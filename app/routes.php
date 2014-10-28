@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
+// Route::get('register','UserController@index');
+Route::post('register/store','UserController@store');
+Route::resource('register','UserController');
+
+
+
+
