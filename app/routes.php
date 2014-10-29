@@ -14,7 +14,6 @@
 Route::get('/', 'HomeController@showWelcome');
 // Route::get('register','UserController@index');
 Route::post('register/store','UserController@store');
-Route::resource('register','UserController');
 
 
 

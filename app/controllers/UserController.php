@@ -7,6 +7,8 @@ class UserController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+	private static $file;
+
 	public function index()
 	{
 		return View::make('register');
@@ -28,9 +30,22 @@ class UserController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+
+	public function uploadDB($file,$role)
+	{
+		if ($file->isValid() and Input::hasFile('pic')){
+			$path = '/assets/img/'.$role;
+			$fne = $role.'-'.$file->getClientOriginalName();
+			
+			$file->move(public_path().$path, $fne);
+			return $path.'/'.$fne;
+		}
+		return 'Fail!';
+	}
+
+
 	public function store()
 	{
-
 		// Didn't check the input
 
 		// $pro = new Profile;
@@ -45,7 +60,7 @@ class UserController extends \BaseController {
 		// 	$pro->telephone = Input::get('tel');
 		// 	// $pro->gender = Input::get('sex');
 		// 	// $pro->birthday = Input::get('dob');
-		// 	// $pro->picture = '-';
+		// 	$pro->picture = $this-uploadDB(Input::file('pic'), Input::get('type');
 		// 	$pro->address = Input::get('addr');
 		// 	$pro->category = Input::get('categ');
 		// 	$pro->description = Input::get('desc');
@@ -53,7 +68,6 @@ class UserController extends \BaseController {
 		// }
 		// else
 		// {
-
 		// 	$pro->firstname = Input::get('fname');
 		// 	$pro->lastname = Input::get('lname');
 		// 	$pro->email = Input::get('email');
@@ -62,24 +76,13 @@ class UserController extends \BaseController {
 		// 	$pro->gender = Input::get('sex');
 		// 	$pro->birthday = Input::get('dob');
 		// 	$pro->role = Input::get('type');
+		// 	$pro->picture = $this-uploadDB(Input::file('pic'), Input::get('type');
 		// }
 
 		// $pro->save();
+		// return "Success!";
 
-		return Redirect::back();
-	}
-
-	public function uploadFile($file,$role)
-	{
-
-		// generate file Name
-		if (Input::hasFile('pic') and Input::file('pic')->isValid())
-		{
-			if ($role == 'customer')
-				return Input::file('pic')->move(app_path().'\assets\img\customer','test.jpg';
-			else
-				return Input::file('pic')->move(app_path().'\assets\img\owner','test.jpg';
-		}
+		return View::make('test')->with('arr',Profile::all());
 	}
 
 	/**
