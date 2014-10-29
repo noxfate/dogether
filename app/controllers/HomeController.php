@@ -17,7 +17,9 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('index.index');
+		$res = DB::select("select district from district");
+		return View::make('index.index')->with('arr',$res);
+		// return $res;
 	}
 
 }

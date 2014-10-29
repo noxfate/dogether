@@ -48,39 +48,37 @@ class UserController extends \BaseController {
 	{
 		// Didn't check the input
 
-		// $pro = new Profile;
+		$pro = new Profile;
 
-		// if (Input::get('type') == 'owner')
-		// {
-		// 	// $pro->firstname = Input::get('fname');
-		// 	// $pro->lastname = Input::get('lname');
-		// 	$pro->name = Input::get('sname');
-		// 	$pro->email = Input::get('email');
-		// 	$pro->password = Hash::make(Input::get('pwd'));
-		// 	$pro->telephone = Input::get('tel');
-		// 	// $pro->gender = Input::get('sex');
-		// 	// $pro->birthday = Input::get('dob');
-		// 	$pro->picture = $this-uploadDB(Input::file('pic'), Input::get('type');
-		// 	$pro->address = Input::get('addr');
-		// 	$pro->category = Input::get('categ');
-		// 	$pro->description = Input::get('desc');
-		// 	$pro->role = Input::get('type');
-		// }
-		// else
-		// {
-		// 	$pro->firstname = Input::get('fname');
-		// 	$pro->lastname = Input::get('lname');
-		// 	$pro->email = Input::get('email');
-		// 	$pro->password = Hash::make(Input::get('pwd'));
-		// 	$pro->telephone = Input::get('tel');
-		// 	$pro->gender = Input::get('sex');
-		// 	$pro->birthday = Input::get('dob');
-		// 	$pro->role = Input::get('type');
-		// 	$pro->picture = $this-uploadDB(Input::file('pic'), Input::get('type');
-		// }
+		if (Input::get('type') == 'owner')
+		{
+			$pro->name = Input::get('sname');
+			$pro->email = Input::get('email');
+			$pro->password = Hash::make(Input::get('pwd'));
+			$pro->telephone = Input::get('tel');
+			$pro->picture = $this->uploadDB(Input::file('pic'), Input::get('type'));
+			$pro->address = Input::get('addr');
+			$pro->district = Input::get('district');
+			$pro->province = Input::get('prov');
+		 //	$pro->post = Input::get('post')
+			$pro->category = Input::get('categ');
+			$pro->description = Input::get('desc');
+			$pro->role = Input::get('type');
+		}
+		else
+		{
+			$pro->firstname = Input::get('fname');
+			$pro->lastname = Input::get('lname');
+			$pro->email = Input::get('email');
+			$pro->password = Hash::make(Input::get('pwd'));
+			$pro->telephone = Input::get('tel');
+			$pro->gender = Input::get('sex');
+			$pro->birthday = Input::get('dob');
+			$pro->role = Input::get('type');
+			$pro->picture = $this->uploadDB(Input::file('pic'), Input::get('type'));
+		}
 
-		// $pro->save();
-		// return "Success!";
+		$pro->save();
 
 		return View::make('test')->with('arr',Profile::all());
 	}

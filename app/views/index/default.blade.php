@@ -1,4 +1,5 @@
 <!doctype html>
+<meta name="Content-Type" content="text/html; charset=utf-8" />
 <html>
 <head>
 	<title>DoGether - Home</title>

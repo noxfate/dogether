@@ -152,9 +152,9 @@
                       </div>
                     </div>
                   <div class="form-group">
-                  <label class="col-sm-2">Profile</label>
-                  <input type="file" class="col-sm-10" name="pic">
-                </div>
+                    <label class="col-sm-2">Profile</label>
+                    <input type="file" class="col-sm-10" name="pic">
+                  </div>
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                       <input type="hidden" name="type" value="customer">
@@ -162,6 +162,7 @@
                     </div>
                   </div>
                 </form>
+
               </div>
           </li>
           <li id="menu-button">
@@ -234,6 +235,130 @@
 @stop
 
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ FOOTER @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+
+<form class="form-horizontal" role="form" action="register/store" method="POST" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email" name="email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control input-sm" placeholder="Password" name="pwd">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Confirm Password</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control input-sm" placeholder="Confirm Password" name="repwd">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">StoreName</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control input-sm" placeholder="Address" name="addr">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Address</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control input-sm" placeholder="Address" name="addr">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">District</label>
+                    <div class="col-sm-10">
+                      <select name="district">
+                        <option value="null">---- Choose District ----</option>
+                        <?php
+                          foreach($arr as $r)
+                          {
+                            echo "<option value='$r->district'>$r->district</option>";
+                          }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Province</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control input-sm" placeholder="Province" name="prov">
+                    </div>
+                  </div>
+                  <!-- <div class="form-group">
+                    <label class="col-sm-2 control-label">Post Number</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control input-sm" placeholder="Post" name="post">
+                    </div>
+                  </div> -->
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Phone Number</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control input-sm" placeholder="080-000-0000">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Caption</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control input-sm" rows="3" name="desc"></textarea>
+                    </div>
+                  </div>
+                  <label class="col-sm-2 control-label">Catagory</label>
+                  <div class="radio-inline">
+                    <label class="help-block">
+                      <input type="radio" name="categ" value="food">
+                      Food
+                    </label>
+                  </div>
+                  <div class="radio-inline">
+                    <label class="help-block">
+                      <input type="radio" name="categ" value="fashion">
+                      Fashion
+                    </label>
+                  </div>
+                  <div class="radio-inline">
+                    <label class="help-block">
+                      <input type="radio" name="categ" value="health">
+                      Health
+                    </label>
+                  </div>
+                  <div class="radio-inline">
+                    <label class="help-block">
+                      <input type="radio" name="categ" value="entertainment">
+                      Entertainment
+                    </label>
+                  </div>
+                  <div class="radio-inline">
+                    <label class="help-block">
+                      <input type="radio" name="categ" value="seminar">
+                      Seminar
+                    </label>
+                  </div>
+                  <div class="radio-inline">
+                    <label class="help-block">
+                      <input type="radio" name="categ" value="other">
+                      Other
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">          
+                      <label class="col-sm-2">Profile</label>
+                      <input type="file" class="col-sm-10" name="pic">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <input type="hidden" name="type" value="owner">
+                      <button type="submit" class="btn btn-default">Sign Up</button>
+                    </div>
+                  </div>
+
+  </form>
+
 
 @section('footer')
 
