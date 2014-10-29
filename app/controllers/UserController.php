@@ -20,7 +20,7 @@ class UserController extends \BaseController {
 	 */
 	public function create()
 	{
-
+		return Profile::all();
 	}
 	
 	/**
@@ -30,36 +30,48 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-		if (Input::get('type') == 'owner'){
 
-		}
-		else{
-
-			$pro = new Profile;
-
-			$pro->firstname = Input::get('fname');
-			$pro->lastname = Input::get('lname');
-			// $pro->name = '-';
-			$pro->email = Input::get('email');
-			$pro->password = Hash::make(Input::get('pwd'));
-			$pro->telephone = Input::get('tel');
-			$pro->gender = Input::get('sex');
-			$pro->birthday = Input::get('dob');
-			// $pro->picture = '-';
-			// $pro->address = '-';
-			// $pro->category = '-';
-			// $pro->description = '-';
-			$pro->role = Input::get('type');
-
-			$pro->save();
-
+		if (Input::hasFile('pic') and Input::file('pic')->isValid())
+		{
+			return Input::file('pic')->move(app_path().'\assets\img\customer','test.jpg');
 		}
 
+		// Didn't check the input
 
-	// 	// DB::insert("insert into account (username,password,role) values (?,?,'customer')",array($usr,$pwd));
-	// 	$result = DB::select("select * from account");
+		// $pro = new Profile;
 
-		return "Success!!";
+		// if (Input::get('type') == 'owner')
+		// {
+		// 	// $pro->firstname = Input::get('fname');
+		// 	// $pro->lastname = Input::get('lname');
+		// 	$pro->name = Input::get('sname');
+		// 	$pro->email = Input::get('email');
+		// 	$pro->password = Hash::make(Input::get('pwd'));
+		// 	$pro->telephone = Input::get('tel');
+		// 	// $pro->gender = Input::get('sex');
+		// 	// $pro->birthday = Input::get('dob');
+		// 	// $pro->picture = '-';
+		// 	$pro->address = Input::get('addr');
+		// 	$pro->category = Input::get('categ');
+		// 	$pro->description = Input::get('desc');
+		// 	$pro->role = Input::get('type');
+		// }
+		// else
+		// {
+
+		// 	$pro->firstname = Input::get('fname');
+		// 	$pro->lastname = Input::get('lname');
+		// 	$pro->email = Input::get('email');
+		// 	$pro->password = Hash::make(Input::get('pwd'));
+		// 	$pro->telephone = Input::get('tel');
+		// 	$pro->gender = Input::get('sex');
+		// 	$pro->birthday = Input::get('dob');
+		// 	$pro->role = Input::get('type');
+		// }
+
+		// $pro->save();
+
+		return Redirect::back();
 	}
 
 	/**

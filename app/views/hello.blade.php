@@ -6,4 +6,6 @@
 	<h1>Hello there, {{$name}}</h1>
 
 	<a href="register">Register</a>
+	<br>
+	<a href="register/create">Show All</a>
 @stop
