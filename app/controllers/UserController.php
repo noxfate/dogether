@@ -31,11 +31,6 @@ class UserController extends \BaseController {
 	public function store()
 	{
 
-		if (Input::hasFile('pic') and Input::file('pic')->isValid())
-		{
-			return Input::file('pic')->move(app_path().'\assets\img\customer','test.jpg');
-		}
-
 		// Didn't check the input
 
 		// $pro = new Profile;
@@ -72,6 +67,19 @@ class UserController extends \BaseController {
 		// $pro->save();
 
 		return Redirect::back();
+	}
+
+	public function uploadFile($file,$role)
+	{
+
+		// generate file Name
+		if (Input::hasFile('pic') and Input::file('pic')->isValid())
+		{
+			if ($role == 'customer')
+				return Input::file('pic')->move(app_path().'\assets\img\customer','test.jpg';
+			else
+				return Input::file('pic')->move(app_path().'\assets\img\owner','test.jpg';
+		}
 	}
 
 	/**
