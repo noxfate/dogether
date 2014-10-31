@@ -12,9 +12,10 @@
 */
 
 Route::get('/', 'HomeController@showWelcome');
-// Route::get('register','UserController@index');
 Route::post('register/store','UserController@store');
 Route::post('login','UserController@login');
+Route::get('logout','UserController@logout');
+Route::get('editprofile','UserController@viewProfile');
 
 
 
