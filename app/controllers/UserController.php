@@ -43,6 +43,40 @@ class UserController extends \BaseController {
 		return 'Fail!';
 	}
 
+	public function login()
+	{
+
+
+		// $count = Profile::where('email','=',Input::get('email'))->count();
+		// $result = Profile::where('email','=',Input::get('email'))->get();
+		// if ($count == 1)
+		// {
+		// 	if (Hash::check(Input::get('pwd'), $result[0]->password))
+		// 	{
+		// 		Session::put('id',$result[0]->id);
+		// 		return Session::get('id');
+		// 		// return "<br>Login Success!";
+		// 	}
+		// }
+		if (!Auth::check())
+		{
+			$userdata = array(
+				"email" => Input::get('email'),
+				"password" => Input::get('pwd')
+				);
+
+			if (Auth::attempt($userdata))
+			{
+				return "Authen Success!";
+			}
+			return "Authen Failed!";
+			
+		}
+		else
+		{
+			return var_dump(Auth::user());
+		}
+	}
 
 	public function store()
 	{
