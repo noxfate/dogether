@@ -11,7 +11,7 @@ class UserController extends \BaseController {
 
 	public function index()
 	{
-
+		return View::make('register');
 	}
 
 
@@ -22,7 +22,7 @@ class UserController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return Profile::all();
 	}
 	
 	/**
@@ -46,6 +46,18 @@ class UserController extends \BaseController {
 	public function login()
 	{
 
+
+		// $count = Profile::where('email','=',Input::get('email'))->count();
+		// $result = Profile::where('email','=',Input::get('email'))->get();
+		// if ($count == 1)
+		// {
+		// 	if (Hash::check(Input::get('pwd'), $result[0]->password))
+		// 	{
+		// 		Session::put('id',$result[0]->id);
+		// 		return Session::get('id');
+		// 		// return "<br>Login Success!";
+		// 	}
+		// }
 		if (!Auth::check())
 		{
 			$userdata = array(
@@ -62,17 +74,8 @@ class UserController extends \BaseController {
 		}
 		else
 		{
-			return Redirect::to('/');
+			return var_dump(Auth::user());
 		}
-	}
-
-	public function logout()
-	{
-		if (Auth::check())
-		{
-			Auth::logout();
-		}
-		return Redirect::to('/');
 	}
 
 	public function store()
@@ -114,10 +117,6 @@ class UserController extends \BaseController {
 		return View::make('test')->with('arr',Profile::all());
 	}
 
-	public function viewProfile()
-	{
-		return View::make('index.profile');
-	}
 	/**
 	 * Display the specified resource.
 	 *
@@ -128,7 +127,6 @@ class UserController extends \BaseController {
 	{
 		//
 	}
-
 
 
 	/**
