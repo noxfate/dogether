@@ -11,7 +11,7 @@ class UserController extends \BaseController {
 
 	public function index()
 	{
-
+		//
 	}
 
 
@@ -33,14 +33,20 @@ class UserController extends \BaseController {
 
 	public function uploadDB($file,$role)
 	{
-		if ($file->isValid() and Input::hasFile('pic')){
-			$path = '/assets/img/'.$role;
-			$fne = $role.'-'.$file->getClientOriginalName();
-			
-			$file->move(public_path().$path, $fne);
-			return $path.'/'.$fne;
+		if (Input::hasFile('pic'))
+		{
+			if ($file->isValid())
+			{
+				
+				$path = '/assets/img/'.$role;
+				$fne = $role.'-'.$file->getClientOriginalName();
+				
+				$file->move(public_path().$path, $fne);
+				return $path.'/'.$fne;
+			}
+			return '/assets/img/default.jpg';
 		}
-		return 'Fail!';
+		return Profile::find(Auth::id())->picture;
 	}
 
 	public function login()
@@ -55,9 +61,9 @@ class UserController extends \BaseController {
 
 			if (Auth::attempt($userdata))
 			{
-				return "Authen Success!";
+				return Redirect::to('/');
 			}
-			return "Authen Failed!";
+			return View::make('error')->with('message','Wrong Username or Password');
 			
 		}
 		else
@@ -114,10 +120,6 @@ class UserController extends \BaseController {
 		return View::make('test')->with('arr',Profile::all());
 	}
 
-	public function viewProfile()
-	{
-		return View::make('index.profile');
-	}
 	/**
 	 * Display the specified resource.
 	 *
@@ -126,7 +128,12 @@ class UserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		if (Auth::check())
+		{
+			$info = Profile::find($id);
+			return View::make('index.profile')->with('id',$info);	
+		}
+		return Redirect::to('/');
 	}
 
 
@@ -139,7 +146,15 @@ class UserController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$pro = Profile::find($id);
+		$pro->firstname = Input::get('fname');
+		$pro->lastname = Input::get('lname');
+		$pro->telephone = Input::get('tel');
+		$pro->picture = $this->uploadDB(Input::file('pic'), $pro->role);
+
+		$pro->save();
+
+		return View::make('index.profile')->with('id',$pro); 
 	}
 
 
@@ -151,7 +166,7 @@ class UserController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		// 
 	}
 
 
