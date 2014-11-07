@@ -1,4 +1,4 @@
-@extends('index/default')
+@extends('index.default')
 
 @section('customCss')
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -207,11 +207,14 @@
   </div>
   @stop
 
-  @else
-    <!-- User have logged in -->
-    LoggedIn<br>
-    <a href="editprofile">Edit Profile</a><br>
-    <a href="logout">Log out</a>
+@else
+  <!-- User have logged in -->
+  @section('header')
+  LoggedIn<br>
+  <a href="profile/{{ Auth::id(); }}">Edit Profile</a><br>
+  <a href="logout">Log out</a>
+  @stop
+
 @endif
 
 @section('slide')
