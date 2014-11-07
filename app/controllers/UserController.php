@@ -52,18 +52,15 @@ class UserController extends \BaseController {
 				"email" => Input::get('email'),
 				"password" => Input::get('pwd')
 				);
-
-			if (Auth::attempt($userdata))
+			
+			if (!Auth::attempt($userdata))
 			{
-				return "Authen Success!";
+				return "Authen Failed!";
 			}
-			return "Authen Failed!";
 			
 		}
-		else
-		{
-			return Redirect::to('/');
-		}
+		return Redirect::to('/');
+
 	}
 
 	public function logout()
@@ -77,46 +74,52 @@ class UserController extends \BaseController {
 
 	public function store()
 	{
-		// Didn't check the input
-
-		$pro = new Profile;
-
-		if (Input::get('type') == 'owner')
+		$count = Profile::where('email','=',Input::get('email'))->count();
+		if ($count == 0)
 		{
-			$pro->name = Input::get('sname');
-			$pro->email = Input::get('email');
-			$pro->password = Hash::make(Input::get('pwd'));
-			$pro->telephone = Input::get('tel');
-			$pro->picture = $this->uploadDB(Input::file('pic'), Input::get('type'));
-			$pro->address = Input::get('addr');
-			$pro->district = Input::get('district');
-			$pro->province = Input::get('prov');
-		 //	$pro->post = Input::get('post')
-			$pro->category = Input::get('categ');
-			$pro->description = Input::get('desc');
-			$pro->role = Input::get('type');
-		}
-		else
-		{
-			$pro->firstname = Input::get('fname');
-			$pro->lastname = Input::get('lname');
-			$pro->email = Input::get('email');
-			$pro->password = Hash::make(Input::get('pwd'));
-			$pro->telephone = Input::get('tel');
-			$pro->gender = Input::get('sex');
-			$pro->birthday = Input::get('dob');
-			$pro->role = Input::get('type');
-			$pro->picture = $this->uploadDB(Input::file('pic'), Input::get('type'));
-		}
+			$pro = new Profile;
 
-		$pro->save();
+			if (Input::get('type') == 'owner')
+			{
+				$pro->name = Input::get('sname');
+				$pro->email = Input::get('email');
+				$pro->password = Hash::make(Input::get('pwd'));
+				$pro->telephone = Input::get('tel');
+				$pro->picture = $this->uploadDB(Input::file('pic'), Input::get('type'));
+				$pro->address = Input::get('addr');
+				$pro->district = Input::get('district');
+				$pro->province = Input::get('prov');
+			 //	$pro->post = Input::get('post')
+				$pro->category = Input::get('categ');
+				$pro->description = Input::get('desc');
+				$pro->role = Input::get('type');
+			}
+			else
+			{
+				$pro->firstname = Input::get('fname');
+				$pro->lastname = Input::get('lname');
+				$pro->email = Input::get('email');
+				$pro->password = Hash::make(Input::get('pwd'));
+				$pro->telephone = Input::get('tel');
+				$pro->gender = Input::get('sex');
+				$pro->birthday = Input::get('dob');
+				$pro->role = Input::get('type');
+				$pro->picture = $this->uploadDB(Input::file('pic'), Input::get('type'));
+			}
 
-		return View::make('test')->with('arr',Profile::all());
+			$pro->save();
+			return View::make('success')->with('arr',Profile::all());
+		}
+		return View::make('error')->with('message','E-mail is already existed!!');
+		
+
+		
 	}
 
 	public function viewProfile()
 	{
-		return View::make('index.profile');
+		if (Auth::check())
+			return View::make('index.profile');
 	}
 	/**
 	 * Display the specified resource.

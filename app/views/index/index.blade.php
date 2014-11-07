@@ -3,10 +3,12 @@
 @section('customCss')
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrapValidator.min.css" rel="stylesheet">
   <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
   <script src="assets/js/jquery-2.1.0.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/bootstrap-dropdown.js"></script>
+  <script src="assets/js/bootstrapValidator.min.js"></script>
 	<style type="text/css">
  
   body{
@@ -95,7 +97,7 @@
                 <div id="register-content" class="dropdown-menu">
                   <form class="form-horizontal" role="form" action="register/store" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                      <label class="col-sm-2 control-label">Email</label>
+                      <label class="col-sm-2 control-label">Email</label> 
                       <div class="col-sm-10">
                         <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email">
                       </div>
@@ -164,7 +166,6 @@
                       </div>
                     </div>
                   </form>
-
                 </div>
             </li>
             <li id="menu-button">
@@ -205,11 +206,12 @@
     </div>
   </div>
   @stop
-@else
-  <!-- User have logged in -->
-  LoggedIn<br>
-  <a href="editprofile">Edit Profile</a><br>
-  <a href="logout">Log out</a>
+
+  @else
+    <!-- User have logged in -->
+    LoggedIn<br>
+    <a href="editprofile">Edit Profile</a><br>
+    <a href="logout">Log out</a>
 @endif
 
 @section('slide')
@@ -372,25 +374,26 @@
 @section('footer')
 
 <script type="text/javascript">
-$(document).ready(function(){
-  $('#login-trigger').click(function(){
-    $(this).next('#login-content').slideToggle()
-    $("#register-content").slideUp()
+  $(document).ready(function(){
+    $('#login-trigger').click(function(){
+      $(this).next('#login-content').slideToggle()
+      $("#register-content").slideUp()
+    });
   });
-});
 
-$(document).ready(function(){
-  $('#register-trigger').click(function(){
-    $(this).next('#register-content').slideToggle()
-    $("#login-content").slideUp()
+  $(document).ready(function(){
+    $('#register-trigger').click(function(){
+      $(this).next('#register-content').slideToggle()
+      $("#login-content").slideUp()
+    });
   });
-});
 
-$(document).ready(function() {
-  $('#datetimepicker').datetimepicker({
-    pickTime: false
+  $(document).ready(function() {
+    $('#datetimepicker').datetimepicker({
+      pickTime: false
+    });
   });
-});
+
 
 // $(document).ready(function(){
 //   $("#menu-button").hover(function(){
