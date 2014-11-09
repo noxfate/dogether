@@ -4,4 +4,3 @@ Oops, Something went wrong!
 <br>
 <br>
 <a href='/'>Back</a>
->>>>>>> origin/master

@@ -46,7 +46,13 @@ class UserController extends \BaseController {
 			}
 			return '/assets/img/default.jpg';
 		}
-		return Profile::find(Auth::id())->picture;
+		else{
+			if (Auth::check()){
+				return Profile::find(Auth::id())->picture;
+			}
+			return '/assets/img/default.jpg'; 
+		}
+		
 	}
 
 	public function login()
@@ -59,7 +65,7 @@ class UserController extends \BaseController {
 				"password" => Input::get('pwd')
 				);
 			
-			if (!Auth::attempt($userdata))
+			if (Auth::attempt($userdata))
 			{
 				return Redirect::to('/');
 			}
@@ -89,7 +95,14 @@ class UserController extends \BaseController {
 			{
 				$pro->name = Input::get('sname');
 				$pro->email = Input::get('email');
-				$pro->password = Hash::make(Input::get('pwd'));
+				if (Input::get('pwd') != Input::get('repwd'))
+				{
+					return Redirect::to('error')->with('message','The password does not match!');
+				}
+				else
+				{
+					$pro->password = Hash::make(Input::get('pwd'));
+				}
 				$pro->telephone = Input::get('tel');
 				$pro->picture = $this->uploadDB(Input::file('pic'), Input::get('type'));
 				$pro->address = Input::get('addr');
@@ -105,7 +118,14 @@ class UserController extends \BaseController {
 				$pro->firstname = Input::get('fname');
 				$pro->lastname = Input::get('lname');
 				$pro->email = Input::get('email');
-				$pro->password = Hash::make(Input::get('pwd'));
+				if (Input::get('pwd') != Input::get('repwd'))
+				{
+					return View::make('error')->with('message','The password does not match!');
+				}
+				else
+				{
+					$pro->password = Hash::make(Input::get('pwd'));
+				}
 				$pro->telephone = Input::get('tel');
 				$pro->gender = Input::get('sex');
 				$pro->birthday = Input::get('dob');
@@ -149,10 +169,21 @@ class UserController extends \BaseController {
 	public function edit($id)
 	{
 		$pro = Profile::find($id);
-		$pro->firstname = Input::get('fname');
-		$pro->lastname = Input::get('lname');
-		$pro->telephone = Input::get('tel');
-		$pro->picture = $this->uploadDB(Input::file('pic'), $pro->role);
+		if ($pro->role == 'owner'){
+			$pro->name = Input::get('sname');
+			$pro->address = Input::get('addr');
+			$pro->telephone = Input::get('tel');
+			$pro->district = Input::get('district');
+			$pro->province = Input::get('prov');
+			$pro->description = Input::get('desc');
+			$pro->category = Input::get('categ');
+			$pro->picture = $this->uploadDB(Input::file('pic'), $pro->role);
+		}else{
+			$pro->firstname = Input::get('fname');
+			$pro->lastname = Input::get('lname');
+			$pro->telephone = Input::get('tel');
+			$pro->picture = $this->uploadDB(Input::file('pic'), $pro->role);
+		}
 
 		$pro->save();
 
