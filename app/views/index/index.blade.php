@@ -274,7 +274,7 @@
                   <div class="form-group">
                     <label class="col-sm-2 control-label">StoreName</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control input-sm" placeholder="Address" name="addr">
+                      <input type="text" class="form-control input-sm" placeholder="Address" name="sname">
                     </div>
                   </div>
                   <div class="form-group">
