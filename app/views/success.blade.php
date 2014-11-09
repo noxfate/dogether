@@ -5,3 +5,4 @@
 	Username: {{ $a->email}}<br>
 @endforeach
 
+<a href='/'>Back</a>
