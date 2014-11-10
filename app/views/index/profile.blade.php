@@ -34,8 +34,41 @@
 					</td>
 				</tr>
 			</table>
+
+			<!-- Hidden Var Here!!  -->
+			<input type="hidden" name="hid" value="profile">
+
 			<input type="submit" value="save">
 		</form>
+
+
+		<!-- Security -->
+		<form action="/edit/{{$id->id}}" method="POST" enctype="multipart/form-data">
+			<table border='1'>
+				<tr>
+					<td>Your-Email</td>
+					<td>{{ $id->email }}</td>
+				</tr>
+				<tr>
+					<td>Old Password</td>
+					<td><input type="password" name="oldpwd"</td>
+				</tr>
+				<tr>
+					<td>New Password</td>
+					<td><input type="password" name="pwd"></td>
+				</tr>
+				<tr>
+					<td>Comfirm Password</td>
+					<td><input type="password" name="repwd"></td>
+				</tr>
+			</table>
+
+			<!-- Hidden Var Here!!  -->
+			<input type="hidden" name="hid" value="password">
+
+			<input type="submit" value="Change">
+		</form>
+
 		<a href="/">Back</a>
 
 	@else
@@ -151,9 +184,40 @@
 					</td>
 				</tr>
 			</table>
-				
+
+			<!-- Hidden Var Here!!  -->
+			<input type="hidden" name="hid" value="profile">
+
 			<input type="submit" value="save">
 		</form>
+
+		<!-- Security -->
+		<form action="/edit/{{$id->id}}" method="POST" enctype="multipart/form-data">
+			<table border='1'>
+				<tr>
+					<td>Your-Email</td>
+					<td>{{ $id->email }}</td>
+				</tr>
+				<tr>
+					<td>Old Password</td>
+					<td><input type="password" name="oldpwd"</td>
+				</tr>
+				<tr>
+					<td>New Password</td>
+					<td><input type="password" name="pwd"></td>
+				</tr>
+				<tr>
+					<td>Comfirm Password</td>
+					<td><input type="password" name="repwd"></td>
+				</tr>
+			</table>
+
+			<!-- Hidden Var Here!!  -->
+			<input type="hidden" name="hid" value="password">
+
+			<input type="submit" value="Change">
+		</form>
+
 		<a href="/">Back</a>
 		
 

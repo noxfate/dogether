@@ -57,7 +57,6 @@ class UserController extends \BaseController {
 
 	public function login()
 	{
-
 		if (!Auth::check())
 		{
 			$userdata = array(
@@ -168,26 +167,42 @@ class UserController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$pro = Profile::find($id);
-		if ($pro->role == 'owner'){
-			$pro->name = Input::get('sname');
-			$pro->address = Input::get('addr');
-			$pro->telephone = Input::get('tel');
-			$pro->district = Input::get('district');
-			$pro->province = Input::get('prov');
-			$pro->description = Input::get('desc');
-			$pro->category = Input::get('categ');
-			$pro->picture = $this->uploadDB(Input::file('pic'), $pro->role);
-		}else{
-			$pro->firstname = Input::get('fname');
-			$pro->lastname = Input::get('lname');
-			$pro->telephone = Input::get('tel');
-			$pro->picture = $this->uploadDB(Input::file('pic'), $pro->role);
+		if (Auth::check()){
+			$pro = Profile::find($id);
+			if (Input::get('hid') == 'profile'){
+				// Change Profile
+				if ($pro->role == 'owner'){
+					$pro->name = Input::get('sname');
+					$pro->address = Input::get('addr');
+					$pro->telephone = Input::get('tel');
+					$pro->district = Input::get('district');
+					$pro->province = Input::get('prov');
+					$pro->description = Input::get('desc');
+					$pro->category = Input::get('categ');
+					$pro->picture = $this->uploadDB(Input::file('pic'), $pro->role);
+				}else{
+					$pro->firstname = Input::get('fname');
+					$pro->lastname = Input::get('lname');
+					$pro->telephone = Input::get('tel');
+					$pro->picture = $this->uploadDB(Input::file('pic'), $pro->role);
+				}
+			}else{
+				// Change Password
+				if (password_verify(Input::get('oldpwd'),$pro->password)){
+					if (Input::get('pwd') == Input::get('repwd'))
+						$pro->password = Hash::make(Input::get('pwd'));
+					else
+						return View::make('error')->with('message','Password does not match!');
+				}else
+					return View::make('error')->with('message','Old Password is incorrect!');
+			}
+			$pro->save();
+
+			return Redirect::to("/profile/$id"); 
+
 		}
-
-		$pro->save();
-
-		return View::make('index.profile')->with('id',$pro); 
+		return Redirect::to('/');
+		
 	}
 
 
