@@ -14,11 +14,14 @@
 // Route::resource('user','UserController');
 
 Route::get('/', 'HomeController@showWelcome');
+
 Route::post('register/store','UserController@store');
 Route::post('login','UserController@login');
 Route::get('logout','UserController@logout');
 Route::get('profile/{id}','UserController@show');
 Route::post('edit/{id}','UserController@edit');
+
+Route::resource('owner','OwnerController');
 
 
 

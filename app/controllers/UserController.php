@@ -66,7 +66,10 @@ class UserController extends \BaseController {
 			
 			if (Auth::attempt($userdata))
 			{
-				return Redirect::to('/');
+				if (Profile::find(Auth::id())->role == 'customer')
+					return Redirect::to('/');
+				return Redirect::to('/owner');
+
 			}
 			return View::make('error')->with('message','Wrong Username or Password');			
 		}

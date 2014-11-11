@@ -1,6 +1,6 @@
 @extends('index.default')
 
-@section('header')
+@section('context')
 	<h1>Profile Page</h1>
 	<br>
 	@if($id->role == 'customer')
@@ -218,7 +218,7 @@
 			<input type="submit" value="Change">
 		</form>
 
-		<a href="/">Back</a>
+		<a href="/owner">Back</a>
 		
 
 
