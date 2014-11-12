@@ -29,5 +29,13 @@ class HomeController extends BaseController {
 		// return $res;
 	}
 
+	public function showLogin()
+	{
+		$res = DB::select("select district from district");
+		return View::make('login')->with('arr',$res);
+		// return $res;
+	}
+
+
 
 }

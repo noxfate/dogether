@@ -15,10 +15,10 @@
 
 Route::get('/', 'HomeController@showWelcome');
 Route::get('/register', 'HomeController@showRegister');
-
+Route::get('/login', 'HomeController@showLogin');
 
 Route::post('register/store','UserController@store');
-Route::post('login/chk','UserController@login');
+Route::post('loginChk','UserController@login');
 Route::get('logout','UserController@logout');
 Route::get('profile/{id}','UserController@show');
 Route::post('edit/{id}','UserController@edit');
