@@ -14,9 +14,11 @@
 // Route::resource('user','UserController');
 
 Route::get('/', 'HomeController@showWelcome');
+Route::get('/register', 'HomeController@showRegister');
+
 
 Route::post('register/store','UserController@store');
-Route::post('login','UserController@login');
+Route::post('login/chk','UserController@login');
 Route::get('logout','UserController@logout');
 Route::get('profile/{id}','UserController@show');
 Route::post('edit/{id}','UserController@edit');
