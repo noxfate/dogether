@@ -9,7 +9,8 @@ class OwnerController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('owner.index')->with('id',Profile::find(Auth::id()));
+		return View::make('owner.profile')->with('id',Profile::find(Auth::id()));
+		//return View::make('owner.index')->with('id',Profile::find(Auth::id()));
 	}
 
 

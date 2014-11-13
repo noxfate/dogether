@@ -25,7 +25,11 @@ Route::post('edit/{id}','UserController@edit');
 
 Route::resource('owner','OwnerController');
 
+Route::get('/test', function(){
 
+	return View::make('owner.profile');
+
+});
 
 
 
