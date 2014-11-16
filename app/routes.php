@@ -15,7 +15,8 @@
 
 Route::get('/', 'HomeController@showWelcome');
 Route::get('/register', 'HomeController@showRegister');
-Route::get('/login', 'HomeController@showLogin');
+
+Route::get('/event', 'HomeController@showLogin');
 
 Route::post('register/store','UserController@store');
 Route::post('loginChk','UserController@login');

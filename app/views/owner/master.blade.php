@@ -10,13 +10,13 @@
     <title>DoGether - Owner Back End - SKTNB</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="asset/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="asset/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
         
     <!-- Custom styles for this template -->
-    <link href="asset/css/style.css" rel="stylesheet">
-    <link href="asset/css/style-responsive.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -56,7 +56,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-                  <p class="centered"><a href="profile.html"><img src="asset/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
                   <h5 class="centered">Marcel Newman</h5>
                     
                   <li class="mt">
@@ -117,17 +117,17 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="asset/js/jquery.js"></script>
-    <script src="asset/js/bootstrap.min.js"></script>
-    <script src="asset/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="asset/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="asset/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="asset/js/jquery.scrollTo.min.js"></script>
-    <script src="asset/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
     <!--common script for all pages-->
-    <script src="asset/js/common-scripts.js"></script>
+    <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
     

@@ -18,24 +18,18 @@ class HomeController extends BaseController {
 	public function showWelcome()
 	{
 		$res = DB::select("select district from district");
-		return View::make('frontend.index')->with('arr',$res);
+			if (Auth::check()) {
+				$res=Auth::user()->email;
+			}
+		return View::make('index.index')->with('arr',$res);
 		// return $res;
 	}
 
 	public function showRegister()
 	{
 		$res = DB::select("select district from district");
-		return View::make('frontend.register')->with('arr',$res);
+		return View::make('index.register')->with('arr',$res);
 		// return $res;
 	}
-
-	public function showLogin()
-	{
-		$res = DB::select("select district from district");
-		return View::make('frontend.login')->with('arr',$res);
-		// return $res;
-	}
-
-
 
 }
