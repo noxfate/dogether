@@ -1044,7 +1044,7 @@ body{
 .destination-places-grid{
 	width: 31.82%;
 	float: left;
-	margin: 0 2% 2% 0;
+	margin: 0 0% 2% 0;
 	border: 1px solid #E2E2E2;
 }
 .dest-place-opt-fea li{
@@ -1074,6 +1074,7 @@ body{
 	color:#1DD2AF;
 }
 .dest-place-pic img{
+
 	display:block;
 	opacity: 0.9;
 	transition: 0.5s all;
@@ -1160,8 +1161,11 @@ body{
 .criuse-pic-info{
 	background: #2C3E50;
 	position: absolute;
-	bottom: 3em;
-	left: 2em;
+	bottom: 0px;
+	right: 0px;
+	width: 70%;
+	height: 100%;
+	/*left: 2em;*/
 }
 .criuse-img{
 	position:relative;
@@ -2703,4 +2707,11 @@ input[type="search"].sb-search-input {
 .sb-search.sb-search-open .sb-search-submit,
 .no-js .sb-search .sb-search-submit {
 	z-index: 90;
+}
+
+.event-grid{
+	width: 100%;
+	float: left;
+	margin: 0 0% 2% 0;
+	/*border: 1px solid #E2E2E2;*/
 }

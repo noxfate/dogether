@@ -16,7 +16,6 @@
 Route::get('/', 'HomeController@showWelcome');
 Route::get('/register', 'HomeController@showRegister');
 
-Route::get('/event', 'HomeController@showLogin');
 
 Route::post('register/store','UserController@store');
 Route::post('loginChk','UserController@login');
@@ -25,10 +24,11 @@ Route::get('profile/{id}','UserController@show');
 Route::post('edit/{id}','UserController@edit');
 
 Route::resource('owner','OwnerController');
+Route::resource('/event', 'EventController');
 
 Route::get('/test', function(){
 
-	return View::make('owner.profile');
+	return View::make('test');
 
 });
 
