@@ -155,7 +155,12 @@ class UserController extends \BaseController {
 		if (Auth::check())
 		{
 			$info = Profile::find($id);
-			return View::make('index.profile')->with('id',$info);	
+			if ($info->role == 'owner'){
+				return View::make('owner.profile')->with('id',$info);					
+			}else{
+				// Fix View Here!
+				return View::make('test');
+			}
 		}
 		return Redirect::to('/');
 	}

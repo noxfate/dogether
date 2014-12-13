@@ -9,39 +9,23 @@
 	</div>
 	<div class="client-grids">
 		<ul class="bxslider">
-		  <li>
+			@foreach($event as $e)
+			<li>
+				<a href="#">{{ $e->name }}</a>
+				<p>{{ $e->detail }}</p>
+				<span>{{ $e->location }}</span>
+				<label> </label>
+			</li>
+			@endforeach
+		  <!-- <li>
 		  	<p>Lorem Ipsum is simply dummy text of the printing and typeset industry. Lorem Ipsum has been the industry's standard dummy text ever hen an with new version look.</p>
 		  	<a href="#">Client Name</a>
 		  	<span>United States</span>
 		  	<label> </label>
-		  </li>
-		  <li>
-		  	<p>Lorem Ipsum is simply dummy text of the printing and typeset industry. Lorem Ipsum has been the industry's standard dummy text ever hen an with new version look.</p>
-		  	<a href="#">Client Name</a>
-		  	<span>United States</span>
-		  	<label> </label>
-		  </li>
-		  <li>
-		  	<p>Lorem Ipsum is simply dummy text of the printing and typeset industry. Lorem Ipsum has been the industry's standard dummy text ever hen an with new version look.</p>
-		  	<a href="#">Client Name</a>
-		  	<span>United States</span>
-		  	<label> </label>
-		  </li>
-		  <li>
-		  	<p>Lorem Ipsum is simply dummy text of the printing and typeset industry. Lorem Ipsum has been the industry's standard dummy text ever hen an with new version look.</p>
-		  	<a href="#">Client Name</a>
-		  	<span>United States</span>
-		  	<label> </label>
-		  </li>
-		  <li>
-		  	<p>Lorem Ipsum is simply dummy text of the printing and typeset industry. Lorem Ipsum has been the industry's standard dummy text ever hen an with new version look.</p>
-		  	<a href="#">Client Name</a>
-		  	<span>United States</span>
-		  	<label> </label>
-		  </li>
+		  </li> -->
 		</ul>
 	</div>
-	<button class="btn" style="position: absolute; right: 10%;">MORE</button>
+	<a href="/event" class="btn" style="position: absolute; right: 10%;">MORE</a>
 </div>
 <!-- enc client -->
 		

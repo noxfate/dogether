@@ -17,11 +17,8 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		$res = DB::select("select district from district");
-			if (Auth::check()) {
-				$res=Auth::user()->email;
-			}
-		return View::make('index.index')->with('arr',$res);
+		$event = Events::all()->take(6);
+		return View::make('index.index')->with('event',$event);
 		// return $res;
 	}
 

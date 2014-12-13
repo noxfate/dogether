@@ -72,13 +72,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="top-header-left">
 					<ul>
 						@if(Auth::check())
-						<li><p><span style="background:url(../images/agent.png)"></span>{{$arr}}</p></li>
-						<li><p><span> </span>Edit My </p>&nbsp;<a class="reg" href="#"> Account</a></li>
-						<div class="clear"> </div>
+							<li><p><span style="background:url(../images/agent.png)"></span>{{ Auth::user()->email }}</p></li>
+							<li><p><span> </span>Edit My </p>&nbsp;<a class="reg" href="profile/{{Auth::id()}}"> Account</a></li>
+							<div class="clear"> </div>
 						@else
-						<li><a href="#" data-toggle="modal" data-target="#myModal"><span> </span> Sign in</a></li>
-						<li><p><span> </span>Not a Member ? </p>&nbsp;<a href="register" class="reg"> Register</a></li>
-						<div class="clear"> </div>
+							<li><a href="#" data-toggle="modal" data-target="#myModal"><span> </span> Sign in</a></li>
+							<li><p><span> </span>Not a Member ? </p>&nbsp;<a href="register" class="reg"> Register</a></li>
+							<div class="clear"> </div>
 						@endif
 					</ul>
 				</div>
@@ -125,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="wrap">
 				<!--- start-logo---->
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" title="voyage" /></a>
+					<a href="/"><img src="images/logo.png" title="voyage" /></a>
 				</div>
 				<!--- //End-logo---->
 				<!--- start-top-nav---->
@@ -231,7 +231,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="subfooter">
 			<div class="wrap">
 				<ul>
-					<li><a href="index.html">Home</a><span>::</span></li>
+					<li><a href="/">Home</a><span>::</span></li>
 					<li><a href="destinations.html">Destinations</a><span>::</span></li>
 					<li><a href="criuses.html">Criuses</a><span>::</span></li>
 					<li><a href="destinations.html">Specils</a><span>::</span></li>

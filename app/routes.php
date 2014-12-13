@@ -24,13 +24,14 @@ Route::get('profile/{id}','UserController@show');
 Route::post('edit/{id}','UserController@edit');
 
 Route::resource('owner','OwnerController');
-Route::resource('/event', 'EventController');
+Route::resource('event', 'EventController');
+Route::resource('myevent','MyEventController');
 
-Route::get('/test', function(){
+// Route::get('/test', function(){
 
-	return View::make('test');
+// 	return View::make('test');
 
-});
+// });
 
 
 
