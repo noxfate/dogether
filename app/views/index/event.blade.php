@@ -52,77 +52,77 @@
 	</div>
 	<div class="criuse-main">
 					<div class="wrap">
-<!-- 						<div class="criuse-head1">
-							<h3>Events</h3>
+						<div class="criuse-head1">
+							<h3>CHEAPEST Criuse</h3>
 						</div>
- -->						<div class="criuse-grids">
+						<div class="criuse-grids">
 							@foreach($event as $e)
 							<div class="criuse-grid">
 								<div class="criuse-grid-head">
 									<div class="criuse-img">
 										<div class="criuse-pic">
-											<img src="images/s1.jpg" title="criuse-name" />
+											<img src="images/glass.jpg" title="criuse-name" />
 										</div>
 										<div class="criuse-pic-info">
 												<div class="criuse-pic-info-top">
-													<img src="{{ Profile::find($e->user_id)->picture }}">
 													<div class="criuse-pic-info-top-weather">
-														<p>{{ $e->category }}</p>
+														<p>{{ $e->time_start }}<span> </span></p>
 													</div>
 													<div class="criuse-pic-info-top-place-name">
-														<h2><label>{{ DB::select("select count(*) as count from joinevent where event_id = ?",array( $e->event_id ))[0]->count }}/{{ $e->size }} people</label><span>{{ $e->name }}</span></h2>
+
+														<h2><label>{{ DB::select("select count(*) as count from joinevent where event_id = ?",array( $e->event_id ))[0]->count }}/{{ $e->size }} People</label>
+															<span>{{ $e->name }}</span>
+														</h2>
+
 													</div>
 												</div>
 												<div class="criuse-pic-info-price">
-													<p><span>Starting From</span> <h4>{{ $e->time_start }}</h4></p>
+													<p><span>By People Name</span></p>
 												</div>
-
-												<a href="#">{{ $e->detail }}
-												<br><br>
-												ไม่ใช่ลิ้งนะ แต่แค่ปรับสีไม่เป็น</a>
+												<div class="detail-pro">
+													Catagory : {{ $e->category }}
+												</div>
+												<div class="detail-pro">
+													{{ $e->detail }}
+												</div>
 										</div>
 									</div>
-									@if (!Auth::check())
-
-									@elseif (Auth::id() === $e->user_id)
-									<div class="criuse-info">										
+									<div class="criuse-info">
+										<div class="criuse-info-left">
+											<ul>
+												@if (!Auth::check())
+												@elseif (Auth::id() === $e->user_id)
+													<li><a class="c-hotel" href="myevent/{{$e->event_id}}"><span> </span>EDIT</a></li>
+												@else
+													<li><a class="c-hotel" href="#" onclick="confirmJoin({{$e->event_id}})"><span> </span>JOIN</a></li>
+												@endif
+												<!-- <li><a class="c-air" href="#"><span> </span> Return Air Ticket</a></li>
+												<li><a class="c-fast" href="#"><span> </span> Complimentry beark fast</a></li>
+												<li><a class="c-car" href="#"><span> </span> Car for All transfers</a></li> -->
+												<div class="clear"> </div>
+											</ul>
+										</div>
 										<div class="criuse-info-right">
 											<ul>
+
 												<li><a class="btn" href="myevent/{{$e->event_id}}">Manage</a></li>
 												<!-- <li><a class="c-face" href="#"><span> </span> </a></li>
 												<li><a class="c-twit" href="#"><span> </span> </a></li>
 												<li><a class="c-tub" href="#"><span> </span> </a></li>
-												<li><a class="c-pin" href="#"><span> </span> </a></li> -->
+												<li><a class="c-pin" href="#"><span> </span> </a></li>
 											</ul>
 										</div>
 										<div class="clear"> </div>
 									</div>
-									@else
-										<div class="criuse-info">										
-											<div class="criuse-info-right">
-												<ul>
-													<li><a class="btn" onclick="confirmJoin({{$e->event_id}})">Join</a></li>
-													<!-- <li><a class="c-face" href="#"><span> </span> </a></li>
-													<li><a class="c-twit" href="#"><span> </span> </a></li>
-													<li><a class="c-tub" href="#"><span> </span> </a></li>
-													<li><a class="c-pin" href="#"><span> </span> </a></li> -->
-												</ul>
-											</div>
-											<div class="clear"> </div>
-										</div>
-
-										<script>
-											function confirmJoin(id){
-												if (confirm("Do you want to Join this Event?") == true){
-													window.location.href = '/event/'+id+'/edit';
-												}	
-											}
-										</script>
-									@endif
-									
 								</div>
-							</div>
-							@endforeach
+								<script>
+									function confirmJoin(id){
+										if (confirm("Do you want to Join this Event?") == true){
+											window.location.href = '/event/'+id+'/edit';
+										}	
+									}
+								</script>
+								@endforeach
 
 							<!-- Social Media Part! -->
 

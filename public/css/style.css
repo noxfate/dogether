@@ -1,3 +1,5 @@
+
+
 /*
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -1170,6 +1172,9 @@ body{
 .criuse-img{
 	position:relative;
 }
+.criuse-img img{
+	max-width: 30%;
+}
 .criuse-pic-info-top{
 	padding:0.5em 1em;
 }
@@ -1189,7 +1194,7 @@ body{
 	width: 12px;
 	height: 12px;
 	display: inline-block;
-	background: url(../images/sun.png) no-repeat 0px 0px;
+	background: url(../images/cal-icon1.png) no-repeat 0px 0px;
 	margin: 0 0.3em;
 	vertical-align: middle;
 }
@@ -2714,4 +2719,11 @@ input[type="search"].sb-search-input {
 	float: left;
 	margin: 0 0% 2% 0;
 	/*border: 1px solid #E2E2E2;*/
+}
+
+.criuse-pic-info .detail-pro{
+	padding: 0.2em 1em;
+	color:#FFF;
+	width: 100%;
+	font: inherit;
 }
