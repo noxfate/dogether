@@ -12,10 +12,8 @@ class MyEventController extends \BaseController {
 		$event = Events::where('user_id','=',Auth::id())->get();
 
 		// Didn't know where to display.
-		$join = DB::select('select * from event where event_id IN 
-			(select event_id from joinevent where user_id = ?);',array(Auth::id()));
-
-		return View::make('index.event')->with('event',$event)->with('joined',$join);
+		
+		return View::make('index.event')->with('event',$event);
 	}
 
 
@@ -53,6 +51,9 @@ class MyEventController extends \BaseController {
 		$evnt->location = Input::get('loca');
 		$evnt->category = Input::get('cate');
 		$evnt->save();
+
+		// Update [ joinevent ] table , Also
+
 		return View::make('success')->with('message','Add Event!');
 	}
 
@@ -66,8 +67,12 @@ class MyEventController extends \BaseController {
 	public function show($id)
 	{
 		$event = Events::find($id);
-		return View::make('index.eventdetail')->with('data',$event);
-		// return $event;
+		$friend = DB::select('select * from profile where id in (
+    		select user_id from joinevent where event_id = ?) and id != ?',array($id, Auth::id()));
+		
+		return View::make('index.eventdetail',array('data'=>$event,
+			'flag'=>'myown','friend'=>$friend));
+		// return $friend;
 	}
 
 
@@ -91,17 +96,19 @@ class MyEventController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$evnt = Events::find($id);
-		$evnt->user_id = Auth::id();
-		$evnt->name = Input::get('name');
-		$evnt->size = Input::get('size');
-		$evnt->time_start = Input::get('start');
-		$evnt->time_end = Input::get('end');
-		$evnt->detail = Input::get('detail');
-		$evnt->location = Input::get('loca');
-		$evnt->category = Input::get('cate');
-		$evnt->save();
-		return View::make('success')->with('message','Event '.$id.' is Edited');
+		// Event Can't be update!!
+
+		// $evnt = Events::find($id);
+		// $evnt->user_id = Auth::id();
+		// $evnt->name = Input::get('name');
+		// $evnt->size = Input::get('size');
+		// $evnt->time_start = Input::get('start');
+		// $evnt->time_end = Input::get('end');
+		// $evnt->detail = Input::get('detail');
+		// $evnt->location = Input::get('loca');
+		// $evnt->category = Input::get('cate');
+		// $evnt->save();
+		// return View::make('success')->with('message','Event '.$id.' is Edited');
 	}
 
 

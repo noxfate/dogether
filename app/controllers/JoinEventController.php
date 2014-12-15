@@ -1,6 +1,6 @@
 <?php
 
-class EventController extends \BaseController {
+class JoinEventController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,17 +9,13 @@ class EventController extends \BaseController {
 	 */
 	public function index()
 	{
-		if (Auth::check()){
-			$id = Auth::id();
-			$event = DB::select("select * from event where user_id != ? 
-				and event_id not in ( select event_id from joinevent where user_id = ?)",
-				array($id,$id));
-		}
-		else{			
-			$event = Events::all();
-		}
-		return View::make('index.event')->with('event',$event);
-		// return DB::select("select count(*) as count from joinevent where event_id = 10")[0]->count;
+		$id = Auth::id();
+		$join = DB::select('select * from event where event_id IN 
+			(select event_id from joinevent where user_id = ?) and event_id NOT IN 
+            (select event_id from event where user_id = ?);',array($id,$id));
+
+		return View::make('index.joinevent')->with('event',$join);
+		// return $join;
 	}
 
 
@@ -53,12 +49,14 @@ class EventController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$aevent = array(Events::find($id));
-		return View::make('index.event')->with('event',$aevent);
+		$data = Events::find($id);
+		$friend = DB::select('select * from profile where id in (
+    		select user_id from joinevent where event_id = ?) and id != ?',array($id, Auth::id()));
 		
+		return View::make('index.eventdetail',array('data'=>$data,
+			'flag'=>'join','friend'=>$friend));
+
 	}
-
-
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -67,12 +65,7 @@ class EventController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$jevnt = new JoinEvent;
-		$jevnt->user_id = Auth::id();
-		$jevnt->event_id = $id;
-		$jevnt->active = 1;
-		$jevnt->save();
-		return View::make('success')->with('message',Auth::id().' '.$id);
+		//
 	}
 
 

@@ -27,6 +27,7 @@ Route::resource('owner','OwnerController');
 Route::get('changepwd',array('uses'=>'OwnerController@changepassword','as'=>'owner.changepass'));
 Route::resource('event', 'EventController');
 Route::resource('myevent','MyEventController');
+Route::resource('joinevent','JoinEventController');
 Route::resource('promotion','PromotionController');
 
 Route::get('test','HomeController@test');
