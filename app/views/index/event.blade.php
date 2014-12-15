@@ -1,13 +1,16 @@
 @extends('index.master')
 
+
+<!-- Joined Event is in Var [joined] -->
 @section('content')
 
 <div class="destinations">
 	<div class="destination-head">
 		<div class="wrap">
 			@if (Auth::check())
-				<a href="event"><h3>Events</h3></a>
+				<a href="event"><h3>All Events</h3></a>
 				<a href="myevent"><h3>My Event</h3></a>
+				<a href="joinevent"><h3>Joined Event</h3></a>
 			@else
 				<h3>Events</h3>
 			@endif
@@ -67,7 +70,7 @@
 														<p>{{ $e->category }}</p>
 													</div>
 													<div class="criuse-pic-info-top-place-name">
-														<h2><label>{{ $e->size }} people</label><span>{{ $e->name }}</span></h2>
+														<h2><label>{{ DB::select("select count(*) as count from joinevent where event_id = ?",array( $e->event_id ))[0]->count }}/{{ $e->size }} people</label><span>{{ $e->name }}</span></h2>
 													</div>
 												</div>
 												<div class="criuse-pic-info-price">
@@ -85,7 +88,7 @@
 									<div class="criuse-info">										
 										<div class="criuse-info-right">
 											<ul>
-												<li><a class="btn" href="myevent/{{$e->event_id}}">Edit</a></li>
+												<li><a class="btn" href="myevent/{{$e->event_id}}">Manage</a></li>
 												<!-- <li><a class="c-face" href="#"><span> </span> </a></li>
 												<li><a class="c-twit" href="#"><span> </span> </a></li>
 												<li><a class="c-tub" href="#"><span> </span> </a></li>
