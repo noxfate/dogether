@@ -73,11 +73,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul>
 						@if(Auth::check())
 							<li><p><span style="background:url(../images/agent.png)"></span>{{ Auth::user()->email }}</p></li>
-							<li><p><span> </span>Edit My </p>&nbsp;<a class="reg" href="profile/{{Auth::id()}}"> Account</a></li>
+							<li><p><span> </span>Edit My </p>&nbsp;<a class="reg" href="/profile/{{Auth::id()}}"> Account</a></li>
 							<div class="clear"> </div>
 						@else
 							<li><a href="#" data-toggle="modal" data-target="#myModal"><span> </span> Sign in</a></li>
-							<li><p><span> </span>Not a Member ? </p>&nbsp;<a href="register" class="reg"> Register</a></li>
+							<li><p><span> </span>Not a Member ? </p>&nbsp;<a href="/register" class="reg"> Register</a></li>
 							<div class="clear"> </div>
 						@endif
 					</ul>
@@ -134,7 +134,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li class="@if (Request::path() == '/') active @endif"><a href="/">Home</a></li>
 						<li class="@if (Request::path() == 'event') active @endif"><a href="event">Event</a></li>
 						<li><a href="#">Achievement</a></li>
-						<li><a href="#">Promotion</a></li>
+						<li><a href="/promotion">Promotion</a></li>
 
 					</ul>
 					@if(Auth::check())

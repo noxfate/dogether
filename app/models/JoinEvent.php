@@ -5,7 +5,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Events extends Eloquent implements UserInterface, RemindableInterface {
+class JoinEvent extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
@@ -14,20 +14,14 @@ class Events extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var string
 	 */
-	protected $table = 'event';
+	protected $table = 'joinevent';
 	protected $primaryKey = 'event_id';
 	public $timestamps = false;
 
 	protected $fillable = array(
 		'user_id',
-		'name',
-		'size',
-		'timestamp',
-		'time_start',
-		'detail',
-		'category',
-		'location',
-		'time_end'
+		'event_id',
+		'active'
 	);
 
 	
@@ -37,6 +31,6 @@ class Events extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
-	protected $hidden = array('timestamp');
+	protected $hidden = array('active');
 
 }

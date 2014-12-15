@@ -1,8 +1,3 @@
-<h1>Successfully Registered</h1>
-
-@foreach($arr as $a)
-	ID: {{ $a->id }}<br>
-	Username: {{ $a->email}}<br>
-@endforeach
+<h1>Successfully {{$message}}</h1>
 
 <a href='/'>Back</a>

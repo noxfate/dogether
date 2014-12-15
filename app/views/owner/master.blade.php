@@ -37,7 +37,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="/owner" class="logo"><b>DASHGUM FREE</b></a>
             <!--logo end-->
             <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -56,31 +56,32 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-                  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                  <p class="centered"><a href="/owner"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
                   <h5 class="centered">Marcel Newman</h5>
                     
                   <li class="mt">
-                      <a href="index.html">
+                      <a href="#">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <!-- <a href="javascript:;" > -->
+                      <a href="/owner/create">
                           <i class="fa fa-desktop"></i>
                           <span>Promotion</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a href="/owner" >
                           <i class="fa fa-cogs"></i>
                           <span>Edit Profile</span>
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="change_password" >
+                      <a href="/changepwd" >
                           <i class="glyphicon glyphicon-lock"></i>
                           <span>Change Password</span>
                       </a>

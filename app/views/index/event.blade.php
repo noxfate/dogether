@@ -1,12 +1,16 @@
 @extends('index.master')
+
 @section('content')
 
 <div class="destinations">
 	<div class="destination-head">
 		<div class="wrap">
-			<a href="event"><h3>All Events</h3></a>
-			<a href="myevent"><h3>My Event</h3></a>
-			
+			@if (Auth::check())
+				<a href="event"><h3>Events</h3></a>
+				<a href="myevent"><h3>My Event</h3></a>
+			@else
+				<h3>Events</h3>
+			@endif
 		</div>
 		<!---End-destinatiuons---->
 		<div class="find-place dfind-place">
@@ -33,7 +37,9 @@
 					</form>
 
 					<!-- Add Button -->
-					<a href="myevent/create" class="button">Add Event</a>
+					@if (Auth::check())
+					<a class='btn' href="myevent/create" class="button">Add Event</a>
+					@endif
 
 				</div>
 				<div class="clear"> </div>
@@ -73,15 +79,13 @@
 												ไม่ใช่ลิ้งนะ แต่แค่ปรับสีไม่เป็น</a>
 										</div>
 									</div>
+									@if (!Auth::check())
+
+									@elseif (Auth::id() === $e->user_id)
 									<div class="criuse-info">										
 										<div class="criuse-info-right">
 											<ul>
-												@if (!Auth::check())
-												@elseif (Auth::id() === $e->user_id)
-													<li><a class="btn" href="myevent/{{$e->event_id}}">Edit</a></li>
-												@else
-													<li><a class="btn">Join</a></li>
-												@endif
+												<li><a class="btn" href="myevent/{{$e->event_id}}">Edit</a></li>
 												<!-- <li><a class="c-face" href="#"><span> </span> </a></li>
 												<li><a class="c-twit" href="#"><span> </span> </a></li>
 												<li><a class="c-tub" href="#"><span> </span> </a></li>
@@ -90,6 +94,29 @@
 										</div>
 										<div class="clear"> </div>
 									</div>
+									@else
+										<div class="criuse-info">										
+											<div class="criuse-info-right">
+												<ul>
+													<li><a class="btn" onclick="confirmJoin({{$e->event_id}})">Join</a></li>
+													<!-- <li><a class="c-face" href="#"><span> </span> </a></li>
+													<li><a class="c-twit" href="#"><span> </span> </a></li>
+													<li><a class="c-tub" href="#"><span> </span> </a></li>
+													<li><a class="c-pin" href="#"><span> </span> </a></li> -->
+												</ul>
+											</div>
+											<div class="clear"> </div>
+										</div>
+
+										<script>
+											function confirmJoin(id){
+												if (confirm("Do you want to Join this Event?") == true){
+													window.location.href = '/event/'+id+'/edit';
+												}	
+											}
+										</script>
+									@endif
+									
 								</div>
 							</div>
 							@endforeach

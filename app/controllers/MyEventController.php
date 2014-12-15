@@ -10,7 +10,12 @@ class MyEventController extends \BaseController {
 	public function index()
 	{
 		$event = Events::where('user_id','=',Auth::id())->get();
-		return View::make('index.event')->with('event',$event);
+
+		// Didn't know where to display.
+		$join = DB::select('select * from event where event_id IN 
+			(select event_id from joinevent where user_id = ?);',array(Auth::id()));
+
+		return View::make('index.event')->with('event',$event)->with('joined',$join);
 	}
 
 
@@ -21,7 +26,13 @@ class MyEventController extends \BaseController {
 	 */
 	public function create()
 	{
-		
+		$pid = Input::get('proid');
+		if ($pid == null){
+			return View::make('index.eventdetail')->with('data',null)->with('pid',null);
+		}else{
+			$data = Promotion::find($pid);
+			return View::make('index.eventdetail')->with('data',null)->with('pid',$data);
+		}
 	}
 
 
@@ -32,7 +43,17 @@ class MyEventController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$evnt = new Events;
+		$evnt->user_id = Auth::id();
+		$evnt->name = Input::get('name');
+		$evnt->size = Input::get('size');
+		$evnt->time_start = Input::get('start');
+		$evnt->time_end = Input::get('end');
+		$evnt->detail = Input::get('detail');
+		$evnt->location = Input::get('loca');
+		$evnt->category = Input::get('cate');
+		$evnt->save();
+		return View::make('success')->with('message','Add Event!');
 	}
 
 
@@ -44,8 +65,9 @@ class MyEventController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$event = Events::where('event_id','=',$id)->get();
+		$event = Events::find($id);
 		return View::make('index.eventdetail')->with('data',$event);
+		// return $event;
 	}
 
 
@@ -57,7 +79,7 @@ class MyEventController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		// return $id;
 	}
 
 
@@ -69,7 +91,17 @@ class MyEventController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$evnt = Events::find($id);
+		$evnt->user_id = Auth::id();
+		$evnt->name = Input::get('name');
+		$evnt->size = Input::get('size');
+		$evnt->time_start = Input::get('start');
+		$evnt->time_end = Input::get('end');
+		$evnt->detail = Input::get('detail');
+		$evnt->location = Input::get('loca');
+		$evnt->category = Input::get('cate');
+		$evnt->save();
+		return View::make('success')->with('message','Event '.$id.' is Edited');
 	}
 
 

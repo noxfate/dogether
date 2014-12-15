@@ -29,4 +29,8 @@ class HomeController extends BaseController {
 		// return $res;
 	}
 
+	public function test()
+	{
+		return View::make('test');
+	}
 }

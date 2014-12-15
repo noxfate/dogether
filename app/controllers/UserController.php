@@ -136,7 +136,7 @@ class UserController extends \BaseController {
 			}
 
 			$pro->save();
-			return View::make('success')->with('arr',Profile::all());
+			return View::make('success')->with('message','Registered');
 		}
 		return View::make('error')->with('message','E-mail is already existed!!');
 		

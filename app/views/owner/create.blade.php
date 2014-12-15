@@ -1,6 +1,6 @@
-@extends('owner.default')
+@extends('owner.master')
 
-@section('context')
+@section('content')
 	<h1>Promotion</h1>
 	<form action="/owner" method="POST" enctype="multipart/form-data">
 		<table border='1'>
@@ -17,7 +17,7 @@
 				<td><input type="date" name="end"></td>
 			</tr>
 			<tr>
-				<td>Description</td>
+				<td>Detail</td>
 				<td><textarea row="3" name="desc"></textarea></td>
 			</tr>
 			<tr>

@@ -15,15 +15,17 @@ class Promotion extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'promotion';
+	protected $primaryKey = 'promotion_id';
 	public $timestamps = false;
 
-	protected $fillable = array('name',
-		'start_date',
-		'end_date',
-		'active',
+	protected $fillable = array(
+		'user_id',
+		'detail',
+		'timestamp',
+		'time_start',
+		'time_end',
 		'picture',
-		'profile_id',
-		'description'
+		'active'
 		);
 
 	/**
@@ -33,4 +35,12 @@ class Promotion extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('active','picture');
 
+	
+	
+	
+	
+	
+	
+	
+	
 }

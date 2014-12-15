@@ -11,7 +11,7 @@
 		<ul class="bxslider">
 			@foreach($event as $e)
 			<li>
-				<a href="#">{{ $e->name }}</a>
+				<a href="/event/{{ $e->event_id }}">{{ $e->name }}</a>
 				<p>{{ $e->detail }}</p>
 				<span>{{ $e->location }}</span>
 				<label> </label>
@@ -100,14 +100,17 @@
 				 <section class="slider">
 		        <div class="flexslider carousel">
 		          <ul class="slides">
+
+<!-- Promotion Slide -->
+
 		            <li onclick="location.href='#';">
 		  	    	    <img src="images/p1.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
 			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
+			  	    	    	 	<!-- <span>Bonus Extras!</span> -->
 		  	    	    	 	</div>
 		  	    	    	 	<div class="caption-info-head-right">
 		  	    	    	 		<span> </span>
@@ -115,11 +118,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
-		  	    		</li>
+		  	    	</li>
+
 		  	    		 <li onclick="location.href='#';">
 		  	    	    <img src="images/p2.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -132,11 +135,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		  	    		 <li onclick="location.href='#';">
 		  	    	    <img src="images/p3.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -149,11 +152,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		  	    		 <li onclick="location.href='#';">
 		  	    	    <img src="images/p4.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -166,11 +169,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		            <li onclick="location.href='#';">
 		  	    	    <img src="images/p5.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -183,11 +186,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		  	    		 <li onclick="location.href='#';">
 		  	    	    <img src="images/p6.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -200,11 +203,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		  	    		 <li onclick="location.href='#';">
 		  	    	    <img src="images/p1.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -217,11 +220,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		  	    		 <li onclick="location.href='#';">
 		  	    	    <img src="images/p2.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -234,11 +237,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		             <li onclick="location.href='#';">
 		  	    	    <img src="images/p3.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -251,11 +254,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		  	    	 <li onclick="location.href='#';">
 		  	    	    <img src="images/p4.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -268,11 +271,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		  	    		 <li onclick="location.href='#';">
 		  	    	    <img src="images/p5.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -285,11 +288,11 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		  	    		 <li onclick="location.href='#';">
 		  	    	    <img src="images/p6.jpg" />
-		  	    	    <!----place-caption-info---->
+		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
@@ -302,7 +305,7 @@
 		  	    	    	 	<div class="clear"> </div>
 		  	    	    	 </div>
 		  	    	    </div>
-		  	    	     <!----//place-caption-info---->
+		  	    	    
 		  	    		</li>
 		          </ul>
 		        </div>

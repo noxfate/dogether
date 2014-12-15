@@ -24,14 +24,12 @@ Route::get('profile/{id}','UserController@show');
 Route::post('edit/{id}','UserController@edit');
 
 Route::resource('owner','OwnerController');
+Route::get('changepwd',array('uses'=>'OwnerController@changepassword','as'=>'owner.changepass'));
 Route::resource('event', 'EventController');
 Route::resource('myevent','MyEventController');
+Route::resource('promotion','PromotionController');
 
-// Route::get('/test', function(){
-
-// 	return View::make('test');
-
-// });
+Route::get('test','HomeController@test');
 
 
 
