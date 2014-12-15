@@ -4,6 +4,54 @@
 <!-- Category didn't check Income Data TT^TT -->
 
 @section('content')
+	{{ HTML::style('css/bootstrap.css'); }}
+	{{ HTML::style('css/flexslider.css'); }}
+	{{ HTML::style('css/fwslider.css'); }}
+	{{ HTML::style('css/jquery-ui.css'); }}
+	{{ HTML::style('css/jquery.bxslider.css'); }}
+	{{ HTML::style('css/style.css'); }}
+	{{ HTML::script('js/css3-mediiaqueries.js'); }}
+	{{ HTML::script('js/flexy-menu.js'); }}
+	{{ HTML::script('js/fwslider.js'); }}
+	{{ HTML::script('js/jquery-ui-min.js'); }}
+	{{ HTML::script('js/jquery.bxslider.js'); }}
+	{{ HTML::script('js/jquery.min.js'); }}
+	{{ HTML::script('js/modal.js'); }}
+
+	<div class="destinations">
+			<div class="destination-head">
+				<div class="wrap">
+					<h3>Event Detail</h3>
+				</div>
+				<!---End-destinatiuons---->
+				<div class="find-place dfind-place">
+					<div class="wrap">
+						<div class="p-h">
+							<span>FIND YOUR</span>
+							<label>HOLYDAYS</label>
+						</div>
+						<!---strat-date-piker---->
+						  <script src="js/jquery-ui.js"></script>
+						  <script>
+						  $(function() {
+						    $( "#datepicker" ).datepicker();
+						  });
+						  </script>
+						<!---/End-date-piker---->
+						<div class="p-ww">
+							<form>
+								<span> Where</span>
+								<input class="dest" type="text" value="Distination" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Distination';}">
+								<span> When</span>
+								<input class="date" id="datepicker" type="text" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
+								<input type="submit" value="Search" />
+							</form>
+						</div>
+						<div class="clear"> </div>
+					</div>
+				</div>
+				<!----//End-find-place---->
+
 	<h1>This is Event Detail</h1>
 	@if ($data != null)
 		@if ($flag == 'join')
