@@ -11,7 +11,7 @@ function initPage(){
 	document.getElementById("password").onblur= CheckPassword ;
 	document.getElementById("repassword").onblur= CheckRePassword;
 	document.getElementById("phone").onblur=CheckPhone;
-	document.getElementById("dob").onchange=CheckDOB;
+	document.getElementById("dob").onblur=CheckDOB;
 	document.getElementById("create").onclick=CheckAll;
 	
 	}
@@ -93,9 +93,12 @@ function CheckDOB(){
 	var x = document.getElementById("dob").value;
 	
 	if(!x){
-		validate[6]=false;
+		validate[6] = false;
+		
 		}else{
-			validate[6]=true;
+			validate[6] = true;
+			
+			return validateRegExp(/^\d{4}\-\d{2}\-\d{2}$/,x,6);
 			}
 	
 	}
@@ -136,6 +139,5 @@ function CheckAll(){
 	}
 	
 	
-function 
 	
 	
