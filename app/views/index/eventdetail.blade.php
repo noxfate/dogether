@@ -43,6 +43,60 @@
 			Location : {{ $data->location }}<br><br>
 
 			@foreach($friend as $f)
+
+				@if ($f->status == 'pending')
+
+					<!-- Wait for Confirmation -->
+
+					Firstname: {{ $f->firstname }}<br>
+					LastName: {{ $f->lastname }}<br>
+					Gender : {{ $f->gender }}<br>
+					Date of Birth : {{ $f->birthday }}<br>
+					E-mail : {{ $f->email }}<br>
+					Telephone : {{ $f->telephone }}<br>
+					<img src="{{ $f->picture }}"><br>
+					
+					{{ Form::open(array('route'=>array('myevent.update',$f->id),'method'=>'put')) }}
+						<input type="hidden" name="eid" value="{{ $data->event_id }}">
+						<input type="submit" class='btn' name="answer" value="accept"> || 
+						<input type="submit" class='btn' name="answer" value="decline">
+					{{ Form::close() }}
+
+				@elseif ($f->status == 'accept' or $f->status == 'confirm')
+
+					<!-- Accepted the Joining Request -->
+
+					Firstname: {{ $f->firstname }}<br>
+					LastName: {{ $f->lastname }}<br>
+					Gender : {{ $f->gender }}<br>
+					Date of Birth : {{ $f->birthday }}<br>
+					E-mail : {{ $f->email }}<br>
+					Telephone : {{ $f->telephone }}<br>
+					<img src="{{ $f->picture }}"><br>
+
+					Status : {{ $f->status }}
+
+					<!-- Decline and this user will Disappear -->
+				@endif
+
+			@endforeach
+			<br>
+			<!-- <a class='btn' href='/myevent/{{ $data->event_id }}/edit'>Confirm</a> -->
+			<button class='btn' href='#'>Confirm</button>
+		@elseif ($flag == 'rate')
+
+			<!-- Rating Part -->
+			<br>
+			Event name : {{ $data->name }}<br>
+			Size : {{ $data->size }}<br>
+			Event Start : {{ $data->time_start }}<br>
+			Event End : {{ $data->time_end }}<br>
+			Category : {{ $data->category }}<br>
+			Detail : {{ $data->detail }}<br>
+			Location : {{ $data->location }}<br><br>
+
+			@foreach($friend as $f)
+
 				Firstname: {{ $f->firstname }}<br>
 				LastName: {{ $f->lastname }}<br>
 				Gender : {{ $f->gender }}<br>
@@ -51,12 +105,18 @@
 				Telephone : {{ $f->telephone }}<br>
 				<img src="{{ $f->picture }}"><br>
 
-				<a class='btn' href="#">Accept</a>
-				<a class='btn' href="#">Decline</a>
+				@if (count(Rate::whereRaw('rated_id = ? and onevent_id = ?',array($f->id,$data->event_id))->get()) < 1 )
+					{{ Form::open(array('route'=>array('rate.update',$f->id),'method'=>'put')) }}
+						<input type="number" name="rating" value="0" min='0' max='5'><br>
+						<input type="hidden" name="eid" value="{{ $data->event_id }}">
+						<input type="submit" value="Rate!">
+					{{ Form::close() }}
+				@else
+					<!-- Already Rate -->
+				@endif
 
 			@endforeach
 			<br>
-			<button class='btn'>Confirm</button>
 		@endif
 
 
