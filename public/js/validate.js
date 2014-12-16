@@ -4,18 +4,20 @@ var validate = [false,false,false,false,false,false,false] ;
 
 
 function initPage(){
+	
 	document.getElementById("firstname").onblur = CheckFirstName;
 	document.getElementById("lastname").onblur = CheckLastName;
 	document.getElementById("email").onblur = CheckEmail;
 	document.getElementById("password").onblur= CheckPassword ;
 	document.getElementById("repassword").onblur= CheckRePassword;
+	document.getElementById("phone").onblur=CheckPhone;
 	
 	}
 	
 	
 	
 function CheckFirstName(){
-	alert("Firstname")
+	alert("Firstname");
 	var x = document.getElementById("firstname").value ;
 	if(!x||x.length<3){
 		validate[0] = false;
@@ -42,7 +44,7 @@ function CheckEmail(){
 		}else{
 			validate[2]=true;
 			
-			return validateRegExp(/[\w\_\-\d\.]@[\w].[\w{4}]/,x,'2');
+			return validateRegExp(/[\w\_\-\d\.]@[\w].[\w{4}]/,x,2);
 			}
 	
 	}
@@ -71,22 +73,16 @@ function CheckRePassword(){
 		}else{
 			validate[4] = false;
 			alert(validate[4]);
-			
 			}
-	
-	
 	}
-		
+
 	
 function validateRegExp(reg,instr,num){
 		
 		//alert(reg.test(instr));
 		if(reg.test(instr)){
-			
 			validate[num]=true;
-			
 			alert(validate[num]);
-			
 		}
 			else{
 				validate[num]=false;

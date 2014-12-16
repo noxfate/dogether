@@ -6,6 +6,7 @@
 <!---start-Blog---->
 <script type="text/javascript" src="assets/js/tabs.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/validate.js"></script>
 
     <div class="blog">
       <div class="destination-head">
@@ -44,33 +45,33 @@
               <div class="row">
               <div class="form-group col-xs-6 ">
                 <label class="control-label">Firstname</label>
-                <input type="text" class="form-control" placeholder="Firstname" name="fname">
+                <input type="text" class="form-control" placeholder="Firstname" name="fname" id="firstname">
               </div>
               <div class="form-group col-xs-6">
                 <label class="control-label">Lastname</label>
-                <input type="text" class="form-control" placeholder="Lastname" name="lname">
+                <input type="text" class="form-control" placeholder="Lastname" name="lname" id="lastname">
               </div>
             </div>
             <div class="row">
               <div class="form-group col-xs-12">
                 <label class="control-label">Email</label>
-                <input type="text" class="form-control" placeholder="example@dogether.com" name="email">
+                <input type="text" class="form-control" placeholder="example@dogether.com" name="email" id="email">
               </div>
             </div>
             <div class="row">
               <div class="form-group col-xs-6">
                 <label class="control-label">Password</label>
-                <input type="password" class="form-control" placeholder="Password" name="pwd">
+                <input type="password" class="form-control" placeholder="Password" name="pwd" id="password">
               </div>
               <div class="form-group col-xs-6">
                 <label class="control-label">Confirm Password</label>
-                <input type="password" class="form-control" placeholder="Confirm Password" name="repwd">
+                <input type="password" class="form-control" placeholder="Confirm Password" name="repwd" id="repassword">
               </div>
             </div>
             <div class="row">
               <div class="form-group col-xs-6">
                 <label class="control-label">Phone Number</label>
-                <input type="text" class="form-control" placeholder="080XXXXXXX" name="tel">
+                <input type="text" class="form-control" placeholder="080XXXXXXX" name="tel" id="phone">
               </div>
               <div class="form-group col-xs-6">
                 <label class="control-label">Date of Birth</label>
