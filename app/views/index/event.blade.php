@@ -77,8 +77,7 @@
 													</div>
 												</div>
 												<div class="criuse-pic-info-price">
-													<p><img src="{{ Profile::find($e->user_id)->picture }}" class="img-circle">
-														<span>By {{ Profile::find($e->user_id)->firstname }} {{ Profile::find($e->user_id)->lastname }}</span></p>
+													<p><span>By People Name</span></p>
 												</div>
 												<div class="detail-pro">
 													Catagory : {{ $e->category }}
@@ -93,7 +92,7 @@
 											<ul>
 												@if (!Auth::check())
 												@elseif (Auth::id() === $e->user_id)
-													<li><a class="c-hotel" href="myevent/{{$e->event_id}}"><span> </span>MANAGE</a></li>
+													<li><a class="c-hotel" href="myevent/{{$e->event_id}}"><span> </span>EDIT</a></li>
 												@else
 													<li><a class="c-hotel" href="#" onclick="confirmJoin({{$e->event_id}})"><span> </span>JOIN</a></li>
 												@endif
@@ -103,16 +102,16 @@
 												<div class="clear"> </div>
 											</ul>
 										</div>
-										<!-- <div class="criuse-info-right">
+										<div class="criuse-info-right">
 											<ul>
 
 												<li><a class="btn" href="myevent/{{$e->event_id}}">Manage</a></li>
-												<li><a class="c-face" href="#"><span> </span> </a></li>
+												<!-- <li><a class="c-face" href="#"><span> </span> </a></li>
 												<li><a class="c-twit" href="#"><span> </span> </a></li>
 												<li><a class="c-tub" href="#"><span> </span> </a></li>
 												<li><a class="c-pin" href="#"><span> </span> </a></li>
 											</ul>
-										</div> -->
+										</div>
 										<div class="clear"> </div>
 									</div>
 								</div>
@@ -125,7 +124,7 @@
 								</script>
 								@endforeach
 
-							<!-- Social Media Part!
+							<!-- Social Media Part! -->
 
 							<!-- <div class="criuse-grid">
 								<div class="criuse-grid-head">
