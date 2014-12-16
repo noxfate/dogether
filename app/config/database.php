@@ -52,27 +52,27 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'dogether',
-			'username'  => 'root',
-			'password'  => '',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-		),
-
 		// 'mysql' => array(
 		// 	'driver'    => 'mysql',
-		// 	'host'      => 'proton.it.kmitl.ac.th',
-		// 	'database'  => 'sktnb',
-		// 	'username'  => 'sktnb',
-		// 	'password'  => 'admin',
+		// 	'host'      => 'localhost',
+		// 	'database'  => 'dogether',
+		// 	'username'  => 'root',
+		// 	'password'  => '',
 		// 	'charset'   => 'utf8',
 		// 	'collation' => 'utf8_unicode_ci',
 		// 	'prefix'    => '',
 		// ),
+
+		'mysql' => array(
+			'driver'    => 'mysql',
+			'host'      => 'proton.it.kmitl.ac.th',
+			'database'  => 'sktnb',
+			'username'  => 'sktnb',
+			'password'  => 'admin',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
