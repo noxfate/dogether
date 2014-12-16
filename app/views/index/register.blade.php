@@ -60,7 +60,7 @@
             </div>
             <div class="row">
               <div class="form-group col-xs-6">
-                <label class="control-label">Password </label><span style="color:red; font-size:15px;"> ( at least 6 character and number )</span>
+                <label class="control-label">Password </label><span style="color:red; font-size:15px;"> ( at least 6 character and 1 number )</span>
                 <input type="password" class="form-control" placeholder="Password" name="pwd" id="password">
               </div>
               <div class="form-group col-xs-6">
