@@ -82,10 +82,10 @@
               <div class="form-group col-xs-6">
                 <label class="control-label">Sex</label><p>
               <label class="radio-inline">
-                <input type="radio" name="sex" id="inlineRadio1" value="M"> Male
+                <input type="radio" name="sex" id="inlineRadio1" value="M" > Male
               </label>
               <label class="radio-inline">
-                <input type="radio" name="sex" id="inlineRadio2" value="F"> Female
+                <input type="radio" name="sex" id="inlineRadio2" value="F" > Female
               </label>
               </div>
               </div>
@@ -107,25 +107,25 @@
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email" name="email">
+                      <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email" name="email" id="email2">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Password</label>
                     <div class="col-sm-10">
-                      <input type="password" class="form-control input-sm" placeholder="Password" name="pwd">
+                      <input type="password" class="form-control input-sm" placeholder="Password" name="pwd" id="password2">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Confirm Password</label>
                     <div class="col-sm-10">
-                      <input type="password" class="form-control input-sm" placeholder="Confirm Password" name="repwd">
+                      <input type="password" class="form-control input-sm" placeholder="Confirm Password" name="repwd" id="repassword2">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label">StoreName</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control input-sm" placeholder="Address" name="sname">
+                      <input type="text" class="form-control input-sm" placeholder="Address" name="sname" id="sname">
                     </div>
                   </div>
                   <div class="form-group">

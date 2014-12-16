@@ -1,6 +1,6 @@
 window.onload = initPage;
 
-var validate = [false,false,false,false,false,false,false] ;
+var validate = [false,false,false,false,false,false,false,false] ;
 
 
 function initPage(){
@@ -12,11 +12,14 @@ function initPage(){
 	document.getElementById("repassword").oninput= CheckRePassword;
 	document.getElementById("phone").oninput=CheckPhone;
 	document.getElementById("dob").oninput=CheckDOB;
+	document.getElementById("inlineRadio1").onclick=SendMale;
+	document.getElementById("inlineRadio2").onclick=SendFemale;
+		
 	document.getElementById("create").onclick=CheckAll;
 	
 	document.getElementById("create").disabled=true;
 	
-	
+
 	
 	}
 	
@@ -118,6 +121,22 @@ function CheckDOB(){
 			}
 	
 	}
+	
+	
+function SendMale(){
+	CheckSex("male");
+	}
+function SendFemale(){
+	CheckSex("female");
+	}
+
+
+function CheckSex(x){
+	validate[7]=true;
+	document.getElementById("create").disabled=false;
+	}
+	
+	
 			
 
 function validateRegExp(reg,instr,num){
@@ -141,13 +160,13 @@ function validateRegExp(reg,instr,num){
 function CheckAll(){
 	
 	var j =0;
-	for(i=0;i<7;i++){
+	for(i=0;i<8;i++){
 		if(validate[i]==true){
 			j++;
 			}
 		}
 		
-	if(j==7){
+	if(j==8){
 		document.getElementById("create").disabled=false;
 		}else{
 			document.getElementById("create").disabled=true;
@@ -155,22 +174,5 @@ function CheckAll(){
 		
 	}
 	
-function createRequest() {
-	try {
-	request = new XMLHttpRequest();
-	} catch (tryMS) {
-	try {
-	request = new ActiveXObject("Msxml2.XMLHTTP");
-	} catch (otherMS) {
-	try {
-	request = new ActiveXObject("Microsoft.XMLHTTP");
-		} catch (failed) {
-		request = null;
-		}
-		}
-	}
-	return request;
-}
-	
-	
+
 	
