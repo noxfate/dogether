@@ -75,7 +75,7 @@
               </div>
               <div class="form-group col-xs-6">
                 <label class="control-label">Date of Birth</label>
-                <input type="date" class="form-control" placeholder=".col-xs-2" name="dob">
+                <input type="date" class="form-control" placeholder=".col-xs-2" name="dob" id="dob">
               </div>
             </div>
             <div class="row">
@@ -96,7 +96,7 @@
               </div>
             </div>
               <input type="hidden" name="type" value="customer">
-              <input class="btn" type="submit" value="Create an Account">
+              <input class="btn" type="submit" value="Create an Account" id="create">
             
             </div>
        </form>

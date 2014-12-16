@@ -11,6 +11,8 @@ function initPage(){
 	document.getElementById("password").onblur= CheckPassword ;
 	document.getElementById("repassword").onblur= CheckRePassword;
 	document.getElementById("phone").onblur=CheckPhone;
+	document.getElementById("dob").onchange=CheckDOB;
+	document.getElementById("create").onclick=CheckAll;
 	
 	}
 	
@@ -77,6 +79,28 @@ function CheckRePassword(){
 	}
 
 	
+function CheckPhone(){
+	var x = document.getElementById("phone").value;
+	alert(isNaN(x));
+	if(isNaN(x)){
+		valiate[5]=false;
+		}else{
+			validate[5]=true;
+			}
+	}
+	
+function CheckDOB(){
+	var x = document.getElementById("dob").value;
+	
+	if(!x){
+		validate[6]=false;
+		}else{
+			validate[6]=true;
+			}
+	
+	}
+			
+
 function validateRegExp(reg,instr,num){
 		
 		//alert(reg.test(instr));
@@ -90,4 +114,20 @@ function validateRegExp(reg,instr,num){
 				
 				}
 			
+			}
+	
+	
+function CheckAll(){
+	var j =0;
+	for(i=0;i<7;i++){
+		if(validate[i]==true){
+			j++;
+			}
+		}
+	}
+	
+	if(j==7){
+		alert("Form collect");
+		}else{
+			alert("Please Enter the collect value");
 			}
