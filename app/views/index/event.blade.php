@@ -7,13 +7,14 @@
 <div class="destinations">
 	<div class="destination-head">
 		<div class="wrap">
-			@if (Auth::check())
+			<h3>Event</h3> 
+			<!-- @if (Auth::check())
 				<a href="event"><h3>All Events</h3></a>
 				<a href="myevent"><h3>My Event</h3></a>
 				<a href="joinevent"><h3>Joined Event</h3></a>
 			@else
 				<h3>Events</h3>
-			@endif
+			@endif -->
 		</div>
 		<!---End-destinatiuons---->
 		<div class="find-place dfind-place">
@@ -39,11 +40,6 @@
 						<input type="submit" value="Search" />
 					</form>
 
-					<!-- Add Button -->
-					@if (Auth::check())
-					<a class='btn' href="myevent/create" class="button">Add Event</a>
-					@endif
-
 				</div>
 				<div class="clear"> </div>
 			</div>
@@ -51,9 +47,12 @@
 		<!----//End-find-place---->
 	</div>
 	<div class="criuse-main">
+		<!-- Add Button -->
 					<div class="wrap">
-						<div class="criuse-head1">
-							<h3>CHEAPEST Criuse</h3>
+						<div class="criuse-head1" style="padding-left: 87%;">
+							@if (Auth::check())
+								<a class='btn' href="myevent/create" class="button">Add Event</a>
+							@endif
 						</div>
 						<div class="criuse-grids">
 							@foreach($event as $e)

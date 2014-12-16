@@ -117,10 +117,20 @@
 
 						<!--chk if owner can accept/decline-->
 						@if ($flag == 'myown')
-						
-							<img src="../images/chk.png" alt="">
-							<img src="../images/can-active.png" alt="">
+							
+							<!--pending-->
+							@if ($f->status == 'pending')
+								{{ Form::open(array('route'=>array('myevent.update',$f->id),'method'=>'put')) }}
+									<input type="hidden" name="eid" value="{{ $data->event_id }}">
+									<input type="radio" name="answer" value="accept"> || 
+									<input type="radio" name="answer" value="decline">
+								{{ Form::close() }}
+							<!-- <img src="../images/chk.png" alt="">
+							<img src="../images/can-active.png" alt=""> -->
 
+							@elseif ($f->status == 'accept' or $f->status == 'confirm')
+								<img src="../images/chk-active.png" alt="">
+							@endif
 						@endif
 
 
@@ -138,11 +148,12 @@
 				</div>
 			</div>
 		</div>
-
+	</div>
+		<!--
 	@if ($data != null)
-		
+	
 	@elseif ($pid != null)
-		<!-- Create From Promotion -->
+		 Create From Promotion
 		<form action="/myevent" method="POST">
 			Event Name : <input type="text" name="name" value="{{ $pid->name}}"><br>
 			Size : <input type="text" name="size"><br>

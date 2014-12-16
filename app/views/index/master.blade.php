@@ -134,9 +134,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li class="@if (Request::path() == '/') active @endif"><a href="/">Home</a></li>
 						<li class="@if (Request::path() == 'event') active @endif"><a href="event">Event</a>
 							<ul>
-								<li><a href="#">Dropdown item</a></li>
-								<li><a href="#">Dropdown item</a></li>
-								<li><a href="#">Dropdown item</a></li>
+								@if (Auth::check())
+								<li><a href="event">All Events</a></li>
+								<li><a href="myevent">My Event</a></li>
+								<li><a href="joinevent">Joined Event</a></li>
+								@endif
 							</ul>
 						</li>
 						
