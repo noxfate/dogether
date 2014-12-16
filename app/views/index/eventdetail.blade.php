@@ -4,19 +4,6 @@
 <!-- Category didn't check Income Data TT^TT -->
 
 @section('content')
-	{{ HTML::style('css/bootstrap.css'); }}
-	{{ HTML::style('css/flexslider.css'); }}
-	{{ HTML::style('css/fwslider.css'); }}
-	{{ HTML::style('css/jquery-ui.css'); }}
-	{{ HTML::style('css/jquery.bxslider.css'); }}
-	{{ HTML::style('css/style.css'); }}
-	{{ HTML::script('js/css3-mediiaqueries.js'); }}
-	{{ HTML::script('js/flexy-menu.js'); }}
-	{{ HTML::script('js/fwslider.js'); }}
-	{{ HTML::script('js/jquery-ui-min.js'); }}
-	{{ HTML::script('js/jquery.bxslider.js'); }}
-	{{ HTML::script('js/jquery.min.js'); }}
-	{{ HTML::script('js/modal.js'); }}
 
 	<div class="destinations">
 			<div class="destination-head">
@@ -162,43 +149,4 @@
 			</div>
 		</div>
 	</div>
-		<!--
-	@if ($data != null)
-	
-	@elseif ($pid != null)
-		 Create From Promotion
-		<form action="/myevent" method="POST">
-			Event Name : <input type="text" name="name" value="{{ $pid->name}}"><br>
-			Size : <input type="text" name="size"><br>
-			Event Start : <input type="date" name="start" value="{{ $pid->time_start }}"><br>
-			Event End : <input type="date" name="end" value="{{ $pid->time_end }}"><br>
-			Cateory : <input type="radio" name="cate" value="food"> Food 
-			<input type="radio" name="cate" value="fashion"> Fashion
-			<input type="radio" name="cate" value="health"> Health
-			<input type="radio" name="cate" value="entertainment"> Entertainment
-			<input type="radio" name="cate" value="seminar"> Seminar
-			<input type="radio" name="cate" value="other"> Other <br>
-			Detail : <textarea name="detail" row="3">{{ $pid->detail }}</textarea><br>
-			Location : <textarea name="loca" row="3"></textarea>
-			<input type="submit" value="save">
-		</form>
-
-	@else
-		<form action="/myevent" method="POST">
-			Event Name : <input type="text" name="name"><br>
-			Size : <input type="text" name="size" ><br>
-			Event Start : <input type="datetime" name="start" ><br>
-			Event End : <input type="datetime" name="end" ><br>
-			Cateory : <input type="radio" name="cate" value="food"> Food 
-			<input type="radio" name="cate" value="fashion"> Fashion
-			<input type="radio" name="cate" value="health"> Health
-			<input type="radio" name="cate" value="entertainment"> Entertainment
-			<input type="radio" name="cate" value="seminar"> Seminar
-			<input type="radio" name="cate" value="other"> Other <br>
-			Detail : <textarea name="detail" row="3"></textarea><br>
-			Location : <textarea name="loca" row="3"></textarea>
-			<input type="submit" value="save">
-		</form>
-	@endif
-
 @stop
