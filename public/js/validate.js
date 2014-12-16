@@ -19,7 +19,7 @@ function initPage(){
 	
 	
 function CheckFirstName(){
-	alert("Firstname");
+	
 	var x = document.getElementById("firstname").value ;
 	if(!x||x.length<3){
 		validate[0] = false;
@@ -29,7 +29,7 @@ function CheckFirstName(){
 	}
 	
 function CheckLastName(){
-	alert("lastname");
+	
 	var x = document.getElementById("lastname").value;
 	if(!x||x.length<3){
 		validate[1]=false;
@@ -81,7 +81,7 @@ function CheckRePassword(){
 	
 function CheckPhone(){
 	var x = document.getElementById("phone").value;
-	alert(isNaN(x));
+	
 	if(isNaN(x)){
 		valiate[5]=false;
 		}else{
@@ -106,11 +106,11 @@ function validateRegExp(reg,instr,num){
 		//alert(reg.test(instr));
 		if(reg.test(instr)){
 			validate[num]=true;
-			alert(validate[num]);
+			
 		}
 			else{
 				validate[num]=false;
-				alert(validate[num]);
+				
 				
 				}
 			
@@ -118,16 +118,24 @@ function validateRegExp(reg,instr,num){
 	
 	
 function CheckAll(){
+	
 	var j =0;
 	for(i=0;i<7;i++){
 		if(validate[i]==true){
 			j++;
 			}
 		}
-	}
-	
+		alert(j);
 	if(j==7){
 		alert("Form collect");
 		}else{
 			alert("Please Enter the collect value");
+			location.reload() ;
 			}
+		
+	}
+	
+	
+function 
+	
+	
