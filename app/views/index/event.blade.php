@@ -77,8 +77,8 @@
 													</div>
 												</div>
 												<div class="criuse-pic-info-price">
-													<p><img src="{{ Profile::find($e->user_id)->picture }}" class="img-circle">
-														<span>By {{ Profile::find($e->user_id)->firstname }} {{ Profile::find($e->user_id)->lastname }}</span></p>
+													<p><img src="{{ Profile::find($e->user_id)->picture }}" class="img-circle" style="height: 50px; width: 50px">
+													<span>By {{ Profile::find($e->user_id)->firstname }} {{ Profile::find($e->user_id)->lastname }}</span></p>
 												</div>
 												<div class="detail-pro">
 													Catagory : {{ $e->category }}

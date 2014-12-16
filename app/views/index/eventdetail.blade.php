@@ -99,82 +99,48 @@
 								</div>
 							</div>
 						</div>
+						<br>
+						<h1>Companion</h1>
 					</div>
 				</div>
 				<!--Accept/Decline Person-->
 				<div class='row'>
-					<div class="col-md-4">.col-md-1</div>
-					<div class="col-md-2">.col-md-1</div>
-					<div class="col-md-4">.col-md-1</div>
-					<div class="col-md-2">.col-md-1</div>
+
+				@foreach($friend as $f)
+					<div class="col-md-2"><img src="{{ $f->picture }}" class="img-circle"></div>
+					<div class="col-md-3">
+						Name: {{ $f->firstname }} {{ $f->lastname }}<br>
+						Gender : {{ $f->gender }}<br>
+						Date of Birth : {{ $f->birthday }}<br>
+						E-mail : {{ $f->email }}<br>
+						Telephone : {{ $f->telephone }}<br>
+
+						<!--chk if owner can accept/decline-->
+						@if ($flag == 'myown')
+						
+							<img src="../images/chk.png" alt="">
+							<img src="../images/can-active.png" alt="">
+
+						@endif
+
+
+					</div>
+				@endforeach
+
+				@if ($flag == 'myown')
+					<div class="col-md-12">
+						<div class="criuse-grid-load">
+							<a href="#">Confirm</a>
+						</div>
+					</div>
+				@endif
 
 				</div>
-
-
-
-
 			</div>
 		</div>
 
 	@if ($data != null)
-		@if ($flag == 'join')
-			<!-- Data, Collaborator -->
-			<br>
-
-
-			Event name : {{ $data->name }}<br>
-			Size : {{ $data->size }}<br>
-			Event Start : {{ $data->time_start }}<br>
-			Event End : {{ $data->time_end }}<br>
-			Category : {{ $data->category }}<br>
-			Detail : {{ $data->detail }}<br>
-			Location : {{ $data->location }}<br><br>
-
-			@foreach($friend as $f)
-				Firstname: {{ $f->firstname }}<br>
-				LastName: {{ $f->lastname }}<br>
-				Gender : {{ $f->gender }}<br>
-				Date of Birth : {{ $f->birthday }}<br>
-				E-mail : {{ $f->email }}<br>
-				Telephone : {{ $f->telephone }}<br>
-				<img src="{{ $f->picture }}"><br>
-
-			@endforeach
 		
-
-		@elseif ($flag == 'myown')
-
-			<!-- Data, Collaborator, Accept/Decline Button -->
-			<br>
-			!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			{{ Profile::find($data->user_id)->firstname }}
-
-			Event name : {{ $data->name }}<br>
-			Size : {{ $data->size }}<br>
-			Event Start : {{ $data->time_start }}<br>
-			Event End : {{ $data->time_end }}<br>
-			Category : {{ $data->category }}<br>
-			Detail : {{ $data->detail }}<br>
-			Location : {{ $data->location }}<br><br>
-
-			@foreach($friend as $f)
-				Firstname: {{ $f->firstname }}<br>
-				LastName: {{ $f->lastname }}<br>
-				Gender : {{ $f->gender }}<br>
-				Date of Birth : {{ $f->birthday }}<br>
-				E-mail : {{ $f->email }}<br>
-				Telephone : {{ $f->telephone }}<br>
-				<img src="{{ $f->picture }}"><br>
-
-				<a class='btn' href="#">Accept</a>
-				<a class='btn' href="#">Decline</a>
-
-			@endforeach
-			<br>
-			<button class='btn'>Confirm</button>
-		@endif
-
-
 	@elseif ($pid != null)
 		<!-- Create From Promotion -->
 		<form action="/myevent" method="POST">
