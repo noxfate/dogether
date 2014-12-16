@@ -33,10 +33,12 @@ class MyEventController extends \BaseController {
 	{
 		$pid = Input::get('proid');
 		if ($pid == null){
-			return View::make('index.eventdetail')->with('data',null)->with('pid',null);
+			//  Create youself
+			return View::make('index.addevent')->with('data',null)->with('pid',null);
 		}else{
+			//  Create From Promotion
 			$data = Promotion::find($pid);
-			return View::make('index.eventdetail')->with('data',null)->with('pid',$data);
+			return View::make('index.addevent')->with('data',null)->with('pid',$data);
 		}
 	}
 

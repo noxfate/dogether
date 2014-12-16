@@ -8,16 +8,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 	<head>
 		<title>DoGether : HOME</title>
-		<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="{{ URL::to('css/bootstrap.css') }}" type="text/css" />
+		<link href="{{ URL::to('css/style.css') }}" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</script>
-		<script src="js/jquery.min.js"></script>
+		<script src="{{ URL::to('js/jquery.min.js')}}"></script>
 		<!---script---->
 
-		<link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css" />
-		<script src="js/jquery.bxslider.js"></script>
+		<link rel="stylesheet" href="{{ URL::to('css/jquery.bxslider.css')}}" type="text/css" />
+		<script src="{{ URL::to('js/jquery.bxslider.js')}}"></script>
 			<script type="text/javascript">
 				$(document).ready(function(){
 					$('.bxslider').bxSlider({
@@ -48,25 +48,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</script>
 		<!---//smoth-scrlling---->
 		<!----start-top-nav-script---->
-		<script type="text/javascript" src="js/flexy-menu.js"></script>
+		<script type="text/javascript" src="{{ URL::to('js/flexy-menu.js')}}"></script>
 		<script type="text/javascript">$(document).ready(function(){$(".flexy-menu").flexymenu({speed: 400,type: "horizontal",align: "right"});});</script>
 		<!----//End-top-nav-script---->
 		<!---webfonts---->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 		<!---webfonts---->
 		<!--start slider -->
-	    <link rel="stylesheet" href="css/fwslider.css" media="all">
-		<script src="js/jquery-ui.min.js"></script>
-		<script src="js/css3-mediaqueries.js"></script>
-		<script src="js/fwslider.js"></script>
+	    <link rel="stylesheet" href="{{ URL::to('css/fwslider.css')}}" media="all">
+		<script src="{{ URL::to('js/jquery-ui.min.js')}}"></script>
+		<script src="{{ URL::to('js/css3-mediaqueries.js')}}"></script>
+		<script src="{{ URL::to('js/fwslider.js')}}"></script>
 		<!--end slider -->
 		<!---calender-style---->
-		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<link rel="stylesheet" href="{{ URL::to('css/jquery-ui.css')}}" />
 		<!---//calender-style---->
 	</head>
 	<body>
 		<!----start-wrap---->
-		<script type="text/javascript" src="js/modal.js"></script>
+		<script type="text/javascript" src="{{ URL::to('js/modal.js')}}"></script>
 		<div class="top-header" id="header">
 			<div class="wrap">
 				<div class="top-header-left">

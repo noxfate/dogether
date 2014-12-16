@@ -7,7 +7,7 @@
 <div class="destinations">
 	<div class="destination-head">
 		<div class="wrap">
-			<h3>Event</h3> 
+			<h3>Events</h3> 
 			<!-- @if (Auth::check())
 				<a href="event"><h3>All Events</h3></a>
 				<a href="myevent"><h3>My Event</h3></a>
