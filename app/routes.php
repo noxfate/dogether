@@ -29,6 +29,7 @@ Route::resource('event', 'EventController');
 Route::resource('myevent','MyEventController');
 Route::resource('joinevent','JoinEventController');
 Route::resource('promotion','PromotionController');
+Route::resource('rate','RateSystemController');
 
 Route::get('test','HomeController@test');
 

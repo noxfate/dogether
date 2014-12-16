@@ -9,10 +9,17 @@ class MyEventController extends \BaseController {
 	 */
 	public function index()
 	{
-		$event = Events::where('user_id','=',Auth::id())->get();
-
-		// Didn't know where to display.
+		// $event = Events::where('user_id','=',Auth::id())->get();
+		$e1 = DB::select('select * from event where user_id = ? 
+			and time_end >= current_timestamp
+			order by time_end',array(Auth::id()));
 		
+		$e2 = DB::select('select * from event where user_id = ?
+			and time_end < current_timestamp
+			order by time_end;',array(Auth::id()));
+		$event = array_merge($e1,$e2);
+
+		// return $event;
 		return View::make('index.event')->with('event',$event);
 	}
 
@@ -41,6 +48,8 @@ class MyEventController extends \BaseController {
 	 */
 	public function store()
 	{
+		// Create New Event
+
 		$evnt = new Events;
 		$evnt->user_id = Auth::id();
 		$evnt->name = Input::get('name');
@@ -52,9 +61,17 @@ class MyEventController extends \BaseController {
 		$evnt->category = Input::get('cate');
 		$evnt->save();
 
-		// Update [ joinevent ] table , Also
+		$eid = DB::select('select event_id from event where event_id = (select max(event_id) from event)');
+		$join = new JoinEvent;
+		$join->event_id = $eid[0]->event_id;
+		$join->user_id = Auth::id();
+		$join->active = 1;
+		// $join->status = 'owner';
+		$join->save();		
+
 
 		return View::make('success')->with('message','Add Event!');
+		// return $join;
 	}
 
 
@@ -67,8 +84,9 @@ class MyEventController extends \BaseController {
 	public function show($id)
 	{
 		$event = Events::find($id);
-		$friend = DB::select('select * from profile where id in (
-    		select user_id from joinevent where event_id = ?) and id != ?',array($id, Auth::id()));
+		$friend = DB::select('select * from profile a, joinevent b where a.id in (
+    		select user_id from joinevent where event_id = ?) and a.id != ? 
+			and b.event_id = ? and b.user_id = a.id;',array($id, Auth::id(), $id));
 		
 		return View::make('index.eventdetail',array('data'=>$event,
 			'flag'=>'myown','friend'=>$friend));
@@ -84,7 +102,7 @@ class MyEventController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		// return $id;
+		return 'confirm';
 	}
 
 
@@ -94,22 +112,19 @@ class MyEventController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($usrid)
 	{
-		// Event Can't be update!!
+		// set Status to Accept/Decline
+		
+		$eid = Input::get('eid');
+		$ans = Input::get('answer');
+		DB::update("update joinevent set status = ? where event_id = ? and user_id = ?"
+			,array($ans,$eid,$usrid));
 
-		// $evnt = Events::find($id);
-		// $evnt->user_id = Auth::id();
-		// $evnt->name = Input::get('name');
-		// $evnt->size = Input::get('size');
-		// $evnt->time_start = Input::get('start');
-		// $evnt->time_end = Input::get('end');
-		// $evnt->detail = Input::get('detail');
-		// $evnt->location = Input::get('loca');
-		// $evnt->category = Input::get('cate');
-		// $evnt->save();
-		// return View::make('success')->with('message','Event '.$id.' is Edited');
+		return Redirect::to('/myevent/'.$eid);
+		
 	}
+
 
 
 	/**

@@ -53,78 +53,87 @@
 	<div class="criuse-main">
 					<div class="wrap">
 						<div class="criuse-head1">
-							<h3>CHEAPEST Criuse</h3>
 						</div>
 						<div class="criuse-grids">
 							@foreach($event as $e)
-							<div class="criuse-grid">
-								<div class="criuse-grid-head">
-									<div class="criuse-img">
-										<div class="criuse-pic">
-											<img src="images/glass.jpg" title="criuse-name" />
+								<div class="criuse-grid">
+									<div class="criuse-grid-head">
+										<div class="criuse-img">
+											<div class="criuse-pic">
+												<img src="images/glass.jpg" title="criuse-name" />
+											</div>
+											<div class="criuse-pic-info">
+													<div class="criuse-pic-info-top">
+														<div class="criuse-pic-info-top-weather">
+															<p>{{ $e->time_start }}<span> </span></p>
+														</div>
+														<div class="criuse-pic-info-top-place-name">
+
+															<h2><label>{{ DB::select("select count(*) as count from joinevent where event_id = ?",array( $e->event_id ))[0]->count }}/{{ $e->size }} People</label>
+																<span>{{ $e->name }}</span>
+															</h2>
+														</div>
+													</div>
+													<div class="criuse-pic-info-price">
+														<p><span>By People Name</span></p>
+													</div>
+													<div class="detail-pro">
+														Catagory : {{ $e->category }}
+													</div>
+													<div class="detail-pro">
+														{{ $e->detail }}
+													</div>
+											</div>
 										</div>
-										<div class="criuse-pic-info">
-												<div class="criuse-pic-info-top">
-													<div class="criuse-pic-info-top-weather">
-														<p>{{ $e->time_start }}<span> </span></p>
-													</div>
-													<div class="criuse-pic-info-top-place-name">
+										<div class="criuse-info">
+											<div class="criuse-info-left">
+												<ul>
+													@if (!Auth::check())
+													@elseif (Auth::id() === $e->user_id)
+														@if ( $e->time_end >= date('Y-m-d H:i:s'))
+															<!-- In time Event! -->
+															<li><a class="c-hotel" href="myevent/{{$e->event_id}}"><span> </span>MANAGE</a></li>
+														@else
+															<!-- Expired Event! -->
+															<li><a class="c-hotel" href="rate/{{$e->event_id}}"><span> </span>RATE NOW</a></li>
+														@endif
+													@elseif ( DB::select("select count(*) as count from joinevent where event_id = ?",array( $e->event_id ))[0]->count >= $e->size)
+														<!-- Join people is more than Size, The Join button will disappear -->
+														<li><span> </span>PARTY FULL</li>
 
-														<h2><label>{{ DB::select("select count(*) as count from joinevent where event_id = ?",array( $e->event_id ))[0]->count }}/{{ $e->size }} People</label>
-															<span>{{ $e->name }}</span>
-														</h2>
+													@else
+														<li><a class="c-hotel" href="#" onclick="confirmJoin({{$e->event_id}})"><span> </span>JOIN</a></li>
+													@endif
+													<!-- <li><a class="c-air" href="#"><span> </span> Return Air Ticket</a></li>
+													<li><a class="c-fast" href="#"><span> </span> Complimentry beark fast</a></li>
+													<li><a class="c-car" href="#"><span> </span> Car for All transfers</a></li> -->
+													<div class="clear"> </div>
+												</ul>
+											</div>
+											<!-- <div class="criuse-info-right">
+												<ul>
 
-													</div>
-												</div>
-												<div class="criuse-pic-info-price">
-													<p><span>By People Name</span></p>
-												</div>
-												<div class="detail-pro">
-													Catagory : {{ $e->category }}
-												</div>
-												<div class="detail-pro">
-													{{ $e->detail }}
-												</div>
+													<li><a class="btn" href="myevent/{{$e->event_id}}">Manage</a></li>
+													<li><a class="c-face" href="#"><span> </span> </a></li>
+
+													<li><a class="c-twit" href="#"><span> </span> </a></li>
+													<li><a class="c-tub" href="#"><span> </span> </a></li>
+													<li><a class="c-pin" href="#"><span> </span> </a></li>
+												</ul>
+											</div> -->
+											<div class="clear"> </div>
 										</div>
 									</div>
-									<div class="criuse-info">
-										<div class="criuse-info-left">
-											<ul>
-												@if (!Auth::check())
-												@elseif (Auth::id() === $e->user_id)
-													<li><a class="c-hotel" href="myevent/{{$e->event_id}}"><span> </span>EDIT</a></li>
-												@else
-													<li><a class="c-hotel" href="#" onclick="confirmJoin({{$e->event_id}})"><span> </span>JOIN</a></li>
-												@endif
-												<!-- <li><a class="c-air" href="#"><span> </span> Return Air Ticket</a></li>
-												<li><a class="c-fast" href="#"><span> </span> Complimentry beark fast</a></li>
-												<li><a class="c-car" href="#"><span> </span> Car for All transfers</a></li> -->
-												<div class="clear"> </div>
-											</ul>
-										</div>
-										<div class="criuse-info-right">
-											<ul>
-
-												<li><a class="btn" href="myevent/{{$e->event_id}}">Manage</a></li>
-												<!-- <li><a class="c-face" href="#"><span> </span> </a></li>
-												<li><a class="c-twit" href="#"><span> </span> </a></li>
-												<li><a class="c-tub" href="#"><span> </span> </a></li>
-												<li><a class="c-pin" href="#"><span> </span> </a></li>
-											</ul>
-										</div>
-										<div class="clear"> </div>
-									</div>
-								</div>
-								<script>
-									function confirmJoin(id){
-										if (confirm("Do you want to Join this Event?") == true){
-											window.location.href = '/event/'+id+'/edit';
-										}	
-									}
-								</script>
+									<script>
+										function confirmJoin(id){
+											if (confirm("Do you want to Join this Event?") == true){
+												window.location.href = '/event/'+id+'/edit';
+											}	
+										}
+									</script>
 								@endforeach
 
-							<!-- Social Media Part! -->
+							<!-- Social Media Part!
 
 							<!-- <div class="criuse-grid">
 								<div class="criuse-grid-head">

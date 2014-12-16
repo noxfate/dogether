@@ -132,7 +132,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="top-nav">
 					<ul class="flexy-menu thick orange">
 						<li class="@if (Request::path() == '/') active @endif"><a href="/">Home</a></li>
-						<li class="@if (Request::path() == 'event') active @endif"><a href="event">Event</a></li>
+						<li class="@if (Request::path() == 'event') active @endif"><a href="/event">Event</a></li>
 						<li><a href="#">Achievement</a></li>
 						<li><a href="/promotion">Promotion</a></li>
 

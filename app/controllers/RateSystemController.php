@@ -1,6 +1,6 @@
 <?php
 
-class EventController extends \BaseController {
+class RateSystemController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,19 +9,7 @@ class EventController extends \BaseController {
 	 */
 	public function index()
 	{
-		if (Auth::check()){
-			$id = Auth::id();
-			$event = DB::select("select * from event where user_id != ? 
-				and event_id not in ( select event_id from joinevent where user_id = ?)
-				order by time_start,time_end;",
-				array($id,$id));
-		}
-		else{			
-			$event = DB::select('select * from event where time_end >= current_time
-				order by time_start,time_end;');
-		}
-		return View::make('index.event')->with('event',$event);
-		// return DB::select("select count(*) as count from joinevent where event_id = 10")[0]->count;
+		//
 	}
 
 
@@ -55,9 +43,14 @@ class EventController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$aevent = array(Events::find($id));
-		return View::make('index.event')->with('event',$aevent);
+		$event = Events::find($id);
+		$friend = DB::select('select * from profile a, joinevent b where a.id in (
+    		select user_id from joinevent where event_id = ?) and a.id != ? 
+			and b.event_id = ? and b.user_id = a.id;',array($id, Auth::id(), $id));
 		
+		return View::make('index.eventdetail',array('data'=>$event,
+			'flag'=>'rate','friend'=>$friend));
+		// return View::make('index.eventdetail');
 	}
 
 
@@ -69,14 +62,7 @@ class EventController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		// Join Event Here
-		$jevnt = new JoinEvent;
-		$jevnt->user_id = Auth::id();
-		$jevnt->event_id = $id;
-		$jevnt->active = 1;
-		$jevnt->status = 'pending';
-		$jevnt->save();
-		return View::make('success')->with('message',Auth::id().' '.$id);
+		//
 	}
 
 
