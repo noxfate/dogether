@@ -7,7 +7,7 @@
 <div class="destinations">
 	<div class="destination-head">
 		<div class="wrap">
-			<h3>Events</h3> 
+			<h3>{{ $page }}</h3> 
 			<!-- @if (Auth::check())
 				<a href="event"><h3>All Events</h3></a>
 				<a href="myevent"><h3>My Event</h3></a>
@@ -93,19 +93,23 @@
 										<div class="criuse-info-left">
 											<ul>
 												@if (!Auth::check())
-												@elseif (Auth::id() === $e->user_id)
-													@if ( $e->time_end >= date('Y-m-d H:i:s'))
-														<!-- In time Event! -->
-														<li><a class="c-hotel" href="myevent/{{$e->event_id}}"><span> </span>MANAGE</a></li>
-													@else
-														<!-- Expired Event! -->
-														<li><a class="c-hotel" href="rate/{{$e->event_id}}"><span> </span>RATE NOW</a></li>
+												@elseif ($page === 'My Events')
+													@if (Auth::id() === $e->user_id)
+														@if ( $e->time_end >= date('Y-m-d H:i:s'))
+															<!-- In time Event! -->
+															<li><a class="c-hotel" href="myevent/{{$e->event_id}}"><span> </span>MANAGE</a></li>
+														@else
+															<!-- Expired Event! -->
+															<li><a class="c-hotel" href="rate/{{$e->event_id}}"><span> </span>RATE NOW</a></li>
+														@endif
+													@elseif ( DB::select("select count(*) as count from joinevent where event_id = ?",array( $e->event_id ))[0]->count >= $e->size)
+															<!-- Join people is more than Size, The Join button will disappear -->
+															<li><span> </span>PARTY FULL</li>
 													@endif
-												@elseif ( DB::select("select count(*) as count from joinevent where event_id = ?",array( $e->event_id ))[0]->count >= $e->size)
-														<!-- Join people is more than Size, The Join button will disappear -->
-														<li><span> </span>PARTY FULL</li>
-												@else
+												@elseif ($page === 'Events')
 													<li><a class="c-hotel" href="#" onclick="confirmJoin({{$e->event_id}})"><span> </span>JOIN</a></li>
+												@elseif ($page === 'Joined Events')
+													<li><a class="c-hotel" href="/joinevent/{{ $e->event_id }}"><span> </span>DETAIL</a></li>
 												@endif
 												<!-- <li><a class="c-air" href="#"><span> </span> Return Air Ticket</a></li>
 												<li><a class="c-fast" href="#"><span> </span> Complimentry beark fast</a></li>

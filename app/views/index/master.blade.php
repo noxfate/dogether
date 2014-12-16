@@ -135,9 +135,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li class="@if (Request::path() == 'event') active @endif"><a href="/event">Event</a>
 							<ul>
 								@if (Auth::check())
-								<li><a href="event">All Events</a></li>
-								<li><a href="myevent">My Event</a></li>
-								<li><a href="joinevent">Joined Event</a></li>
+								<li><a href="/event">All Events</a></li>
+								<li><a href="/myevent">My Event</a></li>
+								<li><a href="/joinevent">Joined Event</a></li>
 								@endif
 							</ul>
 						</li>
@@ -150,7 +150,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="search-box">
 						<div id="sb-search" class="sb-search">
 							<form>
-								<a href="logout"><span class="sb-icon-search"> </span></a>
+								<a href="/logout"><span class="sb-icon-search"> </span></a>
 							</form>
 						</div>
 					</div>

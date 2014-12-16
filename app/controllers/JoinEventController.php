@@ -14,7 +14,7 @@ class JoinEventController extends \BaseController {
 			(select event_id from joinevent where user_id = ?) and event_id NOT IN 
             (select event_id from event where user_id = ?);',array($id,$id));
 
-		return View::make('index.event')->with('event',$join);
+		return View::make('index.event')->with('event',$join)->with('page','Joined Events');
 		// return $join;
 	}
 

@@ -20,7 +20,7 @@ class MyEventController extends \BaseController {
 		$event = array_merge($e1,$e2);
 
 		// return $event;
-		return View::make('index.event')->with('event',$event);
+		return View::make('index.event')->with('event',$event)->with('page','My Events');
 	}
 
 

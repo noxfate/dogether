@@ -4,20 +4,7 @@
 <!-- Category didn't check Income Data TT^TT -->
 
 @section('content')
-	{{ HTML::style('css/bootstrap.css'); }}
-	{{ HTML::style('css/flexslider.css'); }}
-	{{ HTML::style('css/fwslider.css'); }}
-	{{ HTML::style('css/jquery-ui.css'); }}
-	{{ HTML::style('css/jquery.bxslider.css'); }}
-	{{ HTML::style('css/style.css'); }}
-	{{ HTML::script('js/css3-mediiaqueries.js'); }}
-	{{ HTML::script('js/flexy-menu.js'); }}
-	{{ HTML::script('js/fwslider.js'); }}
-	{{ HTML::script('js/jquery-ui-min.js'); }}
-	{{ HTML::script('js/jquery.bxslider.js'); }}
-	{{ HTML::script('js/jquery.min.js'); }}
-	{{ HTML::script('js/modal.js'); }}
-
+	
 	<div class="destinations">
 			<div class="destination-head">
 				<div class="wrap">
@@ -54,9 +41,9 @@
 			</div>
 			<div class="criuse-main">
 				<div class="wrap">
-					<div class="criuse-head1">
-						<h3>MY EVENT Detail</h3>
-					</div>
+					<!-- <div class="criuse-head1">
+						<h3>{{ $data->name }}</h3>
+					</div> -->
 					<div class="criuse-grids">
 						<div class="criuse-grid">
 							<div class="criuse-grid-head">
@@ -92,9 +79,14 @@
 								<div class="criuse-info">
 									<div class="criuse-info-left">
 										<ul>
-											<li><a href="#">Location: {{$data->location}}</a></li>
+											<li>Location: {{$data->location}}</li>
 										</ul>
-									</div>
+									</div> 
+								<!-- 	<div class="criuse-info-right">
+										<ul>
+											<li><a class='btn' href="myevent/create" class="button">Leave</a></li>
+										</ul>
+									</div> -->
 									<div class="clear">
 								</div>
 							</div>

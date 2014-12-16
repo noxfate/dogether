@@ -17,10 +17,10 @@ class EventController extends \BaseController {
 				array($id,$id));
 		}
 		else{			
-			$event = DB::select('select * from event where time_end >= current_time
-				order by time_start,time_end;');
+			$event = DB::select('select * from event where time_end >= current_timestamp
+				order by time_end;');
 		}
-		return View::make('index.event')->with('event',$event);
+		return View::make('index.event')->with('event',$event)->with('page','Events');
 		// return DB::select("select count(*) as count from joinevent where event_id = 10")[0]->count;
 	}
 
