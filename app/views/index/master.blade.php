@@ -139,6 +139,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="#">Dropdown item</a></li>
 							</ul>
 						</li>
+						
 						<li><a href="#">Achievement</a></li>
 						<li><a href="/promotion">Promotion</a></li>
 
@@ -220,10 +221,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="footer-social-icons">
 						<ul>
-							<li><a class="face1 simptip-position-bottom simptip-movable" data-tooltip="facebook" href="#"><span> </span></a></li>
-							<li><a class="twit1 simptip-position-bottom simptip-movable" data-tooltip="twitter" href="#"><span> </span></a></li>
-							<li><a class="tub1 simptip-position-bottom simptip-movable" data-tooltip="tumblr" href="#"><span> </span></a></li>
-							<li><a class="pin1 simptip-position-bottom simptip-movable" data-tooltip="pinterest" href="#"><span> </span></a></li>
+							<li>
+								<div class="fb-share-button" data-href="http://goo.gl/Kc6L" data-layout="button_count"></div>
+
+								<script>(function(d, s, id) {
+								  var js, fjs = d.getElementsByTagName(s)[0];
+								  if (d.getElementById(id)) return;
+								  js = d.createElement(s); js.id = id;
+								  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+								  fjs.parentNode.insertBefore(js, fjs);
+								}(document, 'script', 'facebook-jssdk'));</script></li>
+							<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://goo.gl/Kc6L">Tweet</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
+									p=/^http:/.test(d.location)?'http':'https';
+									if(!d.getElementById(id)){js=d.createElement(s);
+									js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+									fjs.parentNode.insertBefore(js,fjs);
+								}}(document, 'script', 'twitter-wjs');</script></li>
+							<li><!-- วางแท็กนี้ในส่วนหัวหรือก่อนแท็กปิดของเนื้อความ -->
+								<script src="https://apis.google.com/js/platform.js" async defer>
+								  {lang: 'th'}
+								</script>
+								<!-- วางแท็กนี้ในตำแหน่งที่คุณต้องการให้ ปุ่ม +1 ปรากฏ -->
+								<div class="g-plusone" data-annotation="inline" data-width="300"></div></li>
+							
 							<div class="clear"> </div>
 						</ul>
 					</div>
