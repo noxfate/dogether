@@ -113,7 +113,7 @@
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Password</label>
                     <div class="col-sm-10">
-                      <input type="password" class="form-control input-sm" placeholder="Password" name="pwd" id="password2">
+                      <input type="password" class="form-control input-sm" placeholder="Password ( at least 6 character and 1 number )" name="pwd" id="password2">
                     </div>
                   </div>
                   <div class="form-group">
