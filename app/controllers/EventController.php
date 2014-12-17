@@ -9,22 +9,53 @@ class EventController extends \BaseController {
 	 */
 	public function index()
 	{
-		$ctg = Input::get('categ');
-		$start = Input::get('start');
-		$to = Input::get('to');
-
+		$cate = Input::get('categ');
+		$sort = Input::get('sort');
 
 		if (Auth::check()){
 			$id = Auth::id();
-			$event = DB::select("select * from event where user_id != ? 
+
+			if ( ($cate == '' or $cate == 'all') and ($sort == '' or $sort == 'asc')){
+				$event = DB::select("select * from event where user_id != ? 
 					and event_id not in ( select event_id from joinevent where user_id = ?)
 					order by time_end;",
 					array($id,$id));
+			}elseif ( $cate != '' and $sort == 'desc'){
+				$event = DB::select("select * from event where user_id != ? 
+					and event_id not in ( select event_id from joinevent where user_id = ?)
+					and category = ?
+					order by time_end desc;",
+					array($id,$id,$cate));
+			}elseif ($cate != '' and ($sort == '' or $sort == 'asc')){
+				$event = DB::select("select * from event where user_id != ? 
+					and event_id not in ( select event_id from joinevent where user_id = ?)
+					order by time_end;",
+					array($id,$id,$cate));
+			}else{
+				$event = DB::select("select * from event where user_id != ? 
+					and event_id not in ( select event_id from joinevent where user_id = ?)
+					order by time_end desc;",
+					array($id,$id,$cate));
+			}
 		}
-		else{
 			
-			$event = DB::select('select * from event where time_end >= current_timestamp
+		else{
+
+			if ( ($cate == '' or $cate == 'all') and ($sort == '' or $sort == 'asc')){
+				$event = DB::select('select * from event where time_end >= current_timestamp
 					order by time_end;');
+			}elseif ( $cate != '' and $sort == 'desc'){
+				$event = DB::select('select * from event where time_end >= current_timestamp
+					and category = ?
+					order by time_end desc;',array($cate));
+			}elseif ($cate != '' and ($sort == '' or $sort == 'asc')){
+				$event = DB::select('select * from event where time_end >= current_timestamp
+					and category = ?
+					order by time_end;',array($cate));
+			}else{
+				$event = DB::select('select * from event where time_end >= current_timestamp
+					order by time_end desc;');
+			}
 
 		}
 		return View::make('index.event')->with('event',$event)->with('page','Events');

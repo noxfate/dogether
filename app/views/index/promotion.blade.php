@@ -23,11 +23,22 @@
 						  </script>
 						<!---/End-date-piker---->
 						<div class="p-ww">
-							<form>
-								<span> Where</span>
-								<input class="dest" type="text" value="Distination" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Distination';}">
-								<span> When</span>
-								<input class="date" id="datepicker" type="text" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
+							<form action="/promotion" method="GET">
+								<span> Category</span>
+								<select name="categ">
+									<option value="all">All</option>
+									<option value="food">Food</option>
+									<option value="fashion">Fashion</option>
+									<option value="health">Health</option>
+									<option value="entertainment">Entertainment</option>
+									<option value="seminar">Seminar</option>
+									<option value="other">Other</option>
+								</select>
+								<span> Sort</span>
+								<select name="sort" id="">
+									<option value="asc">Ascending</option>
+									<option value="desc">Descending</option>
+								</select>
 								<input type="submit" value="Search" />
 							</form>
 						</div>
