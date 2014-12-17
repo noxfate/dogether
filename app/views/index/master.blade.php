@@ -15,7 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</script>
 		<script src="{{ URL::to('js/jquery.min.js')}}"></script>
 		<!---script---->
-
+		<script src="{{ URL::to('js/alert.js')}}"></script>
 		<link rel="stylesheet" href="{{ URL::to('css/jquery.bxslider.css')}}" type="text/css" />
 		<script src="{{ URL::to('js/jquery.bxslider.js')}}"></script>
 			<script type="text/javascript">

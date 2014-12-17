@@ -1,5 +1,15 @@
 @extends('index.master')
 @section('content')
+
+<div class="wrap">
+	<div class="alert alert-warning alert-dissible fade in" role=alert>
+		test
+		<button type="button" class="close" data-dismiss="alert">
+		  <span aria-hidden="true">&times;</span>
+		  <span class="sr-only">Close</span>
+		</button>
+	</div>
+</div>
 @include('index.slide')
 <!----start-clients---->
 <div class="clients">
@@ -55,7 +65,7 @@
 						</div>
 						<div class="holiday-type-grid" onclick="location.href='#';">
 							<span> <img src="/assets/img/ranking/4.png" alt=""> </span>
-							<a href="#">SOCIALIZATION</a>
+							<a href="#">SOCIALIZER</a>
 						</div>
 						<div class="clear"> </div>
 					</div>
