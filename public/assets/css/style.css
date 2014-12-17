@@ -224,7 +224,7 @@ ul.top-menu > li > .logout {
 	border: 1px solid #64c3c2 !important;
 	padding: 5px 15px;
 	margin-right: 15px;
-	background: #68dff0;
+	background: #333;
 	margin-top: 15px;
 }
 
@@ -367,7 +367,7 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #68dff0;
+    background: #1DD2AF;
     color: #fff;
     display: block;
 
@@ -416,8 +416,8 @@ ul.sidebar-menu li a.active i {
 }
 
 .black-bg {
-    background: #ffd777;
-    border-bottom: 1px solid #c9aa5f;
+    background: #1DD2AF;
+    border-bottom: 1px solid #333;
 }
 
 .wrapper {
