@@ -137,7 +137,7 @@
                   <div class="form-group">
                     <label class="col-sm-2 control-label">District</label>
                     <div class="col-sm-10">
-                      <select name="district">
+                      <select name="district" id="district">
                         <option value="null">---- Choose District ----</option>
                         <?php
                           foreach($arr as $r)
@@ -151,19 +151,19 @@
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Province</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control input-sm" placeholder="Province" name="prov">
+                      <input type="text" class="form-control input-sm" placeholder="Province" name="prov" id="province">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Post Number</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control input-sm" placeholder="Post" name="post">
+                      <input type="text" class="form-control input-sm" placeholder="Post" name="post" id="postnum">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Phone Number</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control input-sm" placeholder="080-000-0000">
+                      <input type="text" class="form-control input-sm" placeholder="080XXXXXXX" id="phone2">
                     </div>
                   </div>
                   <div class="form-group">
@@ -172,40 +172,40 @@
                       <textarea class="form-control input-sm" rows="3" name="desc"></textarea>
                     </div>
                   </div>
-                  <label class="col-sm-2 control-label">Catagory</label>
+                  <label class="col-sm-2 control-label">Category</label>
                   <div class="radio-inline">
                     <label class="help-block">
-                      <input type="radio" name="categ" value="food">
+                      <input type="radio" name="categ" value="food" id="category1" >
                       Food
                     </label>
                   </div>
                   <div class="radio-inline">
                     <label class="help-block">
-                      <input type="radio" name="categ" value="fashion">
+                      <input type="radio" name="categ" value="fashion" id="category2">
                       Fashion
                     </label>
                   </div>
                   <div class="radio-inline">
                     <label class="help-block">
-                      <input type="radio" name="categ" value="health">
+                      <input type="radio" name="categ" value="health" id="category3">
                       Health
                     </label>
                   </div>
                   <div class="radio-inline">
                     <label class="help-block">
-                      <input type="radio" name="categ" value="entertainment">
+                      <input type="radio" name="categ" value="entertainment" id="category4">
                       Entertainment
                     </label>
                   </div>
                   <div class="radio-inline">
                     <label class="help-block">
-                      <input type="radio" name="categ" value="seminar">
+                      <input type="radio" name="categ" value="seminar" id="category5">
                       Seminar
                     </label>
                   </div>
                   <div class="radio-inline">
                     <label class="help-block">
-                      <input type="radio" name="categ" value="other">
+                      <input type="radio" name="categ" value="other" id="category6">
                       Other
                     </label>
                   </div>
