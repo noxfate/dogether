@@ -6,6 +6,10 @@
 			<div class="destination-head">
 				<div class="wrap">
 					<h3>{{ $page }}</h3>
+
+						
+
+					
 				</div>
 				<!---End-destinatiuons---->
 				<div class="find-place dfind-place">
@@ -68,29 +72,7 @@
 						@endif
 					</div>
 					<div class="row">
-					<div class="row">
-						<!-- วางแท็กนี้ในส่วนหัวหรือก่อนแท็กปิดของเนื้อความ -->
-						<script src="https://apis.google.com/js/platform.js" async defer>
-						  {lang: 'th'}
-						</script>
-
-						<!-- วางแท็กนี้ในตำแหน่งที่คุณต้องการให้ ปุ่ม +1 ปรากฏ -->
-						<div class="g-plusone"></div><br>
-
-						<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/event" data-text="Let's see what we've got here! --->" data-hashtags="sktnb">Tweet</a>
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-						
-						<div id="fb-root"></div>
-							<script>(function(d, s, id) {
-							  var js, fjs = d.getElementsByTagName(s)[0];
-							  if (d.getElementById(id)) return;
-							  js = d.createElement(s); js.id = id;
-							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1572541586290686&version=v2.0";
-							  fjs.parentNode.insertBefore(js, fjs);
-							}(document, 'script', 'facebook-jssdk'));</script>
-							<div class="fb-like" data-href="http://goo.gl/38NzXC" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-
-					</div>
+					
 						<!--Start loop here-->
 						@foreach($event as $e)
 							<div class="col-md-1 img-event"> <img src="{{ Profile::find($e->user_id)->picture }}" alt="" class="img-circle"></div>
@@ -163,7 +145,29 @@
 						<ul>
 							<li><a class="d-next" href="#">LOAding More</a></li>
 							<div class="clear"> </div>
-						</ul>
+						</ul><br><br><center>
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/event" data-text="Let's see what we've got here! --->" data-hashtags="sktnb">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+':js/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						
+						<!-- วางแท็กนี้ในส่วนหัวหรือก่อนแท็กปิดของเนื้อความ -->
+						<script src="{{URL::to('js/platform.js')}}" async defer>
+						  {lang: 'th'}
+						</script>
+						<!-- วางแท็กนี้ในตำแหน่งที่คุณต้องการให้ ปุ่ม +1 ปรากฏ -->
+						<div class="g-plusone style='display:inline-block'"></div>
+
+						<div style='display:inline-block' id="fb-root"></div>
+							<script>(function(d, s, id) {
+							  var js, fjs = d.getElementsByTagName(s)[0];
+							  if (d.getElementById(id)) return;
+							  js = d.createElement(s); js.id = id;
+							  js.src= '//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1572541586290686&version=v2.0';
+							  fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
+							<div style='display:inline-block' class="fb-like" data-href="http://goo.gl/38NzXC" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+						
+						
+						</center>
 					</div>
 				</div>
 			<!---//End-destinations-pagenation---->
