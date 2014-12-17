@@ -67,7 +67,7 @@
 				<div class="wrap">
 					<div class="criuse-head1" style="padding-left: 87%;">
 						@if (Auth::check())
-							<a class='btn' href="myevent/create" class="button">Add Event</a>
+							<a class='btn' href="/myevent/create" class="button">Add Event</a>
 						@endif
 					</div>
 					<div class="row">
