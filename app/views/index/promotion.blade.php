@@ -11,37 +11,9 @@
 				<div class="find-place dfind-place">
 					<div class="wrap">
 						<div class="p-h">
-							<span>FIND YOUR</span>
-							<label>PROMOTION</label>
+							<span style="height:60px;"></span>
 						</div>
-						<!---strat-date-piker---->
-						  <script src="js/jquery-ui.js"></script>
-						  <script>
-						  $(function() {
-						    $( "#datepicker" ).datepicker();
-						  });
-						  </script>
-						<!---/End-date-piker---->
-						<div class="p-ww">
-							<form action="/promotion" method="GET">
-								<span> Category</span>
-								<select name="categ">
-									<option value="all">All</option>
-									<option value="food">Food</option>
-									<option value="fashion">Fashion</option>
-									<option value="health">Health</option>
-									<option value="entertainment">Entertainment</option>
-									<option value="seminar">Seminar</option>
-									<option value="other">Other</option>
-								</select>
-								<span> Sort</span>
-								<select name="sort" id="">
-									<option value="asc">Ascending</option>
-									<option value="desc">Descending</option>
-								</select>
-								<input type="submit" value="Search" />
-							</form>
-						</div>
+						
 						<div class="clear"> </div>
 					</div>
 				</div>

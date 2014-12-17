@@ -176,7 +176,7 @@ class UserController extends \BaseController {
 				return View::make('owner.profile')->with('id',$info);					
 			}else{
 				// Fix View Here!
-				return View::make('test');
+				return View::make('index.editprofile');
 			}
 		}
 		return Redirect::to('/');

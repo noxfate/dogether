@@ -18,27 +18,11 @@
 		<div class="find-place dfind-place">
 			<div class="wrap">
 				<div class="p-h">
-					<span>FIND YOUR</span>
-					<label>PROMOTION</label>
+					<span></span>
+					<label>Details</label>
 				</div>
 				<!---strat-date-piker---->
-				  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-				  <script>
-				  $(function() {
-				    $( "#datepicker" ).datepicker();
-				  });
-				  </script>
-				<!---/End-date-piker---->
-				<div class="p-ww">
-					<form>
-						<span> Where</span>
-						<input class="dest" type="text" value="Distination" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Distination';}">
-						<span> When</span>
-						<input class="date" id="datepicker" type="text" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
-						<input type="submit" value="Search" />
-					</form>
-
-				</div>
+				
 				<div class="clear"> </div>
 			</div>
 		</div>
@@ -50,12 +34,11 @@
 				<h3>Promotion name</h3>
 			</div> -->
 			<!--Promotion-->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div><img src="{{ $promo->picture }}" alt=""></div>
+			</div>
 			<table class='table table-hover'>
-				<img src="{{ $promo->picture }}" alt="">
-				<thead>
-					<th>Detail</th>
-					<th></th>
-				</thead>
 				<tr>
 					<td class="col-md-2" style=" font-weight: bold;">Promotion</td>
 					<td>{{ $promo->name }}</td>
