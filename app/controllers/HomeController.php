@@ -17,8 +17,10 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		$event = Events::all()->take(6);
-		return View::make('index.index')->with('event',$event);
+		$event = Events::whereRaw('time_end >= current_timestamp')->take(6)->get();
+		$promo = Promotion::whereRaw('time_end >= current_timestamp')->take(6)->get();
+		return View::make('index.index')->with('event',$event)
+			->with('promo',$promo);
 		// return $res;
 	}
 

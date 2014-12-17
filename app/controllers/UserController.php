@@ -71,7 +71,8 @@ class UserController extends \BaseController {
 				return Redirect::to('/owner');
 
 			}
-			return View::make('error')->with('message','Wrong Username or Password');			
+			Session::put('lgn','false');
+			return Redirect::to('/');			
 		}
 		return Redirect::to('/');
 

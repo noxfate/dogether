@@ -1,15 +1,6 @@
 @extends('index.master')
 @section('content')
 
-<div class="wrap">
-	<div class="alert alert-warning alert-dissible fade in" role=alert>
-		test
-		<button type="button" class="close" data-dismiss="alert">
-		  <span aria-hidden="true">&times;</span>
-		  <span class="sr-only">Close</span>
-		</button>
-	</div>
-</div>
 @include('index.slide')
 <!----start-clients---->
 <div class="clients">
@@ -109,14 +100,15 @@
 
 <!-- Promotion Slide -->
 
-		            <li onclick="location.href='#';">
-		  	    	    <img src="images/p1.jpg" />
+					@foreach($promo as $p)
+		            <li onclick="location.href='/promotion/{{$p->promotion_id}}';">
+		  	    	    <img src="{{ $p->picture }}" />
 		  	    	   
 		  	    	    <div class="caption-info">
 		  	    	    	 <div class="caption-info-head">
 		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<!-- <span>Bonus Extras!</span> -->
+			  	    	    	 	<h4><a href="#">{{ $p->name }}</a></h4>
+			  	    	    	 	<span>By {{ Profile::find($p->user_id)->name }}</span>
 		  	    	    	 	</div>
 		  	    	    	 	<div class="caption-info-head-right">
 		  	    	    	 		<span> </span>
@@ -125,194 +117,9 @@
 		  	    	    	 </div>
 		  	    	    </div>
 		  	    	</li>
+		  	    	@endforeach
 
-		  	    		 <li onclick="location.href='#';">
-		  	    	    <img src="images/p2.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
-		  	    		 <li onclick="location.href='#';">
-		  	    	    <img src="images/p3.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
-		  	    		 <li onclick="location.href='#';">
-		  	    	    <img src="images/p4.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
-		            <li onclick="location.href='#';">
-		  	    	    <img src="images/p5.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
-		  	    		 <li onclick="location.href='#';">
-		  	    	    <img src="images/p6.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
-		  	    		 <li onclick="location.href='#';">
-		  	    	    <img src="images/p1.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
-		  	    		 <li onclick="location.href='#';">
-		  	    	    <img src="images/p2.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
-		             <li onclick="location.href='#';">
-		  	    	    <img src="images/p3.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
-		  	    	 <li onclick="location.href='#';">
-		  	    	    <img src="images/p4.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
-		  	    		 <li onclick="location.href='#';">
-		  	    	    <img src="images/p5.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
-		  	    		 <li onclick="location.href='#';">
-		  	    	    <img src="images/p6.jpg" />
-		  	    	   
-		  	    	    <div class="caption-info">
-		  	    	    	 <div class="caption-info-head">
-		  	    	    	 	<div class="caption-info-head-left">
-			  	    	    	 	<h4><a href="#">Hong Kong & Macau</a></h4>
-			  	    	    	 	<span>Bonus Extras!</span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="caption-info-head-right">
-		  	    	    	 		<span> </span>
-		  	    	    	 	</div>
-		  	    	    	 	<div class="clear"> </div>
-		  	    	    	 </div>
-		  	    	    </div>
-		  	    	    
-		  	    		</li>
+		  	    		
 		          </ul>
 		        </div>
 		        <button class="btn" style="position: absolute; right: 10%;">MORE</button>

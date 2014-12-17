@@ -165,7 +165,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="clear"> </div>
 		</div>
 		<!---//End-header---->
-		
+
+		@if (Session::pull('lgn','true') == 'false')
+		<!-- Warning Tab -->
+		<div class="wrap">
+			<div class="alert alert-danger alert-dissible fade in" role=alert>
+				Log-in unsuccessfull. Wrong Username or Password. Please try again.
+				<button type="button" class="close" data-dismiss="alert">
+				  <span aria-hidden="true">&times;</span>
+				  <span class="sr-only">Close</span>
+				</button>
+			</div>
+		</div>
+		@endif
+
+
 		@yield('content')
 		<!----start-footer---->
 		<div class="footer">
