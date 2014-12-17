@@ -125,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="wrap">
 				<!--- start-logo---->
 				<div class="logo">
-					<a href="/"><img class="logo" style="margin-top:30px" src="images/logo003.png" title="voyage" /></a>
+					<a href="/"><img class="logo" style="margin-top:30px" src="{{URL::to('images/logo003.png')}}" title="voyage" /></a>
 				</div>
 				<!--- //End-logo---->
 				<!--- start-top-nav---->
