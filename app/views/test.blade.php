@@ -3,76 +3,107 @@
 	<div class="destinations">
 			<div class="destination-head">
 				<div class="wrap">
-					<h3>PROMOTION</h3>
+					<h3>RANKING</h3>
 				</div>
 				<!---End-destinatiuons---->
+				<!--Ranking-->
 				<div class="find-place dfind-place">
 					<div class="wrap">
-						<div class="p-h">
-							<span>FIND YOUR</span>
-							<label>HOLYDAYS</label>
-						</div>
-						<!---strat-date-piker---->
-						  <script src="js/jquery-ui.js"></script>
-						  <script>
-						  $(function() {
-						    $( "#datepicker" ).datepicker();
-						  });
-						  </script>
-						<!---/End-date-piker---->
-						<div class="p-ww">
-							<form>
-								<span> Where</span>
-								<input class="dest" type="text" value="Distination" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Distination';}">
-								<span> When</span>
-								<input class="date" id="datepicker" type="text" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
-								<input type="submit" value="Search" />
-							</form>
-						</div>
+							<div class="row ranking">
+								<div class="col-md-3"><img src="assets/img/ranking/4.png" alt=""></div>
+								<div class="col-md-9">
+									<p class="ranking-head">SOCIALIZER</p>
+									<p>You've got 3 acheivements</p>
+								</div>
+							</div>
+
 						<div class="clear"> </div>
 					</div>
 				</div>
-				<!----//End-find-place---->
+				<!----//End-ranking---->
 			</div>
+
+			<!-- achievement -->
+
 			<div class="destination-places">
 				<div class="wrap">
 					<div class="destination-places-head">
-						<h3>LASTEST PROMOTION</h3>
+						<h3>ACHIEVEMENT</h3>
 					</div>
-					<div class="destination-places-grids">
-						<div class="destination-places-grid" onclick="location.href='#';">
-							<div class="dest-place-pic main_box user_style4" data-hipop="two-horizontal">
-								<img src="images/d7.jpg" title="place-name" />
+
+					<div class="row">
+					
+						<div class="col-md-2"><img src="assets/img/achievement/unach.png" alt=""></div>
+						<div class="col-md-4">
+							<p>Event Hunter</p>
+							<p style="padding-left: 85%;">1/10</p>	
+							<div class="progress">
+							  <div class="progress-bar progress-bar-do" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+							  </div>
 							</div>
-							<div class="dest-place-opt">
-								<ul class="dest-place-opt-fea">
-									<li><a class="hot" href="#"><span> </span> By Store Name</a></li>
-									<!-- <li><a class="plain" href="#"><span> </span> Air ticket</a></li>
-									<li><a class="Breakfast" href="#"><span> </span> Break Fast</a></li> -->
-									<div class="clear"> </div>
-								</ul>
-								<ul class="dest-place-opt-cast">
-									<li><a class="d-place" href="#">Promotion Name 12345678</a></li>
-									<!-- <li><a class="d-price" href="#">Starting Form 250$</a></li> -->
-									<div class="clear"> </div>
-								</ul>
-							</div>
+							<p>คำอธิบา Achievement นะจ๊ะ อิอิ ช้างข้างช้าง น้องเคยเห็นช้างหรือเปล่า ช้างมันตัวโตไม่เบา</p>
 						</div>
-						
-						<div class="clear"> </div>
+
+						<div class="col-md-2"><img src="assets/img/achievement/unach.png" alt=""></div>
+						<div class="col-md-4">
+							<p>Friend Maker</p>
+							<p style="padding-left: 85%;">1/10</p>	
+							<div class="progress">
+							  <div class="progress-bar progress-bar-do" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+							  </div>
+							</div>
+							<p>คำอธิบา Achievement นะจ๊ะ อิอิ ช้างข้างช้าง น้องเคยเห็นช้างหรือเปล่า ช้างมันตัวโตไม่เบา</p>
+						</div>
+
 					</div>
+					<br>
+					<div class="row">
+					
+						<div class="col-md-2"><img src="assets/img/achievement/unach.png" alt=""></div>
+						<div class="col-md-4">
+							<p>Head Master</p>
+							<p style="padding-left: 85%;">1/10</p>	
+							<div class="progress">
+							  <div class="progress-bar progress-bar-do" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+							  </div>
+							</div>
+							<p>คำอธิบา Achievement นะจ๊ะ อิอิ ช้างข้างช้าง น้องเคยเห็นช้างหรือเปล่า ช้างมันตัวโตไม่เบา</p>
+						</div>
+
+						<div class="col-md-2"><img src="assets/img/achievement/unach.png" alt=""></div>
+						<div class="col-md-4">
+							<p>Never Miss A Chance</p>
+							<p style="padding-left: 85%;">1/10</p>	
+							<div class="progress">
+							  <div class="progress-bar progress-bar-do" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+							  </div>
+							</div>
+							<p>คำอธิบา Achievement นะจ๊ะ อิอิ ช้างข้างช้าง น้องเคยเห็นช้างหรือเปล่า ช้างมันตัวโตไม่เบา</p>
+						</div>
+
+					</div>
+
+					<br>
+					<div class="row">
+					
+						<div class="col-md-2"><img src="assets/img/achievement/Crititizer.png" alt=""></div>
+						<div class="col-md-4">
+							<p>Crititizer <span class="glyphicon glyphicon-ok"></span></p>
+							<p style="padding-left: 85%;">10/10</p>	
+							<div class="progress">
+							  <div class="progress-bar progress-bar-do" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+							  </div>
+							</div>
+							<p>คำอธิบา Achievement นะจ๊ะ อิอิ ช้างข้างช้าง น้องเคยเห็นช้างหรือเปล่า ช้างมันตัวโตไม่เบา</p>
+						</div>
+
+					</div>
+
 				</div>
 			</div>
-			<!---start-destinations-pagenation---->
-				<div class="destination-pagenate">
-					<div class="wrap">
-						<ul>
-							<li><a class="d-next" href="#">LOAding More</a></li>
-							<div class="clear"> </div>
-						</ul>
-					</div>
-				</div>
-			<!---//End-destinations-pagenation---->
+			<!-- end achievement -->
+		</div>
+	</div>
 @stop
 
 

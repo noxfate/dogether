@@ -2727,3 +2727,16 @@ input[type="search"].sb-search-input {
 	width: 100%;
 	font: inherit;
 }
+th{
+	background-color: #333;
+	color: #FFF;
+}
+.ranking{
+	color: #FFF;
+	padding: 20px 0 20px 20px;
+}
+
+.ranking-head{
+	font-weight: 600;
+	font-size: 400%
+}

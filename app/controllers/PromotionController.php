@@ -45,9 +45,8 @@ class PromotionController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		
-		
-		//return View::make('index.promotionsingle');
+		return View::make('index.prodetail');
+
 	}
 
 
