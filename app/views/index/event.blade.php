@@ -107,7 +107,28 @@
 															<li><span> </span>PARTY FULL</li>
 													@endif
 												@elseif ($page === 'Events')
-													<li><a class="c-hotel" href="#" onclick="confirmJoin({{$e->event_id}})"><span> </span>JOIN</a></li>
+													<li><a class="c-hotel" href="#" data-toggle="modal" data-target="#joinModal"><span> </span>JOIN</a></li>
+
+													<!-- Join Modal -->
+													<div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+													  <div class="modal-dialog">
+													    <div class="modal-content">
+													      <div class="modal-header">
+													        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+													        <h4 class="modal-title" id="myModalLabel">Confirm Join?</h4>
+													      </div>
+													      <div class="modal-body">
+													        ...
+													      </div>
+													      <div class="modal-footer">
+													        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+													        <button type="button" class="btn btn-primary">Save changes</button>
+													      </div>
+													    </div>
+													  </div>
+													</div>
+													<!--end modal-->
+													
 												@elseif ($page === 'Joined Events')
 													@if ( $e->time_end >= date('Y-m-d H:i:s'))
 														<!-- In time Event! -->
