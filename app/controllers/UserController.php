@@ -225,6 +225,7 @@ class UserController extends \BaseController {
 
 			return Redirect::to("/profile/$id"); 
 
+
 		}
 		return Redirect::to('/');
 		

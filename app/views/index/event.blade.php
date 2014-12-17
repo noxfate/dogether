@@ -49,12 +49,11 @@
 								<option value="seminar">Seminar</option>
 								<option value="other">Other</option>
 							</select>
-							<!-- <input class="dest" type="text" value="Destination" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Destination';}"> -->
-							<span>  Start </span>
-							<input name="start" class="date" id="datepicker" type="text" style="width: 130px; padding-left: 5px; padding-right: 5px;" placeholder="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-							<span>  To </span>
-							<input name="to" class="date" id="datepicker2" type="text" style="width: 130px; padding-left: 5px; padding-right: 5px;" placeholder="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-
+							<span> Sort</span>
+							<select name="sort" id="">
+								<option value="asc">Ascending</option>
+								<option value="desc">Descending</option>
+							</select>
 							<input type="submit" value="Search" />
 						</form>
 

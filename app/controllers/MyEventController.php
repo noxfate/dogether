@@ -10,14 +10,51 @@ class MyEventController extends \BaseController {
 	public function index()
 	{
 		$id = Auth::id();
-		
-		$e1 = DB::select('select * from event where user_id = ? 
+
+		$cate = Input::get('categ');
+		$sort = Input::get('sort');
+
+		if ( ($cate == '' or $cate == 'all') and ($sort == '' or $sort == 'asc')){
+			$e1 = DB::select('select * from event where user_id = ? 
 			and time_end >= current_timestamp
 			order by time_end',array($id));
 	
-		$e2 = DB::select('select * from event where user_id = ?
+			$e2 = DB::select('select * from event where user_id = ?
 			and time_end < current_timestamp
 			order by time_end;',array($id));
+
+		}elseif ( $cate != '' and $sort == 'desc'){
+			$e1 = DB::select('select * from event where user_id = ? 
+			and time_end >= current_timestamp
+			and category = ?
+			order by time_end desc',array($id,$cate));
+	
+			$e2 = DB::select('select * from event where user_id = ?
+			and time_end < current_timestamp
+			and category = ?
+			order by time_end desc;',array($id,$cate));
+
+		}elseif ($cate != '' and ($sort == '' or $sort == 'asc')){
+			$e1 = DB::select('select * from event where user_id = ? 
+			and time_end >= current_timestamp
+			and category = ?
+			order by time_end',array($id,$cate));
+	
+			$e2 = DB::select('select * from event where user_id = ?
+			and time_end < current_timestamp
+			and category = ?
+			order by time_end;',array($id,$cate));
+		}else{
+			$e1 = DB::select('select * from event where user_id = ? 
+			and time_end >= current_timestamp
+			order by time_end desc;',array($id));
+	
+			$e2 = DB::select('select * from event where user_id = ?
+			and time_end < current_timestamp
+			order by time_end desc;',array($id));
+		}
+		
+		
 
 		$event = array_merge($e1,$e2);
 
