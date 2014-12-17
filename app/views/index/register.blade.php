@@ -107,7 +107,7 @@
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email" name="email" id="email2">
+                      <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email" name="email" >
                     </div>
                   </div>
                   <div class="form-group">
@@ -131,7 +131,7 @@
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Address</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control input-sm" placeholder="Address" name="addr">
+                      <input type="text" class="form-control input-sm" placeholder="Address" name="addr" id="address">
                     </div>
                   </div>
                   <div class="form-group">
@@ -218,7 +218,7 @@
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                       <input type="hidden" name="type" value="owner">
-                      <button type="submit" class="btn btn-default">Sign Up</button>
+                      <button type="submit" class="btn btn-default" id="signup">Sign Up</button>
                     </div>
                   </div>
 

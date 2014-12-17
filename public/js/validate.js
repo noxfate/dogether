@@ -1,10 +1,11 @@
 window.onload = initPage;
 
 var validate = [false,false,false,false,false,false,false,false] ;
+var validate2= [false,false,false,false,false,false,false,false,false,false,false];
 
 
 function initPage(){
-	
+	//This is Register for user
 	document.getElementById("firstname").oninput = CheckFirstName;
 	document.getElementById("lastname").oninput = CheckLastName;
 	document.getElementById("email").oninput = CheckEmail;
@@ -16,14 +17,21 @@ function initPage(){
 	document.getElementById("inlineRadio2").onclick=SendFemale;
 		
 	document.getElementById("create").onclick=CheckAll;
-	
 	document.getElementById("create").disabled=true;
 	
+	
+	
+	//This is Register for owner
+	document.getElementById("inputEmail3").oninput = CheckEmailOwner ;
+	document.getElementById("password2").oninput = CheckPasswordOwner ;
+	document.getElementById("repassword2").oninput = CheckRePasswordOwner ;
+	document.getElementById("signup").disabled = true;
 
 	
 	}
 	
 	
+//This is function for User
 	
 function CheckFirstName(){
 	
@@ -170,9 +178,78 @@ function CheckAll(){
 		document.getElementById("create").disabled=false;
 		}else{
 			document.getElementById("create").disabled=true;
+			alert("Input is incorrect!!Please check the form");
 			}
 		
 	}
 	
+	
+	
+	
+	
+	
+//This is Function for Owner
 
+function CheckEmailOwner(){
+	
+	var x = document.getElementById("inputEmail3").value ;
+	
+	if(!x){
+		validate2[0]=false;
+		document.getElementById("signup").disabled=true;
+		}else{
+			validate2[0]=true;
+			document.getElementById("signup").disabled=false;
+			
+			
+			return validateRegExp_owner(/[\w\_\-\d\.]@[\w].[\w{4}]/,x,0);
+			}
+	}
+	
+function CheckPasswordOwner(){
+	var x = document.getElementById("password2").value;
+	
+	if(!x){
+		validate2[1] = false;
+		document.getElementById("signup").disabled=true;
+		
+		}else{
+			validate2[1] = true;
+			document.getElementById("signup").disabled=false;
+			
+			return validateRegExp_owner(/^.*(?=.{6,})(?=.*[0-9])(?=.*[a-zA-Z]).*$/,x,1);
+			}
+	
+	
+	}
+	
+function CheckRePasswordOwner(){
+	var x = document.getElementById("repassword2").value;
+	var y = document.getElementById("password2").value;
+	//alert(x);
+	if(y == x){
+		validate[2] = true;
+		document.getElementById("signup").disabled=false;
+		}else{
+			validate[2] = false;
+			document.getElementById("signup").disabled=true;
+			}
+	}
+
+
+function validateRegExp_owner(reg,instr,num){
+	//alert(reg.test(instr));
+		if(reg.test(instr)){
+			validate2[num]=true;
+			document.getElementById("signup").disabled=false;
+			
+		}
+			else{
+				validate2[num]=false;
+				document.getElementById("signup").disabled=true;
+				
+				
+				}
+	
+	}
 	
