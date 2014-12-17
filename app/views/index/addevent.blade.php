@@ -52,29 +52,35 @@
 			@if ($pid != null)
 			
 			<form action="/myevent" method="POST">
+			  
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Event Name</label>
 			    <div class="col-sm-10">
 			      <input type="text" name="name" class="form-control" ><br>
 			    </div>
 			  </div>
+
 			  <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-2 control-label" class="form-control">Size</label>
 			    <div class="col-sm-10">
 			      <input type="text" name="size" class="form-control">
 			    </div>
 			  </div>
+
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Event Start</label>
 			    <div class="col-sm-10">
 			      <input type="date" name="start" class="form-control">
 			    </div>
-			  </div><div class="form-group">
+			  </div>
+
+			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Event End</label>
 			    <div class="col-sm-10">
 			      <input type="date" name="end" class="form-control">
 			    </div>
 			  </div>
+
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label" class="form-control">Catagory</label>
 			    <div class="col-sm-10">
@@ -85,21 +91,23 @@
 				<input type="radio" name="cate" value="entertainment"> Entertainment<br>
 				<input type="radio" name="cate" value="seminar"> Seminar<br>
 				<input type="radio" name="cate" value="other"> Other <br>
-
 			    </div>
 			  </div>
+
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Detail</label>
 			    <div class="col-sm-10">
 			      <textarea name="detail" row="3" class="form-control">{{ $pid->detail }}</textarea><br>
 			    </div>
 			  </div>
+
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Location</label>
 			    <div class="col-sm-10">
 			      <textarea name="loca" row="3" class="form-control"></textarea>
 			    </div>
 			  </div>
+
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
 			      <button type="submit" class="btn btn-default">Save</button>
@@ -110,29 +118,35 @@
 			
 			@else
 			<form action="/myevent" method="POST">
+
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Event Name</label>
 			    <div class="col-sm-10">
 			      <input type="text" name="name" class="form-control" ><br>
 			    </div>
 			  </div>
+
 			  <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-2 control-label" class="form-control">Size</label>
 			    <div class="col-sm-10">
 			      <input type="number" name="size" class="form-control">
 			    </div>
 			  </div>
+
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Event Start</label>
 			    <div class="col-sm-10">
 			      <input type="date" name="start" class="form-control">
 			    </div>
-			  </div><div class="form-group">
+			  </div>
+
+			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Event End</label>
 			    <div class="col-sm-10">
 			      <input type="date" name="end" class="form-control">
 			    </div>
 			  </div>
+
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label" class="form-control">Catagory</label>
 			    <div class="col-sm-10">
@@ -146,17 +160,21 @@
 
 			    </div>
 			  </div>
+
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Detail</label>
 			    <div class="col-sm-10">
 			      <textarea name="detail" row="3" class="form-control"></textarea><br>
 			    </div>
-			  </div><div class="form-group">
+			  </div>
+
+			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Location</label>
 			    <div class="col-sm-10">
 			      <textarea name="loca" row="3" class="form-control"></textarea>
 			    </div>
 			  </div>
+			  
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
 			      <button type="submit" class="btn btn-default">Save</button>
