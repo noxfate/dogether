@@ -9,14 +9,16 @@ class MyEventController extends \BaseController {
 	 */
 	public function index()
 	{
-		// $event = Events::where('user_id','=',Auth::id())->get();
+		$id = Auth::id();
+		
 		$e1 = DB::select('select * from event where user_id = ? 
 			and time_end >= current_timestamp
-			order by time_end',array(Auth::id()));
-		
+			order by time_end',array($id));
+	
 		$e2 = DB::select('select * from event where user_id = ?
 			and time_end < current_timestamp
-			order by time_end;',array(Auth::id()));
+			order by time_end;',array($id));
+
 		$event = array_merge($e1,$e2);
 
 		// return $event;

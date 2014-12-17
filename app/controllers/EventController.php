@@ -16,132 +16,15 @@ class EventController extends \BaseController {
 
 		if (Auth::check()){
 			$id = Auth::id();
-
-			if (($ctg == '' or $ctg == 'all') and $start == '' and $to == ''){
-
-				$event = DB::select("select * from event where user_id != ? 
+			$event = DB::select("select * from event where user_id != ? 
 					and event_id not in ( select event_id from joinevent where user_id = ?)
 					order by time_end;",
 					array($id,$id));
-			}
-
-			elseif (($ctg == '' or $ctg == 'all') and $start == '' and $to != ''){
-
-				$event = DB::select("select * from event where user_id != ? 
-					and event_id not in ( select event_id from joinevent where user_id = ?)
-					and time_end <= ?
-					order by time_end;",
-					array($id,$id,$to));
-			}
-
-			elseif (($ctg == '' or $ctg == 'all') and $start != '' and $to == ''){
-
-				$event = DB::select("select * from event where user_id != ? 
-					and event_id not in ( select event_id from joinevent where user_id = ?)
-					and time_end >= ?
-					order by time_end;",
-					array($id,$id,$start));
-			}
-
-			elseif (($ctg == '' or $ctg == 'all') and $start != '' and $to != ''){
-
-				$event = DB::select("select * from event where user_id != ? 
-					and event_id not in ( select event_id from joinevent where user_id = ?)
-					and time_end <= ? and time_end >= ?
-					order by time_end;",
-					array($id,$id,$to,$start));
-			}
-
-			elseif (($ctg != '' or $ctg != 'all') and $start == '' and $to == ''){
-
-				$event = DB::select("select * from event where user_id != ? 
-					and event_id not in ( select event_id from joinevent where user_id = ?)
-					and category = ?
-					order by time_end;",
-					array($id,$id,$ctg));
-			}
-
-			elseif (($ctg != '' or $ctg != 'all') and $start == '' and $to != ''){
-
-				$event = DB::select("select * from event where user_id != ? 
-					and event_id not in ( select event_id from joinevent where user_id = ?)
-					and category = ? and time_end <= ?
-					order by time_end;",
-					array($id,$id,$ctg,$to));
-			}
-
-			elseif (($ctg != '' or $ctg != 'all') and $start != '' and $to == ''){
-
-				$event = DB::select("select * from event where user_id != ? 
-					and event_id not in ( select event_id from joinevent where user_id = ?)
-					and category = ? and time_end >= ?
-					order by time_end;",
-					array($id,$id,$ctg,$start));
-			}
-
-			elseif (($ctg != '' or $ctg != 'all') and $start != '' and $to != ''){
-
-				$event = DB::select("select * from event where user_id != ? 
-					and event_id not in ( select event_id from joinevent where user_id = ?)
-					and category = ? and time_end <= ? and time_end >= ?
-					order by time_end;",
-					array($id,$id,$ctg,$to,$start));
-			}
-
-			else{
-
-				$event = DB::select("select * from event where user_id != ? 
-					and event_id not in ( select event_id from joinevent where user_id = ?)
-					order by time_end;",
-					array($id,$id));
-			}
-
-
 		}
 		else{
-			// Not Login Search
-			if (($ctg == '' or $ctg == 'all') and $start == '' and $to == ''){
-				$event = DB::select('select * from event where time_end >= current_timestamp
+			
+			$event = DB::select('select * from event where time_end >= current_timestamp
 					order by time_end;');
-			}
-			elseif (($ctg == '' or $ctg == 'all') and $start == '' and $to != ''){
-				$event = DB::select('select * from event where time_end <= ?
-					order by time_end;',array($to));
-			}
-
-			elseif (($ctg == '' or $ctg == 'all') and $start != '' and $to == ''){
-				$event = DB::select('select * from event where time_end >= ?
-					order by time_end;',array($start));
-			}
-
-			elseif (($ctg == '' or $ctg == 'all') and $start != '' and $to != ''){
-				$event = DB::select('select * from event where time_end <= ? and time_end >= ?
-					order by time_end;',array($to,$start));
-			}
-
-			elseif (($ctg != '' or $ctg != 'all') and $start == '' and $to == ''){
-				$event = DB::select('select * from event where category = ?
-					order by time_end;',array($ctg));
-			}
-
-			elseif (($ctg != '' or $ctg != 'all') and $start == '' and $to != ''){
-				$event = DB::select('select * from event where category = ? and time_end <= ?
-					order by time_end;',array($ctg,$to));
-			}
-
-			elseif (($ctg != '' or $ctg != 'all') and $start != '' and $to == ''){
-				$event = DB::select('select * from event where category = ? and time_end >= ?
-					order by time_end;',array($ctg,$start));
-			}
-
-			elseif (($ctg != '' or $ctg != 'all') and $start != '' and $to != ''){
-				$event = DB::select('select * from event where category = ? and time_end <= ? and time_end >= ?
-					order by time_end;',array($ctg,$to,$start));
-			}
-			else{
-				$event = DB::select('select * from event where time_end >= current_timestamp
-					order by time_end;');				
-			}
 
 		}
 		return View::make('index.event')->with('event',$event)->with('page','Events');
@@ -203,7 +86,7 @@ class EventController extends \BaseController {
 		$jevnt->save();
 
 		// [Event Hunter]
-		$achv = AchvRecord::whereRaw('user_id = ? and achv_id = 1 and active = 1')->get();
+		$achv = AchvRecord::whereRaw('user_id = ? and achv_id = 1 and active = 1',array(Auth::id()))->get();
 		$val = $achv[0]->value;
 		if ($val < 10){
 			$achv[0]->value = $val+1;
