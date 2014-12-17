@@ -40,23 +40,23 @@
 					<div class="holiday-type-grids">
 						<div class="holiday-type-grid" onclick="location.href='#';">
 							<span> <img src="/assets/img/ranking/0.png" alt=""> </span>
-							<a href="#">FOREVER ALONE</a>
+							<a>FOREVER ALONE</a>
 						</div>
 						<div class="holiday-type-grid" onclick="location.href='#';">
 							<span> <img src="/assets/img/ranking/1.png" alt=""> </span>
-							<a href="#">OUT GOING</a>
+							<a>OUT GOING</a>
 						</div>
 						<div class="holiday-type-grid" onclick="location.href='#';">
 							<span> <img src="/assets/img/ranking/2.png" alt=""> </span>
-							<a href="#">RISING STAR</a>
+							<a>RISING STAR</a>
 						</div>
 						<div class="holiday-type-grid" onclick="location.href='#';">
 							<span> <img src="/assets/img/ranking/3.png" alt=""> </span>
-							<a href="#">HOTTIE</a>
+							<a>HOTTIE</a>
 						</div>
 						<div class="holiday-type-grid" onclick="location.href='#';">
 							<span> <img src="/assets/img/ranking/4.png" alt=""> </span>
-							<a href="#">SOCIALIZER</a>
+							<a>SOCIALIZER</a>
 						</div>
 						<div class="clear"> </div>
 					</div>
@@ -122,7 +122,7 @@
 		  	    		
 		          </ul>
 		        </div>
-		        <button class="btn" style="position: absolute; right: 10%;">MORE</button>
+		        <a href="/promotion" class="btn" style="position: absolute; right: 10%;">MORE</a>
 		      </section>
               <!-- //End content_slider -->
 
