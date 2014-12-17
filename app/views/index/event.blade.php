@@ -29,16 +29,39 @@
 				  $(function() {
 				    $( "#datepicker" ).datepicker();
 				  });
+				  $(function() {
+				    $( "#datepicker2" ).datepicker();
+				  });
 				  </script>
 				<!---/End-date-piker---->
 				<div class="p-ww">
-					<form>
-						<span> Where</span>
-						<input class="dest" type="text" value="Distination" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Distination';}">
-						<span> When</span>
-						<input class="date" id="datepicker" type="text" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
-						<input type="submit" value="Search" />
-					</form>
+					@if (!Auth::check())
+						<form action="/event" method="GET">
+					@elseif ($page === 'My Events')
+						<form action="/myevent" method="GET">
+					@elseif ($page === 'Events')
+						<form action="/event" method="GET">
+					@elseif ($page === 'Joined Events')
+						<form action="/joinevent" method="GET">
+					@endif
+							<span> Category</span>
+							<select name="categ">
+								<option value="all">All</option>
+								<option value="food">Food</option>
+								<option value="fashion">Fashion</option>
+								<option value="health">Health</option>
+								<option value="entertainment">Entertainment</option>
+								<option value="seminar">Seminar</option>
+								<option value="other">Other</option>
+							</select>
+							<!-- <input class="dest" type="text" value="Destination" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Destination';}"> -->
+							<span>  Start </span>
+							<input name="start" class="date" id="datepicker" type="text" placeholder="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+							<span>  To </span>
+							<input name="to" class="date" id="datepicker2" type="text" placeholder="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+
+							<input type="submit" value="Search" />
+						</form>
 
 				</div>
 				<div class="clear"> </div>
@@ -154,13 +177,6 @@
 										<div class="clear"> </div>
 
 									</div>
-									<script>
-										function confirmJoin(id){
-											if (confirm("Do you want to Join this Event?") == true){
-												window.location.href = '/event/'+id+'/edit';
-											}	
-										}
-									</script>
 								@endforeach
 
 							<!-- Social Media Part!
