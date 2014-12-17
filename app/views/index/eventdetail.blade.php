@@ -80,7 +80,7 @@
 						Date of Birth : {{ $f->birthday }}<br>
 						E-mail : {{ $f->email }}<br>
 						Telephone : {{ $f->telephone }}<br>
-						Rate : {{ $f->rating }} / 5.0<br>
+						Rate : {{ $f->rating }} / 5.00<br>
 
 						<!--chk if owner can accept/decline-->
 						@if ($flag == 'myown')

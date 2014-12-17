@@ -66,39 +66,6 @@ class RateSystemController extends \BaseController {
 		//
 	}
 
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		$rater = Auth::id();
-		$rated = $id;
-		$eid = Input::get('eid');
-		$num = Input::get('rating');
-
-		$ratedb = new Rate;
-		$ratedb->rater_id = $rater;
-		$ratedb->rated_id = $rated;
-		$ratedb->onevent_id = $eid;
-		$ratedb->value = $num;
-		$ratedb->save();
-
-		$avg = DB::select('select avg(value) as avg_rate from rate where rated_id = ?;'
-			,array($id))[0]->avg_rate;
-		$pro = Profile::find($rated);
-		$pro->rating = $avg;
-		$pro->save();
-
-		updateAcheivement($rater,$rated);
-
-		return Redirect::to('/rate/'.$eid);
-		// return "Rate Function : Mr.".$rater." rate Mr.".$rated." in event ".$eid." for ".$num;
-	}
-
 	// Update [Friend Maker] and [Crititizer] Achievement
 
 	public function updateAcheivement($uid,$rid)
@@ -122,6 +89,40 @@ class RateSystemController extends \BaseController {
 		
 
 	}
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update($id)
+	{
+		$rater = Auth::id();
+		$rated = $id;
+		$eid = Input::get('eid');
+		$num = Input::get('rating');
+
+		$ratedb = new Rate;
+		$ratedb->rater_id = $rater;
+		$ratedb->rated_id = $rated;
+		$ratedb->onevent_id = $eid;
+		$ratedb->value = $num;
+		$ratedb->save();
+
+		$avg = DB::select('select cast(avg(value) as decimal(10,2)) as avg_rate from rate where rated_id = ?;'
+			,array($id))[0]->avg_rate;
+		$pro = Profile::find($rated);
+		$pro->rating = $avg;
+		$pro->save();
+
+		$this->updateAcheivement($rater,$rated);
+
+		return Redirect::to('/rate/'.$eid);
+		// return "Rate Function : Mr.".$rater." rate Mr.".$rated." in event ".$eid." for ".$num;
+	}
+
+	
 
 	
 
