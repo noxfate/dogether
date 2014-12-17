@@ -2750,3 +2750,46 @@ th{
 	width: 280px;
 	height: 280px; 
 }
+.content-event.ename{
+	background-color: #2C3E50;
+	font-weight: bold;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	padding-left: 13px;
+}
+.content-event.eby{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #1DD2AF;
+}
+.content-event.edetail{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #000;
+}
+.content-event{
+	padding: 0 25px 0 25px;
+}
+.wrap-event{
+	background-color: #FFF;
+	box-shadow: 4px 6px 6px #888888;
+	padding: 0;
+	color: #fff;
+	margin-top: 30px;
+}
+.arrow{
+	position: relative;
+    left: -23px;
+}
+.btn-event{
+	margin-bottom: 20px;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 5px;
+	padding-left: auto;
+	padding-right: auto;
+	padding-top: 0.7em;
+}
+.img-event{
+	margin-top: 30px;
+}

@@ -33,6 +33,6 @@ class HomeController extends BaseController {
 
 	public function test()
 	{
-		return View::make('test2');
+		return View::make('test3');
 	}
 }

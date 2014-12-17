@@ -42,18 +42,20 @@
 						<h3>LATEST PROMOTION</h3>
 					</div>
 					<div class="row">
-						<div class="col-md-1"> <img src="assets/img/customer/customer-taidaimaru.png" alt="" class="img-circle"></div>
-						<div class="col-md-4 wrap-event">
-							<div class='content-event ename'>Event Name <img src="images/popa.png" alt=""></div>
-							<div class='content-event eby' style="background-color: #1DD2AF;">By Staphan</div>
+						<!--Start loop here-->
+						<div class="col-md-1 img-event"> <img src="assets/img/customer/customer-taidaimaru.png" alt="" class="img-circle"></div>
+						<div class="col-md-5 wrap-event">
+							<div class='content-event ename'><img class='arrow' src="images/popa.png" alt="">Event Name</div>
+							<div class='content-event eby'>By Staphan</div>
 							<div class='content-event edetail'>
 								<p>At 0000-00-00 00:00:00:00<p>
 								<p>Location คณะไอที</p>
 								<p>Catagory</p>
 								<p>detail</p>
 							</div>
-							<button>Join</button>
+							<button class="btn-event btn btn-default">Join</button>
 						</div>
+						<!-- end loop here -->
 					</div>
 				</div>
 			</div>
