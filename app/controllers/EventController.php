@@ -126,7 +126,7 @@ class EventController extends \BaseController {
 
 
 
-		return View::make('success')->with('message',Auth::id().' '.$id);
+		return Redirect::to('/event');
 	}
 
 
