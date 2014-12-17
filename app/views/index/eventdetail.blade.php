@@ -80,7 +80,7 @@
 						Date of Birth : {{ $f->birthday }}<br>
 						E-mail : {{ $f->email }}<br>
 						Telephone : {{ $f->telephone }}<br>
-						Rate : {{ $f->rating }} / 5.0<br>
+						Rate : {{ $f->rating }} / 5.00<br>
 
 						<!--chk if owner can accept/decline-->
 						@if ($flag == 'myown')
@@ -121,13 +121,13 @@
 					</div>
 				@endforeach
 
-				@if ($flag == 'myown')
+				<!-- @if ($flag == 'myown')
 					<div class="col-md-12">
 						<div class="criuse-grid-load">
 							<a href="#">Confirm</a>
 						</div>
 					</div>
-				@endif
+				@endif -->
 
 				</div>
 				
