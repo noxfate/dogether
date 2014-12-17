@@ -14,7 +14,7 @@
 					<div class="form-group">
 					  <label class="col-sm-2 col-sm-2 control-label">Promotion Name</label>
 					  <div class="col-sm-10">
-					      <input type="proname" class="form-control">
+					      <input type="text" class="form-control" name="proname">
 					  </div>
 					</div>
 					<div class="form-group">

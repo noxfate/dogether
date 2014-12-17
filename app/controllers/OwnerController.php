@@ -45,7 +45,7 @@ class OwnerController extends \BaseController {
 		$prom->picture = $this->uploadPic(Input::file('pic'));
 		$prom->active = 1;
 		$prom->save();
-		return $prom;
+		return View::make('owner.create');
 
 	}
 

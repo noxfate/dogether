@@ -153,6 +153,7 @@
                     <div class="col-sm-10">
                       <input type="text" class="form-control input-sm" placeholder="Province" name="prov" id="province" value="กรุงเทพมหานคร" disabled>
                     </div>
+                    <input type="hidden" name="prov" value="กรุงเทพมหานคร">
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Post Number</label>
