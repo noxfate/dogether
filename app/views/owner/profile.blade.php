@@ -54,7 +54,7 @@
 				<div class="form-group">
 				  <label class="col-sm-2 col-sm-2 control-label">Profile Picture</label>
 				  <div class="col-sm-10">
-				      <input type="file" class="form-control">
+				      <input type="file" class="form-control" accept="image/*">
 				  </div>
 				</div>
 				<div class="form-group">
