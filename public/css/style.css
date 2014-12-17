@@ -2793,3 +2793,10 @@ th{
 .img-event{
 	margin-top: 30px;
 }
+
+.logo{
+
+	position: relative;
+	top: -30px;
+	margin-bottom: -50px;
+}

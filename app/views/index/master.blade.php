@@ -125,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="wrap">
 				<!--- start-logo---->
 				<div class="logo">
-					<a href="/"><img src="images/logo.png" title="voyage" /></a>
+					<a href="/"><img class="logo" style="margin-top:30px" src="images/logo003.png" title="voyage" /></a>
 				</div>
 				<!--- //End-logo---->
 				<!--- start-top-nav---->
@@ -181,112 +181,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 		@yield('content')
-		<!----start-footer---->
-		<div class="footer">
-			<div class="wrap">
-			<div class="footer-grids">
-				<div class="footer-grid Newsletter">
-					<h3>News letter </h3>
-					<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.</p>
-					<form>
-						<input type="text" placeholder="Subscribes.." /> <input type="submit" value="GO" />
-					</form>
-				</div>
-				<div class="footer-grid Newsletter">
-					<h3>Latest News </h3>
-					<div class="news">
-						<div class="news-pic">
-							<img src="images/f01.jpg" title="news-pic1" /> 
-						</div>
-						<div class="news-info">
-							<a href="#">Postformat Gallery: Multiple images</a>
-							<span>December 12, 2012 - 9:11 pm</span>
-						</div>
-						<div class="clear"> </div>
-					</div>
-					<div class="news">
-						<div class="news-pic">
-							<img src="images/f01.jpg" title="news-pic1" /> 
-						</div>
-						<div class="news-info">
-							<a href="#">Postformat Gallery: Multiple images</a>
-							<span>December 12, 2012 - 9:11 pm</span>
-						</div>
-						<div class="clear"> </div>
-					</div>
-				</div>
-				<div class="footer-grid tags">
-					<h3>Tags</h3>
-					<ul>
-						<li><a href="#">Agent login</a></li>
-						<li><a href="#">Customer Login</a></li>
-						<li><a href="#">Not a Member?</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">New Horizons</a></li>
-						<li><a href="#">Lanscape</a></li>
-						<li><a href="#">Tags</a></li>
-						<li><a href="#">Nice</a></li>
-						<li><a href="#">Some</a></li>
-						<li><a href="#">Portrait</a></li>
-						<div class="clear"> </div>
-					</ul>
-				</div>
-				<div class="footer-grid address">
-					<h3>Address </h3>
-					<div class="address-info">
-						<span>DieSachbearbeiter Schonhauser </span>
-						<span>Allee 167c,10435 Berlin Germany</span>
-						<span><i>E-mail:</i><a href="mailto:moin@blindtextgenerator.de">moin@blindtextgenerator.de</a></span>
-					</div>
-					<div class="footer-social-icons">
-						<ul>
-							<li>
-								<div class="fb-share-button" data-href="http://goo.gl/Kc6L" data-layout="button_count"></div>
-
-								<script>(function(d, s, id) {
-								  var js, fjs = d.getElementsByTagName(s)[0];
-								  if (d.getElementById(id)) return;
-								  js = d.createElement(s); js.id = id;
-								  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-								  fjs.parentNode.insertBefore(js, fjs);
-								}(document, 'script', 'facebook-jssdk'));</script></li>
-							<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://goo.gl/Kc6L">Tweet</a>
-								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
-									p=/^http:/.test(d.location)?'http':'https';
-									if(!d.getElementById(id)){js=d.createElement(s);
-									js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
-									fjs.parentNode.insertBefore(js,fjs);
-								}}(document, 'script', 'twitter-wjs');</script></li>
-							<li><!-- วางแท็กนี้ในส่วนหัวหรือก่อนแท็กปิดของเนื้อความ -->
-								<script src="https://apis.google.com/js/platform.js" async defer>
-								  {lang: 'th'}
-								</script>
-								<!-- วางแท็กนี้ในตำแหน่งที่คุณต้องการให้ ปุ่ม +1 ปรากฏ -->
-								<div class="g-plusone" data-annotation="inline" data-width="300"></div></li>
-							
-							<div class="clear"> </div>
-						</ul>
-					</div>
-				</div>
-				<div class="clear"> </div>
-			</div>
-			</div>
-		</div>
-		<!----//End-footer---->
+		
 		<!---start-subfooter---->
 		<div class="subfooter">
 			<div class="wrap">
 				<ul>
 					<li><a href="/">Home</a><span>::</span></li>
-					<li><a href="destinations.html">Destinations</a><span>::</span></li>
-					<li><a href="criuses.html">Criuses</a><span>::</span></li>
-					<li><a href="destinations.html">Specils</a><span>::</span></li>
-					<li><a href="destinations.html">Holidays</a><span>::</span></li>
-					<li><a href="blog.html">Blog</a><span>::</span></li>
-					<li><a href="contact.html">Contact Us</a></li>
+					<li><a href="/event">Event</a><span>::</span></li>
+					<li><a href="/achievement">Achievement</a><span>::</span></li>
+					<li><a href="/promotion">Promotion</a><span>::</span></li>
 					<div class="clear"> </div>
 				</ul>
-				<p class="copy-right">Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+				<p class="copy-right"><span class="glyphicon glyphicon-copyright-mark"></span> <a href="#">2014 SKT NB</a></p>
 				<a class="to-top" href="#header"><span> </span> </a>
 			</div>
 		</div>
