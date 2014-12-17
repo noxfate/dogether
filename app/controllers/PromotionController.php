@@ -10,8 +10,9 @@ class PromotionController extends \BaseController {
 	public function index()
 	{
 		// select only time_end >= current_timestamp
-		$data = Promotion::all();
+		$data = Promotion::whereRaw('time_end >= current_date and active = 1')->get();
 		return View::make('index.promotion')->with('promo',$data);
+		// return $data->get();
 	}
 
 
@@ -45,7 +46,8 @@ class PromotionController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return View::make('index.prodetail');
+		$data = Promotion::find($id);
+		return View::make('index.prodetail')->with('promo',$data);
 
 	}
 

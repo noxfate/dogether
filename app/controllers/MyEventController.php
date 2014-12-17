@@ -36,26 +36,27 @@ class MyEventController extends \BaseController {
 			//  Create Event youself
 
 			// [Head Master]
-			$achv = AchvRecord::whereRaw('user_id = ? and achv_id = 3 and active = 1')->get();
+			$achv = AchvRecord::whereRaw('user_id = ? and achv_id = 3 and active = 1',array(Auth::id()))->get();
 			$val = $achv[0]->value;
 			if ($val < 10){
 				$achv[0]->value = $val+1;
 				$achv[0]->save();
 			}
 
-			return View::make('index.addevent')->with('data',null)->with('pid',null);
+			return View::make('index.addevent')->with('data',null)->with('p',null);
 		}else{
 			//  Create From Promotion
 
 			// [Never Miss a Chance!]
-			$achv = AchvRecord::whereRaw('user_id = ? and achv_id = 4 and active = 1')->get();
+			$achv = AchvRecord::whereRaw('user_id = ? and achv_id = 4 and active = 1',array(Auth::id()))->get();
 			$val = $achv[0]->value;
 			if ($val < 10){
 				$achv[0]->value = $val+1;
 				$achv[0]->save();
 			}
 			$data = Promotion::find($pid);
-			return View::make('index.addevent')->with('data',null)->with('pid',$data);
+			$pro = Profile::find($data->user_id);
+			return View::make('index.addevent')->with('data',null)->with('p',$data)->with('prof',$pro);
 		}
 
 

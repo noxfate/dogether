@@ -19,7 +19,7 @@
 			<div class="wrap">
 				<div class="p-h">
 					<span>FIND YOUR</span>
-					<label>ACTIVITIES</label>
+					<label>PROMOTION</label>
 				</div>
 				<!---strat-date-piker---->
 				  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
@@ -45,39 +45,45 @@
 		<!----//End-find-place---->
 	</div>
 	<div class="criuse-main">
-		<div class="wrap">
+		<div class="wrap"><!-- 
 			<div class="criuse-head1">
 				<h3>Promotion name</h3>
-			</div>
+			</div> -->
 			<!--Promotion-->
 			<table class='table table-hover'>
-				<img src="../images/pro2.jpg" alt="">
+				<img src="{{ $promo->picture }}" alt="">
 				<thead>
 					<th>Detail</th>
 					<th></th>
 				</thead>
 				<tr>
 					<td class="col-md-2" style=" font-weight: bold;">Promotion</td>
-					<td>มา 4 จ่าย 3</td>
+					<td>{{ $promo->name }}</td>
 				</tr>
 				<tr>
 					<td class="col-md-2" style="font-weight: bold;">Location</td>
-					<td>ลาดกระบังฮิ</td>
+					<td>{{ Profile::find($promo->user_id)->address }}, {{ Profile::find($promo->user_id)->district }}</td>
 				</tr>
 				<tr>
 					<td class="col-md-2" style="font-weight: bold;">Start Date</td>
-					<td>00-00-0000 00:00:00</td>
+					<td>{{ date("d/m/Y",strtotime($promo->time_start)) }}</td>
 				</tr>
 				<tr>
 					<td class="col-md-2" style="font-weight: bold;">End Date</td>
-					<td>00-00-0000 00:00:00</td>
+					<td>{{ date("d/m/Y",strtotime($promo->time_end)) }}</td>
 				</tr>
 				<tr>
 					<td class="col-md-2" style="font-weight: bold;">Describe</td>
-					<td>หนึ่งสองสามปลาฉลามขึ้นบก</td>
+					<td>{{ $promo->detail }}</td>
 				</tr>
 			</table>
-			<div style="padding-left: 80%;">ON 00-00-0000 00:00:00</div>
+			@if (Auth::check())
+			<form action="/myevent/create" method="GET">
+				<input type="hidden" name="proid" value="{{ $promo->promotion_id }}">
+				<input type="submit" class="btn" value="Create Event">
+			</form>
+			@endif
+			<div style="padding-left: 80%;">on {{ date("H:i:s d/m/Y",strtotime($promo->timestamp)) }}</div>
 		</div>
 	</div>
 </div>

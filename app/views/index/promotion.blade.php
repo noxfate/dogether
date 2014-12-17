@@ -39,7 +39,7 @@
 			<div class="destination-places">
 				<div class="wrap">
 					<div class="destination-places-head">
-						<h3>LASTEST PROMOTION</h3>
+						<h3>LATEST PROMOTION</h3>
 					</div>
 					<div class="destination-places-grids">
 						@foreach($promo as $p)

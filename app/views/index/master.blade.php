@@ -96,7 +96,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		        <h4 class="modal-title" id="myModalLabel">Sign in</h4>
 		      </div>
 		      <div class="modal-body">
-		      	<form role="form" action="loginChk" method="POST">
+		      	<form role="form" action="/loginChk" method="POST">
 			        <div class="form-group">
 		            <label>Enter your Email</label> <br>
 			            <div class="input-group">
