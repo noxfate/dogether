@@ -75,7 +75,7 @@
               </div>
               <div class="form-group col-xs-6">
                 <label class="control-label">Date of Birth</label>
-                <input type="date" class="form-control" placeholder="DD-MM-YYYY" name="dob" id="dob">
+                <input type="date" class="form-control" placeholder="วว/ดด/ปปปป" name="dob" id="dob">
               </div>
             </div>
             <div class="row">
