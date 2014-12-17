@@ -105,6 +105,7 @@
 						Date of Birth : {{ $f->birthday }}<br>
 						E-mail : {{ $f->email }}<br>
 						Telephone : {{ $f->telephone }}<br>
+						Rate : {{ $f->rating }} / 5.0<br>
 
 						<!--chk if owner can accept/decline-->
 						@if ($flag == 'myown')
@@ -113,15 +114,20 @@
 							@if ($f->status == 'pending')
 								{{ Form::open(array('route'=>array('myevent.update',$f->id),'method'=>'put')) }}
 									<input type="hidden" name="eid" value="{{ $data->event_id }}">
-									<input type="radio" name="answer" value="accept"> || 
-									<input type="radio" name="answer" value="decline">
+									<input type="radio" name="answer" value="accept"> Accept 
+									<input type="radio" name="answer" value="decline"> Decline<br>
+									<input type="submit" value="answer"> 
 								{{ Form::close() }}
 							<!-- <img src="../images/chk.png" alt="">
 							<img src="../images/can-active.png" alt=""> -->
 
 							@elseif ($f->status == 'accept' or $f->status == 'confirm')
 								<img src="../images/chk-active.png" alt="">
+							@elseif ($f->status == 'decline')
+								<img src="../images/can-active.png" alt="">
 							@endif
+
+						@elseif ($flag == 'join')
 
 						@elseif ($flag == 'rate')
 							<!-- Rating Part -->

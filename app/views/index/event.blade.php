@@ -109,24 +109,27 @@
 												@elseif ($page === 'Events')
 													<li><a class="c-hotel" href="#" onclick="confirmJoin({{$e->event_id}})"><span> </span>JOIN</a></li>
 												@elseif ($page === 'Joined Events')
-													<li><a class="c-hotel" href="/joinevent/{{ $e->event_id }}"><span> </span>DETAIL</a></li>
+													@if ( $e->time_end >= date('Y-m-d H:i:s'))
+														<!-- In time Event! -->
+														<li><a class="c-hotel" href="/joinevent/{{ $e->event_id }}"><span> </span>DETAIL</a></li>
+													@else
+														<!-- Expired Event! -->
+														<li><a class="c-hotel" href="rate/{{$e->event_id}}"><span> </span>RATE NOW</a></li>
+													@endif
 												@endif
-												<!-- <li><a class="c-air" href="#"><span> </span> Return Air Ticket</a></li>
-												<li><a class="c-fast" href="#"><span> </span> Complimentry beark fast</a></li>
-												<li><a class="c-car" href="#"><span> </span> Car for All transfers</a></li> -->
 												<div class="clear"> </div>
 											</ul>
 										</div>
-										<!-- <div class="criuse-info-right">
+										<div class="criuse-info-right">
 											<ul>
 
-												<li><a class="btn" href="myevent/{{$e->event_id}}">Manage</a></li>
+												<!-- <li><a class="btn" href="myevent/{{$e->event_id}}">Manage</a></li> -->
 												<li><a class="c-face" href="#"><span> </span> </a></li>
 												<li><a class="c-twit" href="#"><span> </span> </a></li>
-												<li><a class="c-tub" href="#"><span> </span> </a></li>
-												<li><a class="c-pin" href="#"><span> </span> </a></li>
+												<!-- <li><a class="c-tub" href="#"><span> </span> </a></li>
+												<li><a class="c-pin" href="#"><span> </span> </a></li> -->
 											</ul>
-										</div> -->
+										</div>
 										<div class="clear"> </div>
 
 									</div>

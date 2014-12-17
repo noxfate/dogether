@@ -76,6 +76,17 @@ class EventController extends \BaseController {
 		$jevnt->active = 1;
 		$jevnt->status = 'pending';
 		$jevnt->save();
+
+		// [Event Hunter]
+		$achv = AchvRecord::whereRaw('user_id = ? and achv_id = 1 and active = 1')->get();
+		$val = $achv[0]->value;
+		if ($val < 10){
+			$achv[0]->value = $val+1;
+			$achv[0]->save();
+		}
+
+
+
 		return View::make('success')->with('message',Auth::id().' '.$id);
 	}
 

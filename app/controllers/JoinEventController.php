@@ -10,9 +10,9 @@ class JoinEventController extends \BaseController {
 	public function index()
 	{
 		$id = Auth::id();
-		$join = DB::select('select * from event where event_id IN 
-			(select event_id from joinevent where user_id = ?) and event_id NOT IN 
-            (select event_id from event where user_id = ?);',array($id,$id));
+		$join = DB::select("select * from event where event_id IN 
+			(select event_id from joinevent where user_id = ? and status != 'decline') and event_id NOT IN 
+            (select event_id from event where user_id = ?);",array($id,$id));
 
 		return View::make('index.event')->with('event',$join)->with('page','Joined Events');
 		// return $join;

@@ -13,6 +13,7 @@ class RateSystemController extends \BaseController {
 	}
 
 
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -84,7 +85,7 @@ class RateSystemController extends \BaseController {
 		$ratedb->rated_id = $rated;
 		$ratedb->onevent_id = $eid;
 		$ratedb->value = $num;
-		// $ratedb->save();
+		$ratedb->save();
 
 		$avg = DB::select('select avg(value) as avg_rate from rate where rated_id = ?;'
 			,array($id))[0]->avg_rate;
@@ -92,10 +93,37 @@ class RateSystemController extends \BaseController {
 		$pro->rating = $avg;
 		$pro->save();
 
-		return Redirect::to('/rate/'.$id);
+		updateAcheivement($rater,$rated);
+
+		return Redirect::to('/rate/'.$eid);
 		// return "Rate Function : Mr.".$rater." rate Mr.".$rated." in event ".$eid." for ".$num;
 	}
 
+	// Update [Friend Maker] and [Crititizer] Achievement
+
+	public function updateAcheivement($uid,$rid)
+	{
+		// [Crititizer]
+		$rater = AchvRecord::whereRaw('user_id = ? and achv_id = 5 and active = 1',array($uid))->get();
+		$val = $rater[0]->value;
+		if ($val < 10){
+			$rater[0]->value = $val+1;
+			$rater[0]->save();
+		}		
+		
+
+		// [Friend Maker]
+		$rated = AchvRecord::whereRaw('user_id = ? and achv_id = 5 and active = 1',array($rid))->get();
+		$val1 = $rated[0]->value;
+		if ($val1 < 10){
+			$rated[0]->value = $val1+1;
+			$rated[0]->save();
+		}		
+		
+
+	}
+
+	
 
 	/**
 	 * Remove the specified resource from storage.

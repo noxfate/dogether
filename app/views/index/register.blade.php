@@ -6,7 +6,7 @@
 <!---start-Blog---->
 <script type="text/javascript" src="assets/js/tabs.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="js/validate.js"></script>
+<!-- <script type="text/javascript" src="js/validate.js"></script> -->
 
     <div class="blog">
       <div class="destination-head">

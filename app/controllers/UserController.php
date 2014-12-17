@@ -114,6 +114,9 @@ class UserController extends \BaseController {
 				$pro->category = Input::get('categ');
 				$pro->description = Input::get('desc');
 				$pro->role = Input::get('type');
+
+
+				$pro->save();
 			}
 			else
 			{
@@ -133,9 +136,21 @@ class UserController extends \BaseController {
 				$pro->birthday = Input::get('dob');
 				$pro->role = Input::get('type');
 				$pro->picture = $this->uploadDB(Input::file('pic'), Input::get('type'));
+				$pro->save();
+
+				// start newbie rank
+				$pid = DB::select('select max(id) as maxid from profile')[0]->maxid;
+				for ($x = 1; $x <= 5; $x++) {
+				    $achv = new AchvRecord;
+					$achv->user_id = $pid;
+					$achv->achv_id = $x;
+					$achv->active = 1;
+					$achv->save();
+				} 
+				
+
 			}
 
-			$pro->save();
 			return View::make('success')->with('message','Registered');
 		}
 		return View::make('error')->with('message','E-mail is already existed!!');
@@ -143,6 +158,7 @@ class UserController extends \BaseController {
 
 		
 	}
+
 
 	/**
 	 * Display the specified resource.

@@ -33,13 +33,32 @@ class MyEventController extends \BaseController {
 	{
 		$pid = Input::get('proid');
 		if ($pid == null){
-			//  Create youself
+			//  Create Event youself
+
+			// [Head Master]
+			$achv = AchvRecord::whereRaw('user_id = ? and achv_id = 3 and active = 1')->get();
+			$val = $achv[0]->value;
+			if ($val < 10){
+				$achv[0]->value = $val+1;
+				$achv[0]->save();
+			}
+
 			return View::make('index.addevent')->with('data',null)->with('pid',null);
 		}else{
 			//  Create From Promotion
+
+			// [Never Miss a Chance!]
+			$achv = AchvRecord::whereRaw('user_id = ? and achv_id = 4 and active = 1')->get();
+			$val = $achv[0]->value;
+			if ($val < 10){
+				$achv[0]->value = $val+1;
+				$achv[0]->save();
+			}
 			$data = Promotion::find($pid);
 			return View::make('index.addevent')->with('data',null)->with('pid',$data);
 		}
+
+
 	}
 
 
@@ -68,7 +87,7 @@ class MyEventController extends \BaseController {
 		$join->event_id = $eid[0]->event_id;
 		$join->user_id = Auth::id();
 		$join->active = 1;
-		// $join->status = 'owner';
+		$join->status = 'owner';
 		$join->save();		
 
 
@@ -120,8 +139,13 @@ class MyEventController extends \BaseController {
 		
 		$eid = Input::get('eid');
 		$ans = Input::get('answer');
-		DB::update("update joinevent set status = ? where event_id = ? and user_id = ?"
-			,array($ans,$eid,$usrid));
+		if ($ans == 'accept'){
+			DB::update("update joinevent set status = ? where event_id = ? and user_id = ?"
+				,array($ans,$eid,$usrid));
+		}else{
+			DB::delete("delete from joinevent where event_id = ? and user_id = ?"
+				,array($eid,$usrid));
+		}
 
 		return Redirect::to('/myevent/'.$eid);
 		

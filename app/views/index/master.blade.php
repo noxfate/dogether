@@ -145,7 +145,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li class="@if (Request::path() == 'event') active @endif"><a href="/event">Event</a></i>
 						@endif
 
-						<li><a href="#">Achievement</a></li>
+						<li><a href="/achievement">Achievement</a></li>
 						<li><a href="/promotion">Promotion</a></li>
 
 					</ul>

@@ -1,6 +1,6 @@
 <?php
 
-class PromotionController extends \BaseController {
+class AchievementController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,9 +9,7 @@ class PromotionController extends \BaseController {
 	 */
 	public function index()
 	{
-		// select only time_end >= current_timestamp
-		$data = Promotion::all();
-		return View::make('index.promotion')->with('promo',$data);
+		
 	}
 
 
@@ -45,9 +43,7 @@ class PromotionController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		
-		
-		//return View::make('index.promotionsingle');
+		//
 	}
 
 
@@ -71,7 +67,7 @@ class PromotionController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		
+		//
 	}
 
 
