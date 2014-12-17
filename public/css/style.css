@@ -673,8 +673,8 @@ body{
 }
 .holiday-type-grids{
 	padding: 3em 0 1em;
-	width: 90%;
-	margin: 0 auto;
+	width: 100%;
+	margin: 0 10%;
 }
 .client-head{
 	text-align:center;

@@ -33,33 +33,29 @@
 			<div class="holiday-types">
 				<div class="wrap">
 					<div class="holiday-type-head">
-						<h3>Acheivements</h3>
-						<span>get explore your dream to travel the world!</span>
+						<h3>Achievements</h3>
+						<span>Complete each achievement to unlog new rank!</span>
 					</div>
 					<div class="holiday-type-grids">
 						<div class="holiday-type-grid" onclick="location.href='#';">
-							<span class="icon1"> </span>
-							<a href="#">Cruise</a>
+							<span> <img src="/assets/img/ranking/0.png" alt=""> </span>
+							<a href="#">FOREVER ALONE</a>
 						</div>
 						<div class="holiday-type-grid" onclick="location.href='#';">
-							<span class="icon2"> </span>
-							<a href="#">City Breaks</a>
+							<span> <img src="/assets/img/ranking/1.png" alt=""> </span>
+							<a href="#">OUT GOING</a>
 						</div>
 						<div class="holiday-type-grid" onclick="location.href='#';">
-							<span class="icon3"> </span>
-							<a href="#">Honeymoon</a>
+							<span> <img src="/assets/img/ranking/2.png" alt=""> </span>
+							<a href="#">RISING STAR</a>
 						</div>
 						<div class="holiday-type-grid" onclick="location.href='#';">
-							<span class="icon4"> </span>
-							<a href="#">Adventure</a>
+							<span> <img src="/assets/img/ranking/3.png" alt=""> </span>
+							<a href="#">HOTTIE</a>
 						</div>
 						<div class="holiday-type-grid" onclick="location.href='#';">
-							<span class="icon5"> </span>
-							<a href="#">Safari</a>
-						</div>
-						<div class="holiday-type-grid" onclick="location.href='#';">
-							<span class="icon6"> </span>
-							<a href="#">Beach</a>
+							<span> <img src="/assets/img/ranking/4.png" alt=""> </span>
+							<a href="#">SOCIALIZATION</a>
 						</div>
 						<div class="clear"> </div>
 					</div>
