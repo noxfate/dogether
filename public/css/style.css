@@ -2733,10 +2733,20 @@ th{
 }
 .ranking{
 	color: #FFF;
-	padding: 20px 0 20px 20px;
+	padding: 30px;
 }
 
 .ranking-head{
 	font-weight: 600;
 	font-size: 400%
+}
+
+.imgr{
+	width: 126px;
+	height: 126px;
+}
+.imgh{
+	margin-top: 40px;
+	width: 280px;
+	height: 280px; 
 }

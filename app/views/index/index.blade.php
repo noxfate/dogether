@@ -34,7 +34,7 @@
 				<div class="wrap">
 					<div class="holiday-type-head">
 						<h3>Achievements</h3>
-						<span>Complete each achievement to unlog new rank!</span>
+						<span>Complete each achievement to unlock new rank!</span>
 					</div>
 					<div class="holiday-type-grids">
 						<div class="holiday-type-grid" onclick="location.href='#';">

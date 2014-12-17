@@ -151,7 +151,7 @@
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Province</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control input-sm" placeholder="Province" name="prov" id="province">
+                      <input type="text" class="form-control input-sm" placeholder="Province" name="prov" id="province" value="กรุงเทพมหานคร" disabled>
                     </div>
                   </div>
                   <div class="form-group">
