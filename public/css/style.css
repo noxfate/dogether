@@ -2727,3 +2727,7 @@ input[type="search"].sb-search-input {
 	width: 100%;
 	font: inherit;
 }
+th{
+	background-color: #333;
+	color: #FFF;
+}
