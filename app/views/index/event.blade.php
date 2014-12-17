@@ -115,14 +115,14 @@
 													    <div class="modal-content">
 													      <div class="modal-header">
 													        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-													        <h4 class="modal-title" id="myModalLabel">Joining Event</h4>
+													        <h4 class="modal-title" id="myModalLabel">Confirm Join?</h4>
 													      </div>
 													      <div class="modal-body">
-													        Do you want to join this Events?
+													        ...
 													      </div>
 													      <div class="modal-footer">
-													      	<a href="/event/{{ $e->event_id }}/edit"type="button" class="btn btn-primary">Join</a>
-													        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+													        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+													        <button type="button" class="btn btn-primary">Save changes</button>
 													      </div>
 													    </div>
 													  </div>
