@@ -14,22 +14,21 @@
 					<div class="wrap">
 						<div class="p-h">
 							<span>FIND YOUR</span>
-							<label>HOLYDAYS</label>
+							<label>Event</label>
 						</div>
-						<!---strat-date-piker---->
-						  <script src="js/jquery-ui.js"></script>
-						  <script>
-						  $(function() {
-						    $( "#datepicker" ).datepicker();
-						  });
-						  </script>
-						<!---/End-date-piker---->
+
 						<div class="p-ww">
 							<form>
-								<span> Where</span>
-								<input class="dest" type="text" value="Distination" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Distination';}">
-								<span> When</span>
-								<input class="date" id="datepicker" type="text" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
+								<span> Catagory</span>
+								<select name="" id="">
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+								<span> Sort</span>
+								<select name="" id="">
+									<option value=""></option>
+									<option value=""></option>
+								</select>
 								<input type="submit" value="Search" />
 							</form>
 						</div>
