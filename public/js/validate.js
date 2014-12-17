@@ -256,7 +256,7 @@ function CheckRePasswordOwner(){
 function CheckStoreName(){
 	var x = document.getElementById("sname").value ;
 	
-	if(!x||x.length<4){
+	if(!x||x.length<3){
 		validate2[3] = false;
 	
 		document.getElementById("signup").disabled = true;
