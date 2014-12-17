@@ -47,7 +47,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="/owner" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="/owner" class="logo"><b>OWNER DASHBOARD</b></a>
             <!--logo end-->
             <div class="top-menu">
               <ul class="nav pull-right top-menu">
@@ -67,7 +67,7 @@
               <ul class="sidebar-menu" id="nav-accordion">
               
                   <p class="centered"><a href="/owner"><img src="{{ URL::to('assets/img/ui-sam.jpg')}}" class="img-circle" width="60"></a></p>
-                  <h5 class="centered">Marcel Newman</h5>
+                  <h5 class="centered"></h5>
                     
                   <li class="mt">
                       <a href="#">

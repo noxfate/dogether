@@ -121,13 +121,13 @@
 					</div>
 				@endforeach
 
-				@if ($flag == 'myown')
+				<!-- @if ($flag == 'myown')
 					<div class="col-md-12">
 						<div class="criuse-grid-load">
 							<a href="#">Confirm</a>
 						</div>
 					</div>
-				@endif
+				@endif -->
 
 				</div>
 				

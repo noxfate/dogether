@@ -200,9 +200,6 @@
 								</div>
 							</div> -->
 						</div>
-						<div class="criuse-grid-load">
-							<a href="#">Loading More</a>
-						</div>
 					</div>
 				</div>
 				

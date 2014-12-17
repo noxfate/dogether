@@ -142,7 +142,7 @@
 				<div class="destination-pagenate">
 					<div class="wrap">
 						<ul>
-							<li><a class="d-next" href="#">LOAding More</a></li>
+							<li></li>
 							<div class="clear"> </div>
 						</ul><br><br><center>
 						<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8000/event" data-text="Let's see what we've got here! --->" data-hashtags="sktnb">Tweet</a>

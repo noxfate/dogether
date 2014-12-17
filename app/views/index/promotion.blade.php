@@ -82,7 +82,7 @@
 				<div class="destination-pagenate">
 					<div class="wrap">
 						<ul>
-							<li><a class="d-next" href="#">LOAding More</a></li>
+							<li></li>
 							<div class="clear"> </div>
 						</ul>
 					</div>
