@@ -13,24 +13,11 @@
 				<div class="find-place dfind-place">
 					<div class="wrap">
 						<div class="p-h">
-							<span>FIND YOUR</span>
-							<label>Event</label>
+							<span style="height:60px;"></span>
 						</div>
 
 						<div class="p-ww">
-							<form>
-								<span> Catagory</span>
-								<select name="" id="">
-									<option value=""></option>
-									<option value=""></option>
-								</select>
-								<span> Sort</span>
-								<select name="" id="">
-									<option value=""></option>
-									<option value=""></option>
-								</select>
-								<input type="submit" value="Search" />
-							</form>
+
 						</div>
 						<div class="clear"> </div>
 					</div>
@@ -70,24 +57,13 @@
 												Catagory : {{ $data->category }}
 											</div>
 											<div class="detail-pro">
+												Location: {{$data->location}}
+											</div>
+											<div class="detail-pro">
 												{{ $data->detail }}
 											</div>
 									</div>
 								</div>
-								<div class="criuse-info">
-									<div class="criuse-info-left">
-										<ul>
-											<li>Location: {{$data->location}}</li>
-										</ul>
-									</div> 
-								<!-- 	<div class="criuse-info-right">
-										<ul>
-											<li><a class='btn' href="myevent/create" class="button">Leave</a></li>
-										</ul>
-									</div> -->
-									<div class="clear">
-								</div>
-							</div>
 						</div>
 						<br>
 						<h1>Companion</h1>
