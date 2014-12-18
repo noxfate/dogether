@@ -85,7 +85,7 @@ class MyEventController extends \BaseController {
 			return View::make('index.addevent')->with('data',null)->with('p',null);
 		}else{
 			//  Create From Promotion
-
+			
 			// [Never Miss a Chance!]
 			$achv = AchvRecord::whereRaw('user_id = ? and achv_id = 4 and active = 1',array(Auth::id()))->get();
 			$val = $achv[0]->value;
@@ -93,6 +93,7 @@ class MyEventController extends \BaseController {
 				$achv[0]->value = $val+1;
 				$achv[0]->save();
 			}
+			
 			$data = Promotion::find($pid);
 			$pro = Profile::find($data->user_id);
 			return View::make('index.addevent')->with('data',null)->with('p',$data)->with('prof',$pro);
@@ -131,7 +132,7 @@ class MyEventController extends \BaseController {
 		$join->save();		
 
 
-		return View::make('success')->with('message','Add Event!');
+		return Redirect::to('/myevent/create');
 		// return $join;
 	}
 

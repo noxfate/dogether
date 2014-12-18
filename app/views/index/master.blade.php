@@ -187,6 +187,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</button>
 			</div>
 		</div>
+		@elseif (Session::pull('rg',0) == 'false')
+			<div class="wrap">
+			<div class="alert alert-info alert-dissible fade in" role=alert>
+				There're some technical problem. Sorry for the inconvenient.
+				<button type="button" class="close" data-dismiss="alert">
+				  <span aria-hidden="true">&times;</span>
+				  <span class="sr-only">Close</span>
+				</button>
+			</div>
+			</div>
+		@elseif (Session::pull('rg',0) == 'true')
+			<div class="wrap">
+			<div class="alert alert-success alert-dissible fade in" role=alert>
+				Successfully Registerd.
+				<button type="button" class="close" data-dismiss="alert">
+				  <span aria-hidden="true">&times;</span>
+				  <span class="sr-only">Close</span>
+				</button>
+			</div>
+			</div>
 		@endif
 
 

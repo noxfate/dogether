@@ -55,7 +55,8 @@
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">Event Name</label>
 			    <div class="col-sm-10">
-			      <input type="text" name="name" class="form-control" value="{{ $p->name }}" disabled><br>
+			      <input type="text" name="name1" class="form-control" value="{{ $p->name }}" disabled><br>
+			      <input type="hidden" name="name" value="{{ $p->name }}">
 			    </div>
 			  </div>
 
@@ -84,12 +85,12 @@
 			    <label for="inputEmail3" class="col-sm-2 control-label" class="form-control">Catagory</label>
 			    <div class="col-sm-10">
 
-    			<input type="radio" name="cate" value="food" @if($prof->category == 'food') checked @endif disabled> Food <br>
-				<input type="radio" name="cate" value="fashion" @if($prof->category == 'fashion') checked @endif disabled> Fashion<br>
-				<input type="radio" name="cate" value="health" @if($prof->category == 'health') checked @endif disabled> Health<br>
-				<input type="radio" name="cate" value="entertainment" @if($prof->category == 'entertainment') checked @endif disabled> Entertainment<br>
-				<input type="radio" name="cate" value="seminar" @if($prof->category == 'seminar') checked @endif disabled> Seminar<br>
-				<input type="radio" name="cate" value="other" @if($prof->category == 'other') checked @endif disabled> Other <br><br>
+    			<input type="radio" name="cate" value="food" @if($prof->category == 'food') checked @endif> Food <br>
+				<input type="radio" name="cate" value="fashion" @if($prof->category == 'fashion') checked @endif> Fashion<br>
+				<input type="radio" name="cate" value="health" @if($prof->category == 'health') checked @endif> Health<br>
+				<input type="radio" name="cate" value="entertainment" @if($prof->category == 'entertainment') checked @endif > Entertainment<br>
+				<input type="radio" name="cate" value="seminar" @if($prof->category == 'seminar') checked @endif > Seminar<br>
+				<input type="radio" name="cate" value="other" @if($prof->category == 'other') checked @endif > Other <br><br>
 			    </div>
 			  </div>
 
