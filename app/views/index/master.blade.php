@@ -187,7 +187,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</button>
 			</div>
 		</div>
-		@elseif (Session::pull('rg',0) == 'false')
+		@elseif (Session::pull('rg','test') == 'false')
 			<div class="wrap">
 			<div class="alert alert-info alert-dissible fade in" role=alert>
 				There're some technical problem. Sorry for the inconvenient.
@@ -197,7 +197,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</button>
 			</div>
 			</div>
-		@elseif (Session::pull('rg',0) == 'true')
+		@elseif (Session::pull('rg','test') == 'true')
 			<div class="wrap">
 			<div class="alert alert-success alert-dissible fade in" role=alert>
 				Successfully Registerd.

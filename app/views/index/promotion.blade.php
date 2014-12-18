@@ -28,7 +28,7 @@
 						@foreach($promo as $p)
 						<div class="destination-places-grid" onclick="location.href='/promotion/{{ $p->promotion_id }}';">
 							<div class="dest-place-pic main_box user_style4" data-hipop="two-horizontal">
-								<img src="{{ $p->picture }}" title="place-name" />
+								<img src="{{ $p->picture }}" style="width:480px; height:250px;" title="place-name" />
 							</div>
 							<div class="dest-place-opt">
 								<ul class="dest-place-opt-fea">
@@ -37,7 +37,7 @@
 									<li><a class="Breakfast" href="#"><span> </span> Break Fast</a></li> -->
 									<div class="clear"> </div>
 								</ul>
-								<ul class="dest-place-opt-cast">
+								<ul class="dest-place-opt-cast" style="height:80px;">
 									<li><a class="d-place" href="#">{{ $p->name }}</a></li>
 									<!-- <li><a class="d-price" href="#">Starting Form 250$</a></li> -->
 									<div class="clear"> </div>

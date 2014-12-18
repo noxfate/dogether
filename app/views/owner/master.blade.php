@@ -68,13 +68,7 @@
               
                   <p class="centered"><a href="/owner"><img src="{{ URL::to('images/fire.png')}}" class="img-circle" width="60"></a></p>
                   <h5 class="centered">Dogether</h5>
-                    
-                  <li class="mt">
-                      <a href="#">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
+                
 
                   <li class="sub-menu">
                       <!-- <a href="javascript:;" > -->

@@ -154,8 +154,6 @@ class UserController extends \BaseController {
 			Session::put('rg','true');
 			return Redirect::to('/register');
 		}
-		// return View::make('error')->with('message','E-mail is already existed!!');
-		Session::put('rg','false');
 
 		return Redirect::to('/register');
 		
