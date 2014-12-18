@@ -37,7 +37,7 @@
 						@else
 							<div class="col-md-2"><img src="assets/img/achievement/{{$a->achv_id}}.png" alt="{{ $a->name }}"></div>
 						@endif	
-						<div class="col-md-4">
+						<div class="col-md-7">
 							<p>{{$a->name}}</p>
 							<p style="padding-left: 85%;">{{ $a->value }}/10</p>	
 							<div class="progress">

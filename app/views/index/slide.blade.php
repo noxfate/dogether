@@ -21,7 +21,7 @@
 		                        <div class="slide-btns description">
 		                        	<ul>
 		                        		<!-- <li><a class="mapbtn" href="#">Show on the map </a></li> -->
-		                        		<li><a class="minfo" href="#">More info </a></li>
+		                        		<li><a class="minfo" href="/promotion/7">More info </a></li>
 		                        		<div class="clear"> </div>
 		                        	</ul>
 		                        </div>
@@ -47,7 +47,7 @@
 		                        <div class="slide-btns description">
 		                        	<ul>
 		                        		<!-- <li><a class="mapbtn" href="#">Show on the map </a></li> -->
-		                        		<li><a class="minfo" href="#">More info </a></li>
+		                        		<li><a class="minfo" href="/promotion/3">More info </a></li>
 		                        		<div class="clear"> </div>
 		                        	</ul>
 		                        </div>
@@ -72,7 +72,7 @@
 		                        <div class="slide-btns description">
 		                        	<ul>
 		                        		<!-- <li><a class="mapbtn" href="#">Show on the map </a></li> -->
-		                        		<li><a class="minfo" href="#">More info </a></li>
+		                        		<li><a class="minfo" href="/promotion/10">More info </a></li>
 		                        		<div class="clear"> </div>
 		                        	</ul>
 		                        </div>
